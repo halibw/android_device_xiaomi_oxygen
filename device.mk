@@ -369,6 +369,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
 
+# USB HAL
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service.basic
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl:64 \
