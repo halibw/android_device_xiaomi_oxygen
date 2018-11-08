@@ -23,7 +23,7 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT := cortex-a53
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
@@ -47,7 +47,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8953
 
 # ANT
- BOARD_ANT_WIRELESS_DEVICE := "qualcomm-aidl"
+ BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
 # Audio
 AUDIO_FEATURE_ENABLED_ANC_HEADSET := true
