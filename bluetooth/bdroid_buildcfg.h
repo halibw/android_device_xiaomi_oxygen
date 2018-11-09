@@ -24,8 +24,8 @@ static inline const char* BtmGetDefaultName()
 {
     char product_device[PROPERTY_VALUE_MAX];
     property_get("ro.product.device", product_device, "");
-     if (strstr(product_device, "mido"))
-        return "Xiaomi Redmi Note 4";
+     if (strstr(product_device, "oxygen"))
+        return "Xiaomi Mi Max 2";
     if (strstr(product_device, "tissot"))
         return "Xiaomi MI A1";
      // Fallback to ro.product.model
