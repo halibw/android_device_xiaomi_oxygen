@@ -123,10 +123,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
-    Gcam \
-    Snap \
     vendor.qti.hardware.camera.device@1.0 \
-    vendor.qti.hardware.camera.device@1.0_vendor
+    vendor.qti.hardware.camera.device@1.0_vendor \
+    Snap
 
 # Charging
 PRODUCT_PACKAGES += \
@@ -222,7 +221,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl
 
 # IPA Manager
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
@@ -308,11 +307,22 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
+# RCS
+PRODUCT_PACKAGES += \
+    rcs_service_aidl \
+    rcs_service_aidl.xml \
+    rcs_service_api \
+    rcs_service_api.xml
+
+PRODUCT_PACKAGES += \
+    libshim_ims
+
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl \
     libcnefeatureconfig \
     libxml2 \
+    ims-ext-common \
     telephony-ext
 
 PRODUCT_BOOT_JARS += \
