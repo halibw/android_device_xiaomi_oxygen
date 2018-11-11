@@ -1,0 +1,2 @@
+allow hal_health_default sysfs_mmc_host:dir search;
+allow hal_health_default sysfs_mmc_host:file { getattr open read };

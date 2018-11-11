@@ -1,0 +1,5 @@
+allow time_daemon time_data_file:file create_file_perms;
+allow time_daemon time_data_file:dir w_dir_perms;
+
+allow time_daemon sysfs:dir r_dir_perms;
+r_dir_file(time_daemon, sysfs_msm_subsys)
