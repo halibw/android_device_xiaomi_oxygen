@@ -57,6 +57,10 @@ vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 -vendor/lib64/libbtnv.so
 vendor/lib64/libbt-hidlclient.so
 
+#Camera
+vendor/lib/vendor.qti.hardware.camera.device@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.camera.device@1.0_vendor.so
+
 # Camera firmware
 vendor/firmware/cpp_firmware_v1_8_0.fw
 vendor/firmware/cpp_firmware_v1_5_0.fw
@@ -152,9 +156,16 @@ vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 
+#Fingerprint
+-priv-app/FingerprintExtensionService/FingerprintExtensionService.apk
+etc/permissions/com.fingerprints.extension.xml
+etc/permissions/android.hardware.fingerprint.xml
+
 # Gatekeeper
 vendor/lib/hw/gatekeeper.msm8953.so
 vendor/lib64/hw/gatekeeper.msm8953.so
+
+vendor/framework/com.fingerprints.extension.jar
 
 # GPS
 etc/permissions/com.qti.location.sdk.xml
