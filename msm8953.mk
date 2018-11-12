@@ -284,7 +284,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
 # Properties
--include device/xiaomi/msm8953-common/prop.mk
+-include device/xiaomi/msm8953-common/vendor_prop.mk
 
 # QMI
 PRODUCT_PACKAGES += \
