@@ -204,6 +204,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
  persist.sys.usb.config.extra=none
 
+# Volte
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.VT_ENABLE=1 \
+    persist.radio.VT_HYBRID_ENABLE=1 \
+    persist.dbg.wfc_avail_ovr=1
+
+# DPM
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.dpm.feature=5
+
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
  wifi.interface=wlan0
