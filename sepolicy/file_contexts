@@ -1,5 +1,5 @@
 # Bluetooth
-/(vendor|system/vendor)/bin/hci_qcomm_init	u:object_r:bluetooth_loader_exec:s0
+#/(vendor|system/vendor)/bin/hci_qcomm_init	u:object_r:bluetooth_loader_exec:s0
 
 # Data files
 /data/connectivity(/.*)?              u:object_r:cnd_data_file:s0
