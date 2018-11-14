@@ -211,7 +211,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.wfc_avail_ovr=1
 
 # DPM
-PRODUCT_PROPERTY_OVERRIDES += \
+#PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.dpm.feature=5
 
 # Wifi
