@@ -1,4 +1,0 @@
-# device specific syscalls.
-readlinkat: 1
-pread64: 1
-0 comments on commit d6338e2
