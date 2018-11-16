@@ -212,8 +212,9 @@ TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/fstab.qcom
 endif
 
 # SELinux
-#include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+
 #CAF
 TARGET_QCOM_DISPLAY_VARIANT := caf-msm8996
 TARGET_QCOM_AUDIO_VARIANT := caf-msm8996
