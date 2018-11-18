@@ -60,4 +60,5 @@
          sdk/src/java/org/lineageos/internal/util/DeviceKeysConstants.java.
     -->
     <integer name="config_longPressOnAppSwitchBehavior">1</integer>
+    <integer name="config_deviceLightCapabilities">232</integer>
 </resources>
