@@ -570,8 +570,13 @@ service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/m
     disabled
 
  # IR blaster
-    chown root system /sys/class/leds/infrared/transmit
-    chown root system /sys/class/leds/infrared/brightness
+    chown system system /sys/class/leds/infrared/transmit
+    chown system system /sys/class/leds/infrared/brightness
+    chown system radio /sys/class/sec/sec_ir/ir_send
+    chown system radio /sys/class/sec/sec_ir/ir_send_result
+    chown system radio /sys/class/sec/sec_ir/ir_data
+    chmod 0660 /dev/peel_ir
+    chown system radio /dev/peel_ir
 
 on post-fs-data
     chown system system /dev/peel_ir
