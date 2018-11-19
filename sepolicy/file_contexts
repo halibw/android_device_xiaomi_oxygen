@@ -8,7 +8,7 @@
 /data/fpc(/.*)?					u:object_r:fpc_data_file:s0
 /dev/socket/fpce(/.*)?				u:object_r:fpce_socket:s0
 /sys/devices/soc/soc:fpc1020(/.*)?		u:object_r:fpc_sysfs:s0
-
+/data/misc/stargate(/.*)?             u:object_r:qfp-daemon_data_file:s0
 # Goodix Fingerprint
 /dev/goodix_fp					u:object_r:gx_fpd_device:s0
 /data/gf_data(/.*)?                             u:object_r:gx_fpd_data_file:s0
