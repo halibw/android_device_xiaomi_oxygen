@@ -86,11 +86,22 @@ void check_device()
    }
 }
 
+void property_override_dual(char const system_prop[], char const vendor_prop[], char const value[])
+{
+    property_override(system_prop, value);
+    property_override(vendor_prop, value);
+}
+
 void vendor_load_properties()
 {
+	char b_description[PROP_VALUE_MAX], b_fingerprint[PROP_VALUE_MAX];
+    char p_carrier[PROP_VALUE_MAX], p_device[PROP_VALUE_MAX], p_model[PROP_VALUE_MAX];
+
     init_alarm_boot_properties();
     check_device();
-
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", b_fingerprint);
+	property_override_dual("ro.product.device", "ro.vendor.product.model", p_device);
+	property_override_dual("ro.product.model", "ro.vendor.product.device", p_model);
     property_set("dalvik.vm.heapstartsize", "16m");
     property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
     property_set("dalvik.vm.heapsize", "512m");
