@@ -150,6 +150,10 @@ vendor/lib64/libxml.so
 # Charger
 vendor/bin/hvdcp_opti
 
+# Dolby
+vendor/lib/libhwdaphal.so
+vendor/lib64/libhwdaphal.so
+
 # DPM
 vendor/bin/dpmQmiMgr
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0_vendor.so
