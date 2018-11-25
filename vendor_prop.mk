@@ -97,7 +97,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
  persist.hwc.mdpcomp.enable=true \
  ro.opengles.version=196610 \
  ro.qualcomm.cabl=0 \
- ro.sf.lcd_density=320
+ ro.sf.lcd_density=320 \
+ persist.sys.wfd.nohdcp=1 \
+ persist.debug.wfd.enable=1 \
+ persist.sys.wfd.virtual=0 
+
+# Fp Gestures
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.fp.navigation=1
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
