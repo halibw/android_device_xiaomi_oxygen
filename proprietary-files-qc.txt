@@ -505,8 +505,8 @@ vendor/radio/qcril_database/qcril.db|8405d20c8e1184c79eba1c4f19ecfb92d7529bdf
 
 
 # Radio - IMS
--app/ims/ims.apk
--app/imssettings/imssettings.apk:vendor/app/imssettings/imssettings.apk
+-vendor/app/ims/ims.apk
+-vendor/app/imssettings/imssettings.apk:vendor/app/imssettings/imssettings.apk
 -app/uceShimService/uceShimService.apk
 etc/permissions/qti-vzw-ims-internal.xml
 lib/com.qualcomm.qti.imscmservice@1.0.so
