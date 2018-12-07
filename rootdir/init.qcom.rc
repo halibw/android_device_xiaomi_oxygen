@@ -455,7 +455,6 @@ service start_hci_filter /system/vendor/bin/wcnss_filter
     disabled
 
 # DT2W
-    chmod 0666 /sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input1/wake_gesture
     chown system system /sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input1/wake_gesture
 
 on property:bluetooth.hciattach=true
