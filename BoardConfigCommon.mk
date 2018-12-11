@@ -223,8 +223,6 @@ BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
 BOARD_SEPOLICY_VERS := 28.0
 
-# DT2W
-TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
 
 #CAF
 TARGET_QCOM_DISPLAY_VARIANT := caf-msm8996
