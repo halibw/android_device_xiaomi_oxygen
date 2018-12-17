@@ -138,6 +138,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
 
+PRODUCT_PACKAGES += \
+    MGC \
+
+
 # Charging
 PRODUCT_PACKAGES += \
     charger_res_images
