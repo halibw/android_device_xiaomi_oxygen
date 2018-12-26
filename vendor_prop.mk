@@ -93,6 +93,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
  dev.pm.dyn_samplingrate=1 \
  persist.debug.wfd.enable=1 \
  persist.demo.hdmirotationlock=false \
+ debug.sf.disable_hwc=0 \
+ debug.sf.gpu_comp_tiling=1 \
+ debug.performance.tuning=1 \
+ persist.hwc.ptor.enable=true \
+ video.accelerate.hw=1 \
  persist.hwc.enable_vds=1 \
  persist.hwc.mdpcomp.enable=true \
  ro.opengles.version=196610 \
@@ -216,6 +221,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.VT_ENABLE=1 \
     persist.radio.VT_HYBRID_ENABLE=1 \
     persist.dbg.wfc_avail_ovr=1
+
+
+# Optimize
+ PRODUCT_PROPERTY_OVERRIDES += \
+     sys.use_fifo_ui=1
 
 # DPM
 #PRODUCT_PROPERTY_OVERRIDES += \

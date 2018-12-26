@@ -1,2 +1,3 @@
 # files in /sys
 r_dir_file(ims, sysfs_msm_subsys)
+#allow ims self:capability { net_raw };
