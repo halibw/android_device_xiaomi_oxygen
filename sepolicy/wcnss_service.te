@@ -1,3 +1,5 @@
 # files in /sys
 r_dir_file(wcnss_service, sysfs_msm_subsys)
+get_prop(wcnss_service, serialno_prop);
+allow wcnss_service wifi_data_file:dir search;
 
