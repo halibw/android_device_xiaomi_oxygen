@@ -69,14 +69,14 @@ service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     writepid /dev/cpuset/system-background/tasks
 
 #Start up peripheral manager
-service per_mgr /vendor/bin/pm-service
+service vendor.per_mgr /vendor/bin/pm-service
     class core
     user system
     group system
     ioprio rt 4
     writepid /dev/cpuset/system-background/tasks
 
-service per_proxy /vendor/bin/pm-proxy
+service vendor.per_proxy /vendor/bin/pm-proxy
     class core
     user system
     group system
@@ -89,7 +89,7 @@ on property:init.svc.per_mgr=running
 on property:sys.shutdown.requested=*
     stop per_proxy
 
-service qseecomd /vendor/bin/qseecomd
+service vendor.qseecomd /vendor/bin/qseecomd
    class core
    user root
    group root
