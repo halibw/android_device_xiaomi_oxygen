@@ -13,6 +13,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   persist.vendor.audio.fluence.voicecall=true \
   persist.vendor.audio.fluence.voicerec=true \
   persist.vendor.btstack.enable.splita2dp=false \
+  persist.vendor.audio.hw.binder.size_kbyte=1024 \
   ro.vendor.audio.sdk.fluencetype=fluence \
   ro.af.client_heap_size_kbyte=7168 \
   ro.vendor.audio.sdk.ssr=false \
