@@ -485,4 +485,6 @@
 	 <bool name="config_enableBurnInProtection">true</bool>
 	 <bool name="config_dual_LTE_capability">true</bool>
 	 <bool name="config_deviceHasVariableButtonBrightness">true</bool>
+	      <!-- Whether the new Auto Selection Network UI should be shown -->
+     <bool name="config_enableNewAutoSelectNetworkUI">false</bool>
  </resources>
