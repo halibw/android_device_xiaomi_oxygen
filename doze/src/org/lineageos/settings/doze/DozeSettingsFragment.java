@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2015 The CyanogenMod Project
- *               2017 The LineageOS Project
+ *               2017-2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,15 +23,13 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.database.ContentObserver;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v14.preference.PreferenceFragment;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -45,14 +43,10 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         CompoundButton.OnCheckedChangeListener {
 
     private TextView mTextView;
-    private View switchBar;
 
     private SwitchPreference mPickUpPreference;
     private SwitchPreference mHandwavePreference;
     private SwitchPreference mPocketPreference;
-
-    private int mBackgroundActivatedColor;
-    private int mBackgroundColor;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -66,10 +60,10 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
             showHelp();
         }
 
-        mBackgroundActivatedColor = ContextCompat.getColor(getActivity(), R.color.switchBarBackgroundActivatedColor);
-        mBackgroundColor = ContextCompat.getColor(getActivity(), R.color.switchBarBackgroundColor);
-
         boolean dozeEnabled = Utils.isDozeEnabled(getActivity());
+
+        PreferenceCategory proximitySensorCategory =
+                (PreferenceCategory) getPreferenceScreen().findPreference(Utils.CATEG_PROX_SENSOR);
 
         mPickUpPreference = (SwitchPreference) findPreference(Utils.GESTURE_PICK_UP_KEY);
         mPickUpPreference.setEnabled(dozeEnabled);
@@ -82,6 +76,11 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         mPocketPreference = (SwitchPreference) findPreference(Utils.GESTURE_POCKET_KEY);
         mPocketPreference.setEnabled(dozeEnabled);
         mPocketPreference.setOnPreferenceChangeListener(this);
+
+        // Hide proximity sensor related features if the device doesn't support them
+        if (!Utils.getProxCheckBeforePulse(getActivity())) {
+            getPreferenceScreen().removePreference(proximitySensorCategory);
+        }
     }
 
     @Override
@@ -98,23 +97,15 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
 
         boolean dozeEnabled = Utils.isDozeEnabled(getActivity());
 
-        mTextView = (TextView) view.findViewById(R.id.switch_text);
+        mTextView = view.findViewById(R.id.switch_text);
         mTextView.setText(getString(dozeEnabled ?
                 R.string.switch_bar_on : R.string.switch_bar_off));
 
-        switchBar = view.findViewById(R.id.switch_bar);
-        switchBar.setBackgroundColor(dozeEnabled ? mBackgroundActivatedColor : mBackgroundColor);
-
-        Switch switchWidget = (Switch) switchBar.findViewById(android.R.id.switch_widget);
+        View switchBar = view.findViewById(R.id.switch_bar);
+        Switch switchWidget = switchBar.findViewById(android.R.id.switch_widget);
         switchWidget.setChecked(dozeEnabled);
         switchWidget.setOnCheckedChangeListener(this);
-
-        switchBar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switchWidget.setChecked(!switchWidget.isChecked());
-            }
-        });
+        switchBar.setOnClickListener(v -> switchWidget.setChecked(!switchWidget.isChecked()));
     }
 
     @Override
@@ -130,8 +121,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         Utils.checkDozeService(getActivity());
 
         mTextView.setText(getString(isChecked ? R.string.switch_bar_on : R.string.switch_bar_off));
-
-        switchBar.setBackgroundColor(isChecked ? mBackgroundActivatedColor : mBackgroundColor);
 
         mPickUpPreference.setEnabled(isChecked);
         mHandwavePreference.setEnabled(isChecked);
@@ -153,12 +142,7 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
             return new AlertDialog.Builder(getActivity())
                     .setTitle(R.string.doze_settings_help_title)
                     .setMessage(R.string.doze_settings_help_text)
-                    .setNegativeButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    })
+                    .setNegativeButton(R.string.dialog_ok, (dialog, which) -> dialog.cancel())
                     .create();
         }
 
