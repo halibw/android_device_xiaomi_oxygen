@@ -482,5 +482,6 @@
     <!-- Slow brightness animation ramp rate in brightness units per second-->
     <integer translatable="false" name="config_brightness_ramp_rate_slow">60</integer>
          <!-- If true, the display will be shifted around in ambient mode. -->
-     <bool name="config_enableBurnInProtection">true</bool>
+	 <bool name="config_enableBurnInProtection">true</bool>
+	 <bool name="config_dual_LTE_capability">true</bool>
  </resources>
