@@ -484,4 +484,5 @@
          <!-- If true, the display will be shifted around in ambient mode. -->
 	 <bool name="config_enableBurnInProtection">true</bool>
 	 <bool name="config_dual_LTE_capability">true</bool>
+	 <bool name="config_deviceHasVariableButtonBrightness">true</bool>
  </resources>
