@@ -93,4 +93,8 @@ if [ "$DEVICE" = "tissot" ]; then
     patchelf --set-soname libminikin-v27.so $DEVICE_BLOB_ROOT/lib/libminikin-v27.so
 fi
 
+# HAX for thermal-engine
+ THERMAL_ENGINE = "$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/bin/thermal-engine
+ sed -i "s|/system/etc/|/vendor/etc/|g" "THERMAL_ENGINE"
+
 "$MY_DIR"/setup-makefiles.sh
