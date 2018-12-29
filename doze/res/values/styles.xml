@@ -25,8 +25,7 @@
         <item name="switchPreferenceStyle">@style/Theme.Main.SwitchPreferenceStyle</item>
     </style>
 
-    <style name="Theme.Main.DialogPreferenceStyle" parent="@style/Theme.Main.PreferenceStyle">
-    </style>
+    <style name="Theme.Main.DialogPreferenceStyle" parent="@style/Theme.Main.PreferenceStyle" />
 
     <style name="Theme.Main.PreferenceCategoryStyle" parent="@*android:style/Preference.DeviceDefault.Category">
         <item name="allowDividerAbove">true</item>
@@ -45,13 +44,14 @@
         <item name="android:layout">@layout/preference_material_settings</item>
     </style>
 
-    <style name="Theme.Main.PreferenceTheme">
-    </style>
+    <style name="Theme.Main.PreferenceTheme" />
 
     <style name="Theme.Main.SwitchPreferenceStyle" parent="@style/Theme.Main.PreferenceStyle">
         <item name="widgetLayout">@*android:layout/preference_widget_switch</item>
     </style>
 
-    <style name="Theme.Main.SwitchBar" parent="@android:style/ThemeOverlay.Material.ActionBar">
+    <style name="Widget.SwitchBar.Switch" parent="@android:style/Widget.Material.CompoundButton.Switch">
+        <item name="android:trackTint">@color/switchbar_switch_track_tint</item>
+        <item name="android:thumbTint">@color/switchbar_switch_thumb_tint</item>
     </style>
 </resources>
