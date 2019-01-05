@@ -70,19 +70,6 @@ vendor/lib64/libbt-hidlclient.so
 vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so
 
 
-# Bluetooth firmware
-vendor/firmware/nvm_tlv.bin
-vendor/firmware/nvm_tlv_1.3.bin
-vendor/firmware/nvm_tlv_2.1.bin
-vendor/firmware/nvm_tlv_3.0.bin
-vendor/firmware/nvm_tlv_3.2.bin
-vendor/firmware/rampatch_tlv.img
-vendor/firmware/rampatch_tlv_1.3.tlv
-vendor/firmware/rampatch_tlv_2.1.tlv
-vendor/firmware/rampatch_tlv_3.0.tlv
-vendor/firmware/rampatch_tlv_3.2.tlv
-
-
 #Camera
 vendor/lib/vendor.qti.hardware.camera.device@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.camera.device@1.0_vendor.so
@@ -323,6 +310,28 @@ vendor/firmware/a506_zap.b02
 vendor/firmware/a506_zap.mdt
 vendor/firmware/a530_pfp.fw
 vendor/firmware/a530_pm4.fw
+vendor/firmware/a225_pfp.fw
+vendor/firmware/a225_pm4.fw
+vendor/firmware/a225p5_pm4.fw
+vendor/firmware/a300_pfp.fw
+vendor/firmware/a300_pm4.fw
+vendor/firmware/a330_pfp.fw
+vendor/firmware/a330_pm4.fw
+vendor/firmware/a420_pfp.fw
+vendor/firmware/a420_pm4.fw
+vendor/firmware/a530_gpmu.fw2
+vendor/firmware/a530_pfp.fw
+vendor/firmware/a530_pm4.fw
+vendor/firmware/a530v1_pfp.fw
+vendor/firmware/a530v1_pm4.fw
+vendor/firmware/a530v2_seq.fw2
+vendor/firmware/a530v3_gpmu.fw2
+vendor/firmware/a530v3_seq.fw2
+vendor/firmware/a540_gpmu.fw2
+vendor/firmware/leia_pfp_470.fw
+vendor/firmware/leia_pm4_470.fw
+
+
 
 # Ipacm
 vendor/bin/ipacm-diag
