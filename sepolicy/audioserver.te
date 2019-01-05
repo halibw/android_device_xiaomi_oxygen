@@ -1,0 +1,2 @@
+allow audioserver audio_cal_file:file { read open getattr };
+allow audioserver persist_file:dir { search };
