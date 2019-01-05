@@ -1,6 +1,3 @@
-# Audio Amp
-/persist/audio/tas2560_cal.txt				u:object_r:audio_cal_file:s0
-
 # Bluetooth
 #/(vendor|system/vendor)/bin/hci_qcomm_init	u:object_r:bluetooth_loader_exec:s0
 
