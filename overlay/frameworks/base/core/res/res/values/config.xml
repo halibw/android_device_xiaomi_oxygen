@@ -490,5 +490,18 @@
 	      <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
 	      <bool name="config_swipe_up_gesture_setting_available">true</bool>
 	      <!-- Flag indicating whether we should enable smart battery. -->
-              <bool name="config_smart_battery_available">true</bool>
+	      <bool name="config_smart_battery_available">true</bool>
+	          <!-- Whether WiFi display is supported by this device.
+         There are many prerequisites for this feature to work correctly.
+         Here are a few of them:
+         * The WiFi radio must support WiFi P2P.
+         * The WiFi radio must support concurrent connections to the WiFi display and
+           to an access point.
+         * The Audio Flinger audio_policy.conf file must specify a rule for the "r_submix"
+           remote submix module.  This module is used to record and stream system
+           audio output to the WiFi display encoder in the media server.
+         * The remote submix module "audio.r_submix.default" must be installed on the device.
+         * The device must be provisioned with HDCP keys (for protected content).
+    -->
+             <bool name="config_enableWifiDisplay">true</bool>
  </resources>
