@@ -170,6 +170,13 @@ on boot
     chown system system /sys/class/leds/white/brightness  
     chown system system /sys/class/leds/white/led_time
 
+   # Flash LED
+    chmod 0660 /sys/devices/soc/qpnp-flash-led-25/leds/led:flash_1/max_brightness
+    chown system system /sys/devices/soc/qpnp-flash-led-25/leds/led:flash_1/max_brightness
+    chmod 0660 /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_1/max_brightness
+    chown system system /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_1/max_brightness
+
+
     # Allow access to emmc rawdump block partition and dload sysfs node
     chown root system /dev/block/bootdevice/by-name/rawdump -p /dev/block/
     chmod 0660 /dev/block/bootdevice/by-name/rawdump -p /dev/block/
@@ -560,7 +567,7 @@ service ril-daemon2 /vendor/bin/hw/rild -c 2
 service charger /sbin/chargeonlymode
     class charger
     group system graphics
-    seclabel u:r:charger:s0
+    seclabel u:r:healthd:s0
 
 service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     class core
@@ -595,6 +602,27 @@ service vendor.time_daemon /system/vendor/bin/time_daemon
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
+
+service gx_fpd /system/vendor/bin/gx_fpd
+     class core
+     user system
+     group system drmrpc
+     writepid /dev/cpuset/system-background/tasks
+
+on property:sys.fp.vendor=switchf
+    stop gx_fpd
+    setprop sys.fp.vendor searchf
+    setprop fpc.fp.miui.token 0
+    setprop ro.boot.fpsensor fpc
+    setprop ro.hardware.fingerprint searchf
+    start fps_hal
+
+on property:sys.fp.onstart=1
+   setprop goodix.fp.miui.analyse 1
+   setprop goodix.fp.miui.token 0
+   setprop ro.boot.fpsensor gdx
+   setprop ro.hardware.fingerprint goodix
+   start fps_hal
 
 on property:dev.bootcomplete=1
     setprop sys.io.scheduler "bfq"

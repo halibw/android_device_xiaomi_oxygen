@@ -385,6 +385,9 @@ case "$buildvariant" in
 esac
 
 
+echo '0' > /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_1/max_brightness
+echo '0' > /sys/devices/soc/qpnp-flash-led-25/leds/led:flash_1/max_brightness
+
 # VoLTE haxx
 #settings_file_global="/data/system/users/0/settings_global.xml"
 #multi_sim_data_call_hits=$(grep -q -c "multi_sim_data_call\" value=\"-1\"" $settings_file_global)
