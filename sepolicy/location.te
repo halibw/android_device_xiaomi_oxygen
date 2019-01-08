@@ -1,6 +1,0 @@
-# files in /sys
-r_dir_file(location, sysfs_msm_subsys)
-
-# /data/vendor/location
-allow location location_data_file:dir create_dir_perms;
-allow location location_data_file:{ file sock_file } create_file_perms;

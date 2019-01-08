@@ -1,5 +1,0 @@
-allow mm-qcamerad camera_data_file:dir { add_name remove_name search write };
-allow mm-qcamerad camera_data_file:sock_file { create unlink };
-allow mm-qcamerad default_prop:property_service set;
-allow mm-qcamerad sysfs:file { open read };
-allow mm-qcamerad sysfs_graphics:file{ open read };

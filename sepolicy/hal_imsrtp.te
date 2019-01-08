@@ -1,2 +1,0 @@
-# allow hal to read sysfs file
-r_dir_file(hal_imsrtp, sysfs_msm_subsys)
