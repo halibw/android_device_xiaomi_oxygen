@@ -214,12 +214,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Usb
 PRODUCT_PROPERTY_OVERRIDES += \
  persist.sys.usb.config.extra=none
+    
+  
+   # IMS / VoLTE
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+persist.radio.lte_vrte_ltd=1
+persist.radio.VT_CAM_INTERFACE=2
+persist.radio.VT_ENABLE=1
+persist.radio.VT_HYBRID_ENABLE=1
+persist.volte_enabled_by_hw=1
 
-# Volte
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.VT_ENABLE=1 \
-    persist.radio.VT_HYBRID_ENABLE=1 \
-    persist.dbg.wfc_avail_ovr=1
+
 
 
 # Optimize
