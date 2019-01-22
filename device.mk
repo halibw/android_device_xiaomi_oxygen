@@ -160,7 +160,7 @@ PRODUCT_PACKAGES += \
     memtrack.msm8953 \
     libdisplayconfig \
     liboverlay \
-    libqdMetaData.system \
+    libqdMetaData \
     libgenlock \
     libtinyxml \
     vendor.display.config@1.0.vendor
