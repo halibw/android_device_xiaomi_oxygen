@@ -220,7 +220,7 @@ endif
 
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
+#include device/qcom/sepolicy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
 BOARD_SEPOLICY_VERS := 28.0
