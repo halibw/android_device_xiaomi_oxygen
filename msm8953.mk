@@ -436,7 +436,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 # XiaomiParts
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     XiaomiParts
 
 PRODUCT_COPY_FILES += \
