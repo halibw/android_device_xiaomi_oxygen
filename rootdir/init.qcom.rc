@@ -138,6 +138,11 @@ on boot
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
 
+    chown system system /sys/devices/soc/78b7000.i2c/i2c-3/3-0038/enable_dt2w
+    chmod 0664 /sys/devices/soc/78b7000.i2c/i2c-3/3-0038/enable_dt2w
+    chown system system /proc/touchpanel/enable_dt2w
+    chmod 0664 /proc/touchpanel/enable_dt2w
+
     mkdir /persist/drm 0770 system system
     mkdir /persist/bluetooth 0770 bluetooth bluetooth
     mkdir /persist/misc 0770 system system

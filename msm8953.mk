@@ -357,6 +357,9 @@ PRODUCT_PACKAGES += \
     ims-ext-common \
     telephony-ext
 
+# Telephony
+Add persist.vendor.qti.pie.telephony=1
+
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
