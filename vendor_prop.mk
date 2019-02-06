@@ -38,6 +38,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   vendor.voice.playback.conc.disabled=true \
   vendor.voice.record.conc.disabled=false \
   ro.config.media_vol_steps=25 \
+  ro.config.vc_call_vol_steps=7 \
   vendor.voice.voip.conc.disabled=true
 
 # Bluetooth

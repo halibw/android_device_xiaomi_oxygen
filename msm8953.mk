@@ -123,7 +123,7 @@ PRODUCT_PACKAGES += \
     AntHalService \
     com.dsi.ant.antradio_library
 
-#PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.media_vol_steps=25 \
     ro.config.vc_call_vol_steps=7
 
@@ -358,7 +358,7 @@ PRODUCT_PACKAGES += \
     telephony-ext
 
 # Telephony
-Add persist.vendor.qti.pie.telephony=1
+#Add persist.vendor.qti.pie.telephony=1
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
