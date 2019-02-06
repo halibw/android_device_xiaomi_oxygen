@@ -61,6 +61,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   persist.camera.eis.enable=1 \
   persist.vendor.qti.telephony.vt_cam_interface=1 \
   vidc.enc.dcvs.extra-buff-count=2 \
+  camera.hal1.packagelist=com.whatsapp \
   persist.camera.HAL3.enabled=1
 
 
