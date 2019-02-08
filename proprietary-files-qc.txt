@@ -93,6 +93,11 @@ vendor/firmware/cpp_firmware_v1_5_2.fw
 vendor/firmware/cpp_firmware_v1_1_6.fw
 
 
+# Dirac
+vendor/etc/diracmobile.config
+vendor/lib/libDiracAPI_SHARED
+vendor/lib/soundfx/libdirac.so
+
 #Expose aux camera for below packages
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi,com.instagram.android,com.whatsapp,com.snapchat.android \
