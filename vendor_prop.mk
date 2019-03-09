@@ -2,6 +2,9 @@
 # system.prop for msm8953-common
 #
 
+#havoc
+ro.havoc.maintainer=HARD_ROCK83
+
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
   af.fast_track_multiplier=2 \
