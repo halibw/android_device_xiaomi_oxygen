@@ -499,6 +499,13 @@ service start_hci_filter /system/vendor/bin/wcnss_filter
 # DT2W
     chown system system /sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input1/wake_gesture
 
+service hciattach /system//vendor/bin/hci_qcomm_init -e
+    class late_start
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
 on property:bluetooth.hciattach=true
     start hciattach
     setprop bluetooth.status on
