@@ -1,4 +1,5 @@
-// Copyright (C) 2019 The LineageOS Project
+//
+//  Copyright (C) 2020 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,18 +14,18 @@
 // limitations under the License.
 
 cc_binary {
+    name: "android.hardware.lights-service.xiaomi",
     relative_install_path: "hw",
-    defaults: ["hidl_defaults"],
-    name: "android.hardware.light@2.0-service.xiaomi_oxygen",
-    proprietary: true,
-    init_rc: ["android.hardware.light@2.0-service.xiaomi_oxygen.rc"],
-    vintf_fragments: ["android.hardware.light@2.0-service.xiaomi_oxygen.xml"],
-    srcs: ["service.cpp", "Light.cpp"],
+    init_rc: ["android.hardware.lights-service.xiaomi.rc"],
+    vintf_fragments: ["android.hardware.lights-service.xiaomi.xml"],
+    vendor: true,
     shared_libs: [
-        "libhardware",
-        "libhidlbase",
-        "liblog",
-        "libutils",
-        "android.hardware.light@2.0",
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.light-ndk_platform",
+    ],
+    srcs: [
+        "Lights.cpp",
+        "main.cpp",
     ],
 }

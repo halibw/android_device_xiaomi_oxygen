@@ -271,7 +271,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.xiaomi_oxygen
+    android.hardware.lights-service.xiaomi
 
 # Media
 PRODUCT_COPY_FILES += \
