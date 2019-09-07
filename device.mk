@@ -151,6 +151,7 @@ PRODUCT_PACKAGES += \
     libgui_vendor:32 \
     libshims_android \
     libshims_ui \
+    libwui \
     Snap
 
 # Cgroup and task_profiles
