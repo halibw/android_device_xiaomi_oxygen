@@ -361,8 +361,8 @@ PRODUCT_PACKAGES += \
 # Telephony
 #Add persist.vendor.qti.pie.telephony=1
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+#PRODUCT_BOOT_JARS += \
+#    telephony-ext
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
