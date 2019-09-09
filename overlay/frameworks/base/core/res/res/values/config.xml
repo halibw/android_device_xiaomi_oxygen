@@ -526,4 +526,7 @@
 
  	<!-- Whether the display blanks itself when transition from a doze to a non-doze state -->
 	<bool name="config_displayBlanksAfterDoze">true</bool>
+
+    <!-- True if the firmware supports Wi-Fi link probing -->
+    <bool name="config_wifi_link_probing_supported">true</bool>
  </resources>
