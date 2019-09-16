@@ -31,6 +31,15 @@
 
     <!-- Doze: check proximity sensor before pulsing from intent? -->
     <bool name="doze_proximity_check_before_pulse_intent">true</bool>
+      <!-- Max visible notification icons -->
+     <integer name="config_maxVisibleNotificationIcons">5</integer>
+     <integer name="config_maxVisibleNotificationIconsWhenDark">6</integer>
+
+      <!-- Smart replies in notifications: Whether we disable the feature unless the app targets P -->
+      <bool name="config_smart_replies_in_notifications_requires_targeting_p">false</bool>
+           <!-- Allow devices override audio panel location to the left side -->
+     <bool name="config_audioPanelOnLeftSide">true</bool>
+
 
 </resources>
 
