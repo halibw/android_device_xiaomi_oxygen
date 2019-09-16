@@ -207,12 +207,12 @@ on boot
     chmod 0660 /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_1/max_brightness
 
     # Allow access to emmc rawdump block partition and dload sysfs node
-    chown root system /dev/block/bootdevice/by-name/rawdump -p /dev/block/
-    chmod 0660 /dev/block/bootdevice/by-name/rawdump -p /dev/block/
+    chown root system /dev/block/bootdevice/by-name/rawdump
+    chmod 0660 /dev/block/bootdevice/by-name/rawdump
     chown root system /sys/kernel/dload/emmc_dload
     chmod 0660 /sys/kernel/dload/emmc_dload
-    chown root system /dev/block/bootdevice/by-name/ramdump -p /dev/block/
-    chmod 0660 /dev/block/bootdevice/by-name/ramdump -p /dev/block/
+    chown root system /dev/block/bootdevice/by-name/ramdump
+    chmod 0660 /dev/block/bootdevice/by-name/ramdump
     chown root system /sys/kernel/dload/dload_mode
     chmod 0660 /sys/kernel/dload/dload_mode
 
@@ -497,7 +497,7 @@ service start_hci_filter /system/vendor/bin/wcnss_filter
     disabled
 
 # DT2W
-    chown system system /sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input1/wake_gesture
+#    chown system system /sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input1/wake_gesture
 
 on property:bluetooth.hciattach=true
     start hciattach
@@ -611,13 +611,13 @@ service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/m
     disabled
 
  # IR blaster
-    chown system system /sys/class/leds/infrared/transmit
-    chown system system /sys/class/leds/infrared/brightness
-    chown system radio /sys/class/sec/sec_ir/ir_send
-    chown system radio /sys/class/sec/sec_ir/ir_send_result
-    chown system radio /sys/class/sec/sec_ir/ir_data
-    chmod 0660 /dev/peel_ir
-    chown system radio /dev/peel_ir
+ #   chown system system /sys/class/leds/infrared/transmit
+ #   chown system system /sys/class/leds/infrared/brightness
+ #   chown system radio /sys/class/sec/sec_ir/ir_send
+ #   chown system radio /sys/class/sec/sec_ir/ir_send_result
+ #   chown system radio /sys/class/sec/sec_ir/ir_data
+ #   chmod 0660 /dev/peel_ir
+ #   chown system radio /dev/peel_ir
 
 on post-fs-data
     chown system system /dev/peel_ir
