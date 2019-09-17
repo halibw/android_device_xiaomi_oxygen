@@ -340,6 +340,7 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.2::ISupplicant/default</fqname
+    </hal>
     <hal format="hidl">
         <name>com.qualcomm.qti.dpm.api</name>
         <transport>hwbinder</transport>
