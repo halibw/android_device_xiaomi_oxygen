@@ -11,6 +11,10 @@ VNDK_SP_LIBRARIES := \
     libunwindstack \
     libziparchive
 
+EXTRA_VENDOR_LIBRARIES := \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0
+
 install_in_hw_dir := \
    android.hidl.memory@1.0-impl
 
