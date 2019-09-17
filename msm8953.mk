@@ -429,8 +429,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 
 # VNDK
-PRODUCT_PACKAGES += \
-    vndk-sp
+#PRODUCT_PACKAGES += \
+#    vndk-sp
 
 # Wifi
 PRODUCT_PACKAGES += \
