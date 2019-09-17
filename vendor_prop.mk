@@ -2,8 +2,8 @@
 # system.prop for msm8953-common
 #
 
-#havoc
-ro.havoc.maintainer=HARD_ROCK83
+#COSMIC-OS
+ro.cos.maintainer=SCISSORDRAGONBOY
 
 # ADB at boot
 persist.service.adb.enable=1
@@ -54,6 +54,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
   bluetooth.hfp.client=1 \
+  persist.bluetooth.bluetooth_audio_hal.disabled=true \
+  persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
+  persist.vendor.bt.enable.splita2dp=true \
   qcom.bluetooth.soc=smd \
   ro.bluetooth.hfp.ver=1.7 \
   ro.qualcomm.bt.hci_transport=smd
@@ -219,6 +222,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
  service.qti.ims.enabled=1 \
  telephony.lteOnCdmaDevice=1
 
+
+
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
  persist.timed.enable=true
@@ -243,8 +248,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
  persist.radio.VT_HYBRID_ENABLE=1 \
  persist.volte_enabled_by_hw=1 
 
-
-
+# SurfaceFlinger
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.protected_contents=true \
+    ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
+    ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000 \
+    ro.surface_flinger.use_color_management=true
 
 # Optimize
  PRODUCT_PROPERTY_OVERRIDES += \
