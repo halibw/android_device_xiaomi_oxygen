@@ -221,8 +221,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
  service.qti.ims.enabled=1 \
  telephony.lteOnCdmaDevice=1
 
-
-
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
  persist.timed.enable=true
@@ -234,9 +232,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Usb
 PRODUCT_PROPERTY_OVERRIDES += \
  persist.sys.usb.config.extra=none
-    
-  
-   # IMS / VoLTE
+
+# IMS / VoLTE
 PRODUCT_PROPERTY_OVERRIDES += \
  persist.dbg.volte_avail_ovr=1 \
  persist.dbg.vt_avail_ovr=1 \
@@ -245,14 +242,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
  persist.radio.VT_CAM_INTERFACE=2 \
  persist.radio.VT_ENABLE=1 \
  persist.radio.VT_HYBRID_ENABLE=1 \
- persist.volte_enabled_by_hw=1 
+ persist.volte_enabled_by_hw=1
 
 # SurfaceFlinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.protected_contents=true \
-    ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
-    ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000 \
-    ro.surface_flinger.use_color_management=true
+    ro.surface_flinger.protected_contents=true
 
 # Optimize
  PRODUCT_PROPERTY_OVERRIDES += \
