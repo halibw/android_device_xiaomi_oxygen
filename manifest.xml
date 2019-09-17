@@ -7,7 +7,6 @@
             <name>IDevicesFactory</name>
             <instance>default</instance>
         </interface>
-        <fqname>@5.0::IDevicesFactory/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.audio.effect</name>
@@ -17,7 +16,6 @@
             <name>IEffectsFactory</name>
             <instance>default</instance>
         </interface>
-        <fqname>@5.0::IEffectsFactory/default</fqname>
     </hal>
     <hal format="hidl">
         <name>com.fingerprints.extension</name>
@@ -141,7 +139,7 @@
             <instance>default</instance>
             <instance>gnss_vendor</instance>
         </interface>
-</hal>
+     </hal>
      <hal format="hidl">
         <name>vendor.qti.hardware.data.latency</name>
         <transport>hwbinder</transport>
@@ -177,7 +175,6 @@
             <name>IMapper</name>
             <instance>default</instance>
         </interface>
-        <fqname>@2.1::IMapper/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.ir</name>
@@ -196,7 +193,7 @@
             <name>IKeymasterDevice</name>
             <instance>default</instance>
         </interface>
-</hal>
+     </hal>
      <hal format="hidl">
         <name>android.hardware.health</name>
         <transport>hwbinder</transport>
@@ -329,7 +326,6 @@
             <name>IHostapd</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.1::IHostapd/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.wifi.supplicant</name>
@@ -339,7 +335,6 @@
             <name>ISupplicant</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.2::ISupplicant/default</fqname
     </hal>
     <hal format="hidl">
         <name>com.qualcomm.qti.dpm.api</name>
