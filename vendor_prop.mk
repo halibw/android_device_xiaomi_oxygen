@@ -54,7 +54,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
   bluetooth.hfp.client=1 \
-  persist.bluetooth.bluetooth_audio_hal.disabled=true \
   persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
   persist.vendor.bt.enable.splita2dp=true \
   qcom.bluetooth.soc=smd \
