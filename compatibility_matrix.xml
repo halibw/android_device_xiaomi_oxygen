@@ -71,4 +71,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <vendor-ndk>
+        <version>28</version>
+    </vendor-ndk>
 </compatibility-matrix>
