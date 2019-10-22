@@ -1,15 +1,6 @@
 ifeq ($(BOARD_VNDK_VERSION),)
 $(warning ************* BOARD VNDK is not enabled - compiling vndk-sp ***************************)
-LOCAL_PATH := $(call my-dir)
-
-ifndef BOARD_VNDK_VERSION
-
 VNDK_SP_LIBRARIES := \
-    libdexfile \
-    libartbase \
-    libunwind \
-    libunwindstack \
-    libziparchive \
     android.hardware.graphics.mapper@2.0 \
     android.hardware.graphics.mapper@2.1 \
     android.hardware.graphics.mapper@3.0 \
@@ -51,14 +42,14 @@ VNDK_SP_LIBRARIES := \
 EXTRA_VENDOR_LIBRARIES := \
     android.hidl.base@1.0
 
-install_in_hw_dir := \
-   android.hidl.memory@1.0-impl
+#-------------------------------------------------------------------------------
+# VNDK Modules
+#-------------------------------------------------------------------------------
+LOCAL_PATH := $(call my-dir)
 
-vndk_sp_dir := vndk-sp-$(PLATFORM_VNDK_VERSION)
-
-define define-vndk-sp-lib
+define define-vndk-lib
 include $$(CLEAR_VARS)
-LOCAL_MODULE := $1.vndk-sp-gen
+LOCAL_MODULE := $1.$2
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_PREBUILT_MODULE_FILE := $$(call intermediates-dir-for,SHARED_LIBRARIES,$1)/$1.so
 LOCAL_STRIP_MODULE := false
@@ -66,13 +57,14 @@ LOCAL_MULTILIB := first
 LOCAL_MODULE_TAGS := optional
 LOCAL_INSTALLED_MODULE_STEM := $1.so
 LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_RELATIVE_PATH := $(vndk_sp_dir)
+LOCAL_MODULE_RELATIVE_PATH := $3
+LOCAL_VENDOR_MODULE := $4
 include $$(BUILD_PREBUILT)
 
 ifneq ($$(TARGET_2ND_ARCH),)
 ifneq ($$(TARGET_TRANSLATE_2ND_ARCH),true)
 include $$(CLEAR_VARS)
-LOCAL_MODULE := $1.vndk-sp-gen
+LOCAL_MODULE := $1.$2
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_PREBUILT_MODULE_FILE := $$(call intermediates-dir-for,SHARED_LIBRARIES,$1,,,$(TARGET_2ND_ARCH_VAR_PREFIX))/$1.so
 LOCAL_STRIP_MODULE := false
@@ -80,10 +72,11 @@ LOCAL_MULTILIB := 32
 LOCAL_MODULE_TAGS := optional
 LOCAL_INSTALLED_MODULE_STEM := $1.so
 LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_RELATIVE_PATH := $(vndk_sp_dir)
+LOCAL_MODULE_RELATIVE_PATH := $3
+LOCAL_VENDOR_MODULE := $4
 include $$(BUILD_PREBUILT)
-endif # TARGET_TRANSLATE_2ND_ARCH is not true
-endif # TARGET_2ND_ARCH is not empty
+endif  # TARGET_TRANSLATE_2ND_ARCH is not true
+endif  # TARGET_2ND_ARCH is not empty
 endef
 
 $(foreach lib,$(VNDK_SP_LIBRARIES),\
@@ -100,10 +93,10 @@ $(foreach lib,$(EXTRA_VENDOR_LIBRARIES),\
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := vndk-sp
-LOCAL_MODULE_OWNER := google
 LOCAL_MODULE_TAGS := optional
-LOCAL_REQUIRED_MODULES := $(addsuffix .vndk-sp-gen,$(VNDK_SP_LIBRARIES))
+LOCAL_REQUIRED_MODULES := \
+    $(addsuffix .vndk-sp-gen,$(VNDK_SP_LIBRARIES)) \
+    $(addsuffix .vndk-sp-ext-gen,$(VNDK_SP_EXT_LIBRARIES)) \
+    $(addsuffix .vndk-ext-gen,$(EXTRA_VENDOR_LIBRARIES))
 include $(BUILD_PHONY_PACKAGE)
-vndk_sp_dir :=
-endif
 endif
