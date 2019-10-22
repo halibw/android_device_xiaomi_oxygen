@@ -140,14 +140,8 @@ PRODUCT_PACKAGES += \
     camera.msm8953 \
     libmm-qcamera \
     Snap \
-    Gcam \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
-
-
-# Camera
-#PRODUCT_PACKAGES += \
-    Snap
 
 # Charging
 PRODUCT_PACKAGES += \
