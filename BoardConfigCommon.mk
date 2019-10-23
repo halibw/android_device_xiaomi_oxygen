@@ -217,9 +217,6 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 BOARD_SEPOLICY_VERS := 28.0
 
-# Security patch level
-VENDOR_SECURITY_PATCH := 2018-07-01
-
 #Enable DRM plugins 64 bit compilation
 TARGET_ENABLE_MEDIADRM_64 := true
 
