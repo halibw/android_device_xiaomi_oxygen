@@ -240,7 +240,7 @@
         <item>7</item>
     </integer-array>
 
-        <!-- List of files pinned by the Pinner Service with the apex boot image -->
+        <!-- List of files pinned by the Pinner Service with the apex boot image b/119800099 -->
     <string-array translatable="false" name="config_apexBootImagePinnerServiceFiles">
         <item>"/system/framework/framework.jar"</item>
         <item>"/system/framework/services.jar"</item>
@@ -249,6 +249,8 @@
         <item>"/apex/com.android.runtime/javalib/core-oj.jar"</item>
         <item>"/apex/com.android.runtime/javalib/core-libart.jar"</item>
         <item>"/apex/com.android.media/javalib/updatable-media.jar"</item>
+        <item>"/system/priv-app/SystemUIGoogle/SystemUIGoogle.apk"</item>
+        <item>"/system/lib64/libsurfaceflinger.so"</item>
     </string-array>
 
     <!-- Boolean indicating if restoring network selection should be skipped -->
@@ -426,15 +428,8 @@
         <item>"/apex/com.android.runtime/javalib/core-oj.jar"</item>
         <item>"/apex/com.android.runtime/javalib/core-libart.jar"</item>
         <item>"/apex/com.android.media/javalib/updatable-media.jar"</item>
-        <item>/system/lib64/libRScpp.so</item>
-        <item>/system/lib64/libRS.so</item>
-        <item>/system/lib64/libRS_internal.so</item>
-        <item>/system/lib64/libbcinfo.so</item>
-        <item>/system/lib64/libRSDriver.so</item>
-        <item>/system/lib64/libRSCpuRef.so</item>
-        <item>/system/lib64/libblas.so</item>
-        <item>"/system/priv-app/SystemUI/oat/arm64/SystemUI.vdex"</item>
-        <item>"/system/priv-app/SystemUI/oat/arm64/SystemUI.odex"</item>
+        <item>"/product/priv-app/SystemUI/SystemUI.apk"</item>
+        <item>"/product/priv-app/SystemUI/oat/arm64/SystemUI.odex"</item>
         <item>"/system/lib64/libsurfaceflinger.so"</item>
     </string-array>
 
