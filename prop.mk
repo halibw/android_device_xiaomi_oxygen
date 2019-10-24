@@ -75,6 +75,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   vidc.enc.dcvs.extra-buff-count=2 \
   persist.camera.HAL3.enabled=1 \
   vendor.camera.hal1.packagelist=com.whatsapp \
+  vendor.camera.aux.packagelist=com.android.camera,com.google.android.Pixel3Mod
 
 #Expose aux camera for below packages
 PRODUCT_PROPERTY_OVERRIDES += \

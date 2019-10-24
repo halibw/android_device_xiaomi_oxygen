@@ -21,7 +21,7 @@ set -e
 INITIAL_COPYRIGHT_YEAR=2017
 
 # Required!
-export DEVICE=mido
+export DEVICE=oxygen
 export DEVICE_COMMON=msm8953-common
 export VENDOR=xiaomi
 
@@ -42,7 +42,7 @@ fi
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
 
 # Copyright headers and guards
-write_headers "mido tissot"
+write_headers "oxygen tissot"
 
 # The standard common blobs
 write_makefiles "$MY_DIR"/proprietary-files-qc.txt true

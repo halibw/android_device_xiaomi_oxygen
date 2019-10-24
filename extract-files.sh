@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=mido
+DEVICE=oxygen
 DEVICE_COMMON=msm8953-common
 VENDOR=xiaomi
 
