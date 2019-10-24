@@ -18,6 +18,10 @@
 
 set -e
 
+DEVICE=mido
+DEVICE_COMMON=msm8953-common
+VENDOR=xiaomi
+
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
@@ -57,50 +61,31 @@ setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files-qc.txt "$SRC" "$SECTION"
 
-if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
+if [ -s "$MY_DIR"/proprietary-files.txt ]; then
     # Reinitialize the helper for device
     setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
 
-    extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC" "$SECTION"
+    extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
+
+    DEVICE_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
+
+    sed -i \
+        's/\/system\/etc\//\/vendor\/etc\//g' \
+        "$DEVICE_BLOB_ROOT"/vendor/lib/libmmcamera2_sensor_modules.so
+
+    sed -i \
+         "s|/data/misc/camera/cam_socket|/data/vendor/qcam/cam_socket|g" \
+         "$DEVICE_BLOB_ROOT"/vendor/bin/mm-qcamera-daemon
+
+;;
+        vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so|vendor/lib64/libsoftkeymasterdevice-v27.so|vendor/lib64/libkeymaster_messages-v27.so|vendor/lib64/libkeymaster_portable-v27.so|vendor/lib64/libkeymaster_staging-v27.so|vendor/lib64/libsoftkeymaster-v27.so)
+                patchelf --replace-needed "libsoftkeymasterdevice.so" "libsoftkeymasterdevice-v27.so" "${2}"
+                patchelf --replace-needed "libkeymaster_messages.so" "libkeymaster_messages-v27.so" "${2}"
+                patchelf --replace-needed "libkeymaster_portable.so" "libkeymaster_portable-v27.so" "${2}"
+                patchelf --replace-needed "libkeymaster_staging.so" "libkeymaster_staging-v27.so" "${2}"
+                patchelf --replace-needed "libsoftkeymaster.so" "libsoftkeymaster-v27.so" "${2}"
+                patchelf --set-soname $(basename "${2}") "${2}"
+        ;;
 fi
-
-COMMON_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
-DEVICE_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
-
-patchelf --replace-needed android.hardware.gnss@1.0.so android.hardware.gnss@1.0-v27.so $COMMON_BLOB_ROOT/vendor/lib64/vendor.qti.gnss@1.0_vendor.so
-patchelf --replace-needed android.hardware.gnss@1.0.so android.hardware.gnss@1.0-v27.so $COMMON_BLOB_ROOT/lib64/vendor.qti.gnss@1.0.so
-
-if [ "$DEVICE" = "mido" ]; then
-    # Hax for cam configs
-    sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" $COMMON_BLOB_ROOT/vendor/lib/libmmcamera2_sensor_modules.so
-	
-if [ "$DEVICE" = "oxygen" ]; then
-    # Hax for cam configs
-    #sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" $COMMON_BLOB_ROOT/vendor/lib/libmmcamera2_sensor_modules.so
-
-    # Hax for cam configs
-
-    CAMERA2_SENSOR_MODULES="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/lib/libmmcamera2_sensor_modules.so
-
-    sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
-
-fi
-sed -i "s|\/data\/vendor\/misc\/audio\/acdbdata\/delta\/|\/data\/vendor\/audio\/acdbdata\/delta\/\x00\x00\x00\x00\x00|g" \
-    "$COMMON_BLOB_ROOT"/vendor/lib/libaudcal.so
-sed -i "s|\/data\/vendor\/misc\/audio\/acdbdata\/delta\/|\/data\/vendor\/audio\/acdbdata\/delta\/\x00\x00\x00\x00\x00|g" \
-    "$COMMON_BLOB_ROOT"/vendor/lib64/libaudcal.so
-
-if [ "$DEVICE" = "tissot" ]; then
-    # Hax for oreo cam hal
-    patchelf --replace-needed libicuuc.so libicuuc-v27.so $DEVICE_BLOB_ROOT/lib/libMiCameraHal.so
-    patchelf --replace-needed libminikin.so libminikin-v27.so $DEVICE_BLOB_ROOT/lib/libMiCameraHal.so
-    patchelf --replace-needed libskia.so libskia-v27.so $DEVICE_BLOB_ROOT/lib/libMiCameraHal.so
-    patchelf --set-soname libicuuc-v27.so $DEVICE_BLOB_ROOT/lib/libicuuc-v27.so
-    patchelf --set-soname libminikin-v27.so $DEVICE_BLOB_ROOT/lib/libminikin-v27.so
-fi
-
-# HAX for thermal-engine
- THERMAL_ENGINE = "$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/bin/thermal-engine
- sed -i "s|/system/etc/|/vendor/etc/|g" "THERMAL_ENGINE"
 
 "$MY_DIR"/setup-makefiles.sh

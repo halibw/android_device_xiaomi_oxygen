@@ -20,6 +20,11 @@ set -e
 
 INITIAL_COPYRIGHT_YEAR=2017
 
+# Required!
+export DEVICE=mido
+export DEVICE_COMMON=msm8953-common
+export VENDOR=xiaomi
+
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
@@ -37,7 +42,7 @@ fi
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
 
 # Copyright headers and guards
-write_headers "mido oxygen"
+write_headers "mido tissot"
 
 # The standard common blobs
 write_makefiles "$MY_DIR"/proprietary-files-qc.txt true
@@ -45,16 +50,15 @@ write_makefiles "$MY_DIR"/proprietary-files-qc.txt true
 # We are done!
 write_footers
 
-if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
+if [ -s "$MY_DIR"/proprietary-files.txt ]; then
     # Reinitialize the helper for device
-    INITIAL_COPYRIGHT_YEAR="$DEVICE_BRINGUP_YEAR"
     setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false
 
     # Copyright headers and guards
     write_headers
 
     # The standard device blobs
-    write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files.txt true
+    write_makefiles "$MY_DIR"/proprietary-files.txt true
 
     # We are done!
     write_footers
