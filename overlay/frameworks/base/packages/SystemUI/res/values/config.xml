@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
-** Copyright 2015, The Android Open Source Project
+** Copyright 2009, 2015, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -23,23 +23,11 @@
     <!-- Doze: does this device support STATE_DOZE and STATE_DOZE_SUSPEND?  -->
     <bool name="doze_display_state_supported">true</bool>
 
-    <!-- Doze: when to pulse after a buzzworthy notification arrives -->
-    <string name="doze_pulse_schedule" translatable="false">10s,30s,60s,180s</string>
+    <!-- If true, enable the advance anti-falsing classifier on the lockscreen. On some devices it
+         does not work well, particularly with noisy touchscreens. Note that disabling it may
+         increase the rate of unintentional unlocks. -->
+    <bool name="config_lockscreenAntiFalsingClassifierEnabled">false</bool>
 
-    <!-- Doze: pulse parameter - delay to wait for the screen to wake up after an intent -->
-    <integer name="doze_pulse_delay_in_intent">0</integer>
-
-    <!-- Doze: check proximity sensor before pulsing from intent? -->
-    <bool name="doze_proximity_check_before_pulse_intent">true</bool>
-      <!-- Max visible notification icons -->
-     <integer name="config_maxVisibleNotificationIcons">5</integer>
-     <integer name="config_maxVisibleNotificationIconsWhenDark">6</integer>
-
-      <!-- Smart replies in notifications: Whether we disable the feature unless the app targets P -->
-      <bool name="config_smart_replies_in_notifications_requires_targeting_p">false</bool>
-           <!-- Allow devices override audio panel location to the left side -->
-     <bool name="config_audioPanelOnLeftSide">true</bool>
-
-
+    <!-- Should "4G" be shown instead of "LTE" when the network is NETWORK_TYPE_LTE? -->
+    <bool name="config_show4GForLTE">true</bool>
 </resources>
-
