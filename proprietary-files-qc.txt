@@ -510,6 +510,8 @@ vendor/radio/qcril_database/qcril.db|f25a9215fcc2445e73d1aa0b7ef9bdbd97e33f56
 
 # Radio (IMS) - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 -priv-app/ims/ims.apk|10d64cbbd275431b5e346296c66d894685f8ff8e
+-app/imssettings/imssettings.apk:vendor/app/imssettings/imssettings.apk
+-app/uceShimService/uceShimService.apk
 lib/com.qualcomm.qti.imscmservice@1.0.so|7d7af9bdbe6048ad5842c30929a9be822fbea7f6
 lib/com.qualcomm.qti.imscmservice@2.0.so|075c6068f3e469e795217fac58a82be2d9102c68
 lib/com.qualcomm.qti.imscmservice@2.1.so|cec69294cb4a3033e462cd735c09dd28263e3ffa
