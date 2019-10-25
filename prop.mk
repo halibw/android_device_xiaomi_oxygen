@@ -2,8 +2,8 @@
 # system.prop for msm8953-common
 #
 
-#COSMIC-OS
-ro.cos.maintainer=SCISSORDRAGONBOY
+# Revenge-OS
+ro.revengeos.maintainer=SCISSORDRAGONBOY
 
 # ADB at boot
 persist.service.adb.enable=1
@@ -119,10 +119,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
  ro.opengles.version=196610 \
  ro.qualcomm.cabl=0 \
  ro.vendor.display.cabl=2 \
- ro.sf.lcd_density=320 \
+ ro.sf.lcd_density=440 \
  persist.sys.wfd.nohdcp=1 \
  persist.debug.wfd.enable=1 \
- persist.sys.wfd.virtual=0 
+ persist.sys.wfd.virtual=0
 
 # Fp Gestures
 PRODUCT_PROPERTY_OVERRIDES += \
