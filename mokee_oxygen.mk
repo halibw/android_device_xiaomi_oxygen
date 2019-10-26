@@ -26,7 +26,7 @@ $(call inherit-product, vendor/mokee/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := oxygen
-PRODUCT_NAME := mk_oxygen
+PRODUCT_NAME := mokee_oxygen
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi Max 2
 PRODUCT_MANUFACTURER := Xiaomi
