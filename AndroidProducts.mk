@@ -14,7 +14,7 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/revengeos_oxygen.mk
+    $(LOCAL_DIR)/mk_oxygen.mk
 
 COMMON_LUNCH_CHOICES := \
-    revengeos_oxygen-eng
+    mk_oxygen-eng

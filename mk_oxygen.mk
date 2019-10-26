@@ -21,12 +21,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from oxygen device.
 $(call inherit-product, device/xiaomi/oxygen/device.mk)
 
-# Inherit some common RevengeOS  stuff.
-$(call inherit-product, vendor/revengeos/config/common.mk)
+# Inherit some common MokeeOS  stuff.
+$(call inherit-product, vendor/mokee/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := oxygen
-PRODUCT_NAME := revengeos_oxygen
+PRODUCT_NAME := mk_oxygen
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi Max 2
 PRODUCT_MANUFACTURER := Xiaomi
@@ -34,9 +34,6 @@ TARGET_VENDOR := Xiaomi
 BOARD_VENDOR := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-REVENGEOS_BUILD_TYPE := Unofficial
-DEVICE_MAINTAINERS="Scissordragonboy | Yassh Malik"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
             PRIVATE_BUILD_DESC="oxygen-user 7.1.1 NMF26F 8.11.8 release-keys"
