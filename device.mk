@@ -296,6 +296,8 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
+    init.oxygen.rc \
+    init.goodix.sh \
     init.qcom.rc \
     init.qcom.sh \
     init.qcom.usb.rc \
