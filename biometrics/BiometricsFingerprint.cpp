@@ -13,19 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#define LOG_TAG "android.hardware.biometrics.fingerprint@2.0-service"
-#define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.0-service"
+#define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_oxygen"
+#define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_oxygen"
 
 #include <hardware/hw_auth_token.h>
 #include <hardware/hardware.h>
 #include <hardware/fingerprint.h>
 #include "BiometricsFingerprint.h"
-#include <cutils/properties.h>
 
 #include <inttypes.h>
 #include <unistd.h>
-
-fingerprint_device_t* getWrapperService(fingerprint_notify_t);
 
 namespace android {
 namespace hardware {
@@ -35,7 +32,6 @@ namespace V2_1 {
 namespace implementation {
 
 // Supported fingerprint HAL version
-static bool is_goodix = false;
 
 using RequestStatus =
         android::hardware::biometrics::fingerprint::V2_1::RequestStatus;
@@ -44,12 +40,7 @@ BiometricsFingerprint *BiometricsFingerprint::sInstance = nullptr;
 
 BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevice(nullptr) {
     sInstance = this; // keep track of the most recent instance
-
     mDevice = openHal();
-    if (mDevice == nullptr) {
-        is_goodix = true;
-        mDevice = getWrapperService(BiometricsFingerprint::notify);
-    }
 
     if (!mDevice) {
         ALOGE("Can't open HAL module");
@@ -153,7 +144,7 @@ FingerprintAcquiredInfo BiometricsFingerprint::VendorAcquiredFilter(
 
 Return<uint64_t> BiometricsFingerprint::setNotify(
         const sp<IBiometricsFingerprintClientCallback>& clientCallback) {
-        std::lock_guard<std::mutex> lock(mClientCallbackMutex);
+    std::lock_guard<std::mutex> lock(mClientCallbackMutex);
     mClientCallback = clientCallback;
     // This is here because HAL 2.1 doesn't have a way to propagate a
     // unique token for its driver. Subsequent versions should send a unique
@@ -182,39 +173,20 @@ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
 }
 
 Return<RequestStatus> BiometricsFingerprint::cancel() {
-
-    fingerprint_msg_t msg;
-    msg.type = FINGERPRINT_ERROR;
-    msg.data.error = FINGERPRINT_ERROR_CANCELED;
-    mDevice->notify(&msg);
-
-      return ErrorFilter(mDevice->cancel(mDevice));
+      /* notify client on cancel hack */
+    int ret = mDevice->cancel(mDevice);
+    ALOG(LOG_VERBOSE, LOG_TAG, "cancel() %d\n", ret);
+    if (ret == 0) {
+        fingerprint_msg_t msg;
+        msg.type = FINGERPRINT_ERROR;
+        msg.data.error = FINGERPRINT_ERROR_CANCELED;
+        sInstance->notify(&msg);
+    }
+    return ErrorFilter(ret);
 }
 
-#define MAX_FINGERPRINTS 100
-
-typedef int (*enumerate_2_0)(struct fingerprint_device *dev, fingerprint_finger_id_t *results,
-        uint32_t *max_size);
-
 Return<RequestStatus> BiometricsFingerprint::enumerate()  {
-    fingerprint_finger_id_t results[MAX_FINGERPRINTS];
-    uint32_t n = MAX_FINGERPRINTS;
-    enumerate_2_0 enumerate = (enumerate_2_0) mDevice->enumerate;
-    int ret = enumerate(mDevice, results, &n);
-
-    if (ret == 0 && mClientCallback != nullptr) {
-        ALOGD("Got %d enumerated templates", n);
-        for (uint32_t i = 0; i < n; i++) {
-            const uint64_t devId = reinterpret_cast<uint64_t>(mDevice);
-            const auto& fp = results[i];
-            ALOGD("onEnumerate(fid=%d, gid=%d)", fp.fid, fp.gid);
-            if (!mClientCallback->onEnumerate(devId, fp.fid, fp.gid, n - i - 1).isOk()) {
-                ALOGE("failed to invoke fingerprint onEnumerate callback");
-            }
-        }
-    }
-
-    return ErrorFilter(ret);
+	    return ErrorFilter(mDevice->enumerate(mDevice));
 }
 
 Return<RequestStatus> BiometricsFingerprint::remove(uint32_t gid, uint32_t fid) {
@@ -231,6 +203,7 @@ Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid,
         return RequestStatus::SYS_EINVAL;
     }
     int ret = mDevice->set_active_group(mDevice, gid, storePath.c_str());
+    /* set active group hack for goodix */
     if ((ret > 0) && is_goodix)
         ret = 0;
     return ErrorFilter(ret);
@@ -251,9 +224,9 @@ IBiometricsFingerprint* BiometricsFingerprint::getInstance() {
 fingerprint_device_t* BiometricsFingerprint::openHal() {
     int err;
     const hw_module_t *hw_mdl = nullptr;
-    ALOGD("Opening fingerprint fpc hal library...");
-    if (0 != (err = hw_get_module_by_class(FINGERPRINT_HARDWARE_MODULE_ID, "fpc", &hw_mdl))) {
-        ALOGE("Can't open fingerprint fpc HW Module, error: %d", err);
+    ALOGD("Opening fingerprint hal library...");
+    if (0 != (err = hw_get_module(FINGERPRINT_HARDWARE_MODULE_ID, &hw_mdl))) {
+        ALOGE("Can't open fingerprint HW Module, error: %d", err);
         return nullptr;
     }
 
@@ -291,7 +264,7 @@ fingerprint_device_t* BiometricsFingerprint::openHal() {
 void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
     BiometricsFingerprint* thisPtr = static_cast<BiometricsFingerprint*>(
             BiometricsFingerprint::getInstance());
-        std::lock_guard<std::mutex> lock(thisPtr->mClientCallbackMutex);
+    std::lock_guard<std::mutex> lock(thisPtr->mClientCallbackMutex);
     if (thisPtr == nullptr || thisPtr->mClientCallback == nullptr) {
         ALOGE("Receiving callbacks before the client callback is registered.");
         return;
@@ -354,12 +327,11 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
             }
             break;
         case FINGERPRINT_TEMPLATE_ENUMERATING:
-            // ignored, won't happen for 2.0 HALs
             break;
     }
 }
 
-} // namespace implementation
+}  // namespace implementation
 }  // namespace V2_1
 }  // namespace fingerprint
 }  // namespace biometrics
