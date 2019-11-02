@@ -1,10 +1,20 @@
 [
  {
-   "repository": "android_kernel_xiaomi_msm8953",
-   "target_path": "kernel/xiaomi/msm8953"
+   "remote": "github",
+   "repository": "blackmiddow/kernel_xiaomi_oxygen",
+   "target_path": "kernel/xiaomi/msm8953",
+   "branch": "vol"
+ },
+  {
+   "remote": "github",
+   "repository": "blackmiddow/device_xiaomi_msm8953-common",
+   "target_path": "device/xiaomi/msm8953-common",
+   "branch": "pie"
  },
  {
-   "repository": "android_packages_resources_devicesettings",
-   "target_path": "packages/resources/devicesettings"
+   "remote": "github",
+   "repository": "blackmiddow/vendor_xiaomi_oxygen",
+   "target_path": "vendor/xiaomi",
+   "branch": "pie"
  }
 ]

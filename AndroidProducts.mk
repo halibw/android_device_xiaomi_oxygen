@@ -14,7 +14,7 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/mokee_oxygen.mk
+    $(LOCAL_DIR)/lineage_oxygen.mk
 
 COMMON_LUNCH_CHOICES := \
-    mokee_oxygen-eng
+    lineage_oxygen-eng
