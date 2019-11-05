@@ -544,4 +544,11 @@
 
         <!-- True if the firmware supports Wi-Fi link probing -->
         <bool name="config_wifi_link_probing_supported">true</bool>
- </resources>
+
+    <!-- Component name for default assistant on this device -->
+    <string name="config_defaultAssistantComponentName">com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService</string>
+
+    <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
+    <bool name="config_cleanupUnusedFingerprints">false</bool>
+
+</resources>
