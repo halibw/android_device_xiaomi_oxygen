@@ -65,7 +65,7 @@ LOCAL_C_INCLUDES := \
         $(call project-path-for,qcom-media)/mm-core/inc \
         $(TARGET_OUT_HEADERS)/mm-camera-lib/cp/prebuilt
 
-ifneq (,$(filter $(TRINKET),$(TARGET_BOARD_PLATFORM)))
+ifneq ($(TARGET_KERNEL_VERSION),$(filter $(TARGET_KERNEL_VERSION),3.18 4.4 4.9))
 LOCAL_C_INCLUDES += \
         system/core/libion/kernel-headers \
         system/core/libion/include
@@ -103,7 +103,7 @@ LOCAL_SHARED_LIBRARIES := liblog libhardware libutils libcutils libdl libsync
 LOCAL_SHARED_LIBRARIES += libmmcamera_interface libmmjpeg_interface libui libcamera_metadata
 LOCAL_SHARED_LIBRARIES += libqdMetaData libqservice libbinder
 LOCAL_SHARED_LIBRARIES += libcutils libdl
-ifneq (,$(filter $(TRINKET),$(TARGET_BOARD_PLATFORM)))
+ifneq ($(TARGET_KERNEL_VERSION),$(filter $(TARGET_KERNEL_VERSION),3.18 4.4 4.9))
 LOCAL_SHARED_LIBRARIES += libion
 endif
 ifeq ($(USE_DISPLAY_SERVICE),true)
