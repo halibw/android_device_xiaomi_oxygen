@@ -21,12 +21,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from oxygen device.
 $(call inherit-product, device/xiaomi/oxygen/device.mk)
 
-# Inherit some common LineageOS  stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common HavocOS  stuff.
+$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := oxygen
-PRODUCT_NAME := lineage_oxygen
+PRODUCT_NAME := havoc_oxygen
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi Max 2
 PRODUCT_MANUFACTURER := Xiaomi
@@ -36,7 +36,10 @@ BOARD_VENDOR := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-            PRIVATE_BUILD_DESC="oxygen-user 7.1.1 NMF26F 9.6.27 release-keys"
+PRIVATE_BUILD_DESC="oxygen-user 7.1.1 NMF26F 9.6.27 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := "Xiaomi/oxygen/oxygen:7.1.1/NF26F/9.6.27:user/release-keys"
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    DEVICE_MAINTAINERS="Scissordragonboy"

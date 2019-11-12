@@ -14,7 +14,7 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_oxygen.mk
+    $(LOCAL_DIR)/havoc_oxygen.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_oxygen-eng
+    havoc_oxygen-eng
