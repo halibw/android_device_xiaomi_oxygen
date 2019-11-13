@@ -27,6 +27,9 @@ $(call inherit-product, vendor/havoc/config/common_full_phone.mk)
 # Inherit from custom vendor
 $(call inherit-product, vendor/MiuiCamera/config.mk)
 
+# Inherit some Gapps
+TARGET_GAPPS_ARCH := arm64
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := oxygen
 PRODUCT_NAME := havoc_oxygen
