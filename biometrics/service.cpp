@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_oxygen"
+#define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_mido"
 
 #include <binder/ProcessState.h>
 
@@ -61,7 +61,7 @@ int main() {
         }
 
         // the conventional HAL might start binder services
-        android::ProcessState::initWithDriver("/dev/binder");
+        android::ProcessState::initWithDriver("/dev/vndbinder");
         android::ProcessState::self()->startThreadPool();
     }
 
