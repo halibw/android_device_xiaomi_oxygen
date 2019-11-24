@@ -607,11 +607,17 @@ etc/qdcm_calib_data_otm1911_fhd_video_mode_dsi_panel.xml:vendor/etc/qdcm_calib_d
 etc/qdcm_calib_data_r63350_ebbg_fhd_video_mode_dsi_panel.xml:vendor/etc/qdcm_calib_data_r63350_ebbg_fhd_video_mode_dsi_panel.xml
 
 # Fingerprint
-bin/gx_fpd:vendor/bin/gx_fpd
-lib/hw/fingerprint.searchf.so:vendor/lib/hw/fingerprint.searchf.so|7ad2eb4d37d6fe8ac040168ea0d20f3d9af44f54
-lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.so
-lib64/hw/fingerprint.searchf.so:vendor/lib64/hw/fingerprint.searchf.so|bf6fce6739ba843b93d2bf04c9fd69f33b4815c0
-lib64/hw/gxfingerprint.default.so:vendor/lib64/hw/gxfingerprint.default.so|21120610203e3e94a95610702a6f8f9f82535a69
-lib64/libfp_client.so:vendor/lib64/libfp_client.so
-lib64/libfpnav.so:vendor/lib64/libfpnav.so
-lib64/libfpservice.so:vendor/lib64/libfpservice.so
+bin/gx_fpd:vendor/bin/gx_fpd 
+lib/hw/fingerprint.searchf.so:vendor/lib/hw/fingerprint.searchf.so|7ad2eb4d37d6fe8ac040168ea0d20f3d9af44f54 
+lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.so 
+lib64/hw/fingerprint.searchf.so:vendor/lib64/hw/fingerprint.searchf.so|bf6fce6739ba843b93d2bf04c9fd69f33b4815c0 
+lib64/hw/gxfingerprint.default.so:vendor/lib64/hw/gxfingerprint.default.so|21120610203e3e94a95610702a6f8f9f82535a69 
+lib64/libfp_client.so:vendor/lib64/libfp_client.so 
+lib64/libfpnav.so:vendor/lib64/libfpnav.so 
+lib64/libfpservice.so:vendor/lib64/libfpservice.so 
+-vendor/app/FingerprintExtensionService/FingerprintExtensionService.apk 
+vendor/etc/permissions/com.fingerprints.extension.xml
+vendor/etc/permissions/android.hardware.fingerprint.xml
+vendor/framework/com.fingerprints.extension.jar
+lib/android.hardware.biometrics.fingerprint@2.1.so:vendor/lib/android.hardware.biometrics.fingerprint@2.1.so
+lib64/android.hardware.biometrics.fingerprint@2.1.so:vendor/lib64/android.hardware.biometrics.fingerprint@2.1.so
