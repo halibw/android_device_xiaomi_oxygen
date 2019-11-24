@@ -150,6 +150,21 @@ on boot
     chown system system /sys/class/leds/red/brightness
     chown system system /sys/class/leds/green/brightness
     chown system system /sys/class/leds/blue/brightness
+    chown system system /sys/class/leds/white/blink
+    chown system system /sys/class/leds/white/brightness
+    chown system system /sys/class/leds/white/led_time
+
+   # Flash LED
+    chmod 0660 /sys/devices/soc/qpnp-flash-led-25/leds/led:flash_1/max_brightness
+    chown system system /sys/devices/soc/qpnp-flash-led-25/leds/led:flash_1/max_brightness
+    chmod 0660 /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_1/max_brightness
+    chown system system /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_1/max_brightness
+
+   # Flashlight
+    chown root system /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_0/max_brightness
+    chmod 0660 /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_0/max_brightness
+    chown root system /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_1/max_brightness
+    chmod 0660 /sys/devices/soc/qpnp-flash-led-25/leds/led:torch_1/max_brightness
 
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
