@@ -146,6 +146,9 @@ vendor/lib/libtrueportrait.so
 vendor/lib/libubifocus.so
 
 # Camera actuators
+vendor/lib/libactuator_oxygen_dw9763_sunny.so
+vendor/lib/libactuator_oxygen_ov12a_ofilm_dw9718.so
+vendor/lib/libactuator_oxygen_ov12a_sunny_dw9763
 vendor/lib/libactuator_dw9763.so
 vendor/lib/libactuator_dw9763_ofilm_imx258.so
 vendor/lib/libactuator_dw9763_qtech_imx258.so
@@ -573,6 +576,11 @@ vendor/lib/libchromatix_s5k5e8_sunny_zsl_preview_3a.so
 vendor/lib/libchromatix_s5k5e8_sunny_zsl_video_3a.so
 
 # Camera configs
+etc/camera/oxygen_imx386_sunny_chromatix.xml:vendor/etc/camera/oxygen_imx386_sunny_chromatix.xml
+etc/camera/oxygen_ov12a_ofilm_chromatix.xml:vendor/etc/camera/oxygen_ov12a_ofilm_chromatix.xml
+etc/camera/oxygen_ov12a_sunny_chromatix.xml:vendor/etc/camera/oxygen_ov12a_sunny_chromatix.xml
+etc/camera/oxygen_s5k5e8_ofilm_chromatix.xml:vendor/etc/camera/oxygen_s5k5e8_ofilm_chromatix.xml
+etc/camera/oxygen_s5k5e8_qtech_chromatix.xml:vendor/etc/camera/oxygen_s5k5e8_qtech_chromatix.xml
 etc/camera/camera_config.xml:vendor/etc/camera/camera_config.xml
 etc/camera/csidtg_camera.xml:vendor/etc/camera/csidtg_camera.xml
 etc/camera/csidtg_chromatix.xml:vendor/etc/camera/csidtg_chromatix.xml
