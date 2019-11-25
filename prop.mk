@@ -61,7 +61,10 @@ persist.camera.gyro.disable=0 \
 persist.camera.isp.clock.optmz=0 \
 persist.camera.stats.test=5 \
 persist.vendor.qti.telephony.vt_cam_interface=1 \
-vidc.enc.dcvs.extra-buff-count=2
+vidc.enc.dcvs.extra-buff-count=2 \
+persist.camera.HAL3.enabled=1 \
+persist.camera.dual.camera=0 \
+persist.camera.eis.enable=1
 
 # Cne
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -69,7 +72,25 @@ persist.vendor.cne.feature=1
 
 # Coresight
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.debug.coresight.config=stm-events
+ persist.debug.coresight.config=stm-events \
+ debug.egl.hw=0 \
+ debug.enable.sglscale=1 \
+ debug.gralloc.enable_fb_ubwc=1 \
+ debug.mdpcomp.logs=0 \
+ debug.sf.hw=0 \
+ dev.pm.dyn_samplingrate=1 \
+ persist.debug.wfd.enable=1 \
+ persist.demo.hdmirotationlock=false \
+ vendor.display.disable_rotator_downscale=1 \
+ persist.hwc.enable_vds=1 \
+ persist.hwc.mdpcomp.enable=true \
+ ro.opengles.version=196610 \
+ ro.qualcomm.cabl=0 \
+ ro.vendor.display.cabl=2 \
+ ro.sf.lcd_density=320 \
+ persist.sys.wfd.nohdcp=1 \
+ persist.debug.wfd.enable=1 \
+ persist.sys.wfd.virtual=0
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -180,7 +201,7 @@ debug.sf.early_phase_offset_ns=1500000 \
 debug.sf.early_app_phase_offset_ns=1500000 \
 debug.sf.early_gl_phase_offset_ns=3000000 \
 debug.sf.early_gl_app_phase_offset_ns=15000000
-    
+
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.vendor.delta_time.enable=true
