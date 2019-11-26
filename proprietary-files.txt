@@ -1294,7 +1294,6 @@ vendor/lib/libChamomilePA.so
 vendor/lib/libfeedbackhandler.so
 vendor/lib/libhwdaphal.so
 vendor/lib/libicuuc-v27.so
-vendor/lib/libldacBT_enc.so
 vendor/lib/libllvm-qgl.so
 vendor/lib/libminikin-v27.so
 vendor/lib/libmm-disp-apis.so
@@ -1307,14 +1306,12 @@ vendor/lib/libnl.so
 vendor/lib/libRS_internal.so
 vendor/lib/libscalar.so
 vendor/lib/libsd_sdk_display.so
-vendor/lib/libskia.so
 vendor/lib/libsmemlog.so
 vendor/lib/libtrueportrait.so
 vendor/lib/lib_fpc_tac_shared.so
 vendor/lib/vendor.lineage.power@1.0.so
 vendor/lib64/libfeedbackhandler.so
 vendor/lib64/libhwdaphal.so
-vendor/lib64/libldacBT_enc.so
 vendor/lib64/libllvm-qgl.so
 vendor/lib64/libmm-disp-apis.so
 vendor/lib64/libmm-qdcm.so
@@ -1322,8 +1319,6 @@ vendor/lib64/libnl.so
 vendor/lib64/libRS_internal.so
 vendor/lib64/libscalar.so
 vendor/lib64/libsd_sdk_display.so
-vendor/lib64/libskia.so
 vendor/lib64/libsmemlog.so
 vendor/lib64/lib_fpc_tac_shared.so
 vendor/lib64/vendor.lineage.power@1.0.so
-vendor/[SYS]/Journal
