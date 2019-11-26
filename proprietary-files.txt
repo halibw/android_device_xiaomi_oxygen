@@ -1317,4 +1317,8 @@ vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libgoodixfingerprintd_binder.so
 
-
+# Misc
+vendor/lib/libChamomilePA.so
+vendor/lib/libtrueportrait.so
+vendor/lib/lib_fpc_tac_shared.so
+vendor/lib64/lib_fpc_tac_shared.so
