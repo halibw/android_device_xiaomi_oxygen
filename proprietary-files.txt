@@ -36,6 +36,12 @@ vendor/lib/lib_lowlight.so
 vendor/lib/mibokeh_625_opencl.bin
 vendor/lib64/libSonyIMX386PdafLibrary.so
 
+# Camera TNR - from prada (Redmi 4)
+vendor/lib/libllvd_smore.so
+vendor/lib/libllvd_sw_tnr.so
+vendor/lib/libmmcamera_sw_tnr
+vemdor/lib/libmmcamera_llvd.so
+
 # Camera-bin
 vendor/bin/mm-qcamera-daemon
 
