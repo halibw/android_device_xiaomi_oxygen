@@ -55,6 +55,9 @@ persist.qfp=false
 hw.fm.init=0
 vendor.hw.fm.init=0
 
+# fastbootd
+ro.fastbootd.available=true
+
 # Media
 av.debug.disable.pers.cache=1
 media.aac_51_output_enabled=true

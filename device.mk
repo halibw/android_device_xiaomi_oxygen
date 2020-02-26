@@ -186,6 +186,10 @@ PRODUCT_PACKAGES += \
     libbacktrace-vendor \
     libshims_binder
 
+# fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
