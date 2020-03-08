@@ -535,8 +535,8 @@
  	<!-- Whether the display blanks itself when transition from a doze to a non-doze state -->
 	<bool name="config_displayBlanksAfterDoze">false</bool>
 
-    <!-- Component name for default assistant on this device -->
-    <string name="config_defaultAssistantComponentName">com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService</string>
+    <!-- The name of the package that will hold the assistant role by default. -->
+    <string name="config_defaultAssistant" translatable="false">com.google.android.googlequicksearchbox</string>
 
     <!-- The component name, flattened to a string, for the default autofill service
          to  enabled for an user. This service must be trusted, as it can be activated
