@@ -143,7 +143,8 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libbinder_gdxfp
+    libbinder_gdxfp \
+    fakelogprint
 
 # Consumerir
 PRODUCT_PACKAGES += \
