@@ -560,4 +560,10 @@
     which we the system will not show crash, ANR,
          etc. dialogs. --> 
      <string name="config_appsNotReportingCrashes">com.google.android.tts</string>
+
+    <!-- Flag indicating whether the surface flinger has limited
+        alpha compositing functionality in hardware.  If set, the window
+        manager will disable alpha trasformation in animations where not
+        strictly needed. -->
+    <bool name="config_sf_limitedAlpha">true</bool>
 </resources>
