@@ -107,6 +107,12 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     sound_trigger.primary.msm8953:32
 
+# Audio features
+PRODUCT_PACKAGES += \
+    libhfp:32 \
+    libsndmonitor:32 \
+    libspkrprot:32
+
 # Audio configuration
 PRODUCT_COPY_FILES += \
     hardware/qcom-caf/msm8953/audio/configs/msm8953/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml \

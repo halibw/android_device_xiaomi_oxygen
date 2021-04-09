@@ -41,6 +41,24 @@ vendor.voice.playback.conc.disabled=true
 vendor.voice.record.conc.disabled=false
 vendor.voice.voip.conc.disabled=true
 
+# Audio dynamic feature flags
+vendor.audio.feature.anc_headset.enable=true
+vendor.audio.feature.compress_meta_data.enable=false
+vendor.audio.feature.compr_voip.enable=true
+vendor.audio.feature.custom_stereo.enable=true
+vendor.audio.feature.fluence.enable=true
+vendor.audio.feature.fm.enable=true
+vendor.audio.feature.hfp.enable=true
+vendor.audio.feature.hifi_audio.enable=true
+vendor.audio.feature.incall_music.enable=true
+vendor.audio.feature.kpi_optimize.enable=true
+vendor.audio.feature.multi_voice_session.enable=true
+vendor.audio.feature.snd_mon.enable=true
+vendor.audio.feature.spkr_prot.enable=true
+vendor.audio.feature.src_trkn.enable=true
+vendor.audio.feature.vbat.enable=true
+vendor.audio.feature.wsa.enable=true
+
 # Bluetooth
 bluetooth.hfp.client=1
 vendor.qcom.bluetooth.soc=smd
