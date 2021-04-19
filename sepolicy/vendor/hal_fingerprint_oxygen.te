@@ -5,7 +5,7 @@ type hal_fingerprint_oxygen_exec, exec_type, vendor_file_type, file_type;
 binder_use(hal_fingerprint_oxygen)
 init_daemon_domain(hal_fingerprint_oxygen)
 
-typeattribute hal_fingerprint_mido data_between_core_and_vendor_violators;
+typeattribute hal_fingerprint_oxygen data_between_core_and_vendor_violators;
 allow hal_fingerprint_oxygen gx_fpd:binder { transfer call };
 allow hal_fingerprint_oxygen gx_fpd_service:service_manager find;
 allow hal_fingerprint_oxygen fingerprint_service:service_manager find;
