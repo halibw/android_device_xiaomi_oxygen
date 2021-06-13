@@ -1,1 +1,0 @@
-https://github.com/RevengeOS/android_manifest/commit/8098a82ecf78bb0a0b7000a5b862d0faa5e81b73
