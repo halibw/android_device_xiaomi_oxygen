@@ -85,7 +85,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \
     android.hardware.audio.service \
     android.hardware.audio.effect@5.0-impl \
-    android.hardware.soundtrigger@2.2-impl \
+    android.hardware.soundtrigger@2.1-impl:32 \
     audio.primary.msm8953 \
     audio.r_submix.default \
     audio.usb.default \
