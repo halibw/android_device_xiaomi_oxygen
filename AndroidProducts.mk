@@ -14,7 +14,7 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aicp_oxygen.mk
+    $(LOCAL_DIR)/arrow_oxygen.mk
 
 COMMON_LUNCH_CHOICES := \
-    aicp_oxygen-eng
+    arrow_oxygen-eng

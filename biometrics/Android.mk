@@ -7,12 +7,7 @@ LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_SRC_FILES := \
     BiometricsFingerprint.cpp \
-    service.cpp \
-    fingerprintd/FingerprintDaemonCallbackProxy.cpp \
-    fingerprintd/FingerprintDaemonProxy.cpp \
-    fingerprintd/IFingerprintDaemonCallback.cpp \
-    fingerprintd/IFingerprintDaemon.cpp \
-    fingerprintd/wrapper.cpp
+    service.cpp
 
 LOCAL_SHARED_LIBRARIES := \
     libbinder \

@@ -121,15 +121,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_mtp.xml
 
 # Camera
-PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service \
-    camera.device@3.2-impl \
-    camera.msm8953 \
-    libmm-qcamera \
-    Snap \
-    vendor.qti.hardware.camera.device@1.0 \
-    vendor.qti.hardware.camera.device@1.0_vendor
+#PRODUCT_PACKAGES += \
+#   android.hardware.camera.provider@2.4-impl \
+#   android.hardware.camera.provider@2.4-service \
+#   camera.device@3.2-impl \
+#   camera.msm8953 \
+#   libmm-qcamera \
+#   Snap \
+#   vendor.qti.hardware.camera.device@1.0 \
+#   vendor.qti.hardware.camera.device@1.0_vendor
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -175,8 +175,8 @@ PRODUCT_PACKAGES += \
     libebtc
 
 # Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.0-service.xiaomi_oxygen
+#PRODUCT_PACKAGES += \
+#   android.hardware.biometrics.fingerprint@2.0-service.xiaomi_oxygen
 
 # FM
 PRODUCT_PACKAGES += \
@@ -377,10 +377,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
-
-# USB HAL
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.basic
 
 # Vibrator
 PRODUCT_PACKAGES += \

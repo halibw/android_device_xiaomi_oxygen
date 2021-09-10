@@ -38,6 +38,7 @@
 
 # Root folders
 /firmware(/.*)?          u:object_r:firmware_file:s0
+/persist(/.*)?                                  u:object_r:mnt_vendor_file:s0
 
 # Sensors
 #(mnt/vendor)/persist/sensors(/.*)?                                     u:object_r:persist_sensors_file:s0
