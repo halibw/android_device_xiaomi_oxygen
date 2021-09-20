@@ -37,9 +37,9 @@ vendor/lib/mibokeh_625_opencl.bin
 vendor/lib64/libSonyIMX386PdafLibrary.so
 
 # Camera TNR - from prada (Redmi 4)
-vendor/lib/libllvd_smore.so
-vendor/lib/libllvd_sw_tnr.so
-vendor/lib/libmmcamera_sw_tnr
+vendor/lib/libllvd_smore.so|582739377d89d73fca85364f714c4e577a59ea82
+vendor/lib/libllvd_sw_tnr.so|fcdcf57426014ff9d29f394ada26a6fd830dc6e3
+vendor/lib/libmmcamera_sw_tnr.so|6b20dab49ea83f84afed555d9b60595a4c380e16
 
 # Camera-bin
 vendor/bin/mm-qcamera-daemon
@@ -1296,6 +1296,7 @@ etc/camera/oxygen_ov12a_ofilm_chromatix.xml:vendor/etc/camera/oxygen_ov12a_ofilm
 etc/camera/oxygen_ov12a_sunny_chromatix.xml:vendor/etc/camera/oxygen_ov12a_sunny_chromatix.xml 
 etc/camera/oxygen_s5k5e8_ofilm_chromatix.xml:vendor/etc/camera/oxygen_s5k5e8_ofilm_chromatix.xml
 etc/camera/oxygen_s5k5e8_qtech_chromatix.xml:vendor/etc/camera/oxygen_s5k5e8_qtech_chromatix.xml
+
 
 # Display calibration
 etc/qdcm_calib_data_ili9885_boe_fhd_video_mode_dsi_panel.xml:vendor/etc/qdcm_calib_data_ili9885_boe_fhd_video_mode_dsi_panel.xml 

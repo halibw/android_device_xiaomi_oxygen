@@ -179,7 +179,7 @@ vendor/lib64/libssd.so|0e988e6ef7b1d356f4b92a26a61b96a840de1d20
 # DRM - Widevine - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 vendor/bin/hw/android.hardware.drm@1.1-service.widevine|cc91a2ab5b26bed9c1102c6cae5dd123519706bf
 vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|458dd241f5f8536eccb57f012b3eba0061736e8e
-vendor/lib/libwvhidl.so|c22eaee425010cc69ce943d8c65da17fae150f0e
+vendor/lib64/libwvhidl.so|9720fa37d6bfe685ee2d8752f7760a950ba2aef1
 
 # FM Radio - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 vendor/bin/fm_qsoc_patches|77f31379d6bf68f2f0b3aa8936150b778c4e89ee
