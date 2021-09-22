@@ -359,6 +359,9 @@ on property:ro.vendor.use_data_netmgrd=false
     # netmgr not supported on specific target
     stop vendor.netmgrd
 
+on property:hw.fm.init=*
+    write /sys/module/radio_iris_transport/parameters/fmsmd_set ${hw.fm.init}
+
 service loc_launcher /vendor/bin/loc_launcher
     class late_start
     user gps

@@ -41,8 +41,8 @@ persist.vendor.data.mode=concurrent
 # Fingerprint
 persist.qfp=false
 
-# Fm
-ro.fm.transmitter=false
+# FM
+hw.fm.init=0
 vendor.hw.fm.init=0
 
 # Media
