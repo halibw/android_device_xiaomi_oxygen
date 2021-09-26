@@ -1,0 +1,35 @@
+// libbinder
+cc_library_shared {
+    name: "libbinder_gdxfp",
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "libbinder_gdxfp.cpp",
+    ],
+    cflags: [
+        "-Werror",
+        "-Wextra",
+        "-Wall",
+    ],
+    shared_libs: [
+        "libutils",
+    ],
+}
+
+// Camera
+cc_library_shared {
+    name: "libcamshim",
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "libshims.cpp",
+    ],
+    cflags: [
+        "-Werror",
+        "-Wextra",
+        "-Wall",
+    ],
+    shared_libs: [
+        "libutils",
+    ],
+}

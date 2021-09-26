@@ -81,7 +81,7 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \
-    android.hardware.audio@2.0-service \
+    android.hardware.audio.service \
     android.hardware.audio.effect@5.0-impl \
     android.hardware.soundtrigger@2.2-impl \
     audio.primary.msm8953 \
@@ -131,8 +131,11 @@ PRODUCT_COPY_FILES += \
 #   vendor.qti.hardware.camera.device@1.0 \
 #   vendor.qti.hardware.camera.device@1.0_vendor
 
-# Camera
+# Shims
 PRODUCT_PACKAGES += \
+    libfui \
+    libbinder_gdxfp \
+    libcamshim \
     libshim_camera
 
 # Consumerir
@@ -166,7 +169,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
-    android.hardware.drm@1.2-service.clearkey
+    android.hardware.drm@1.3-service.clearkey
 
 # Ebtables
 PRODUCT_PACKAGES += \
@@ -175,8 +178,9 @@ PRODUCT_PACKAGES += \
     libebtc
 
 # Fingerprint
-#PRODUCT_PACKAGES += \
-#   android.hardware.biometrics.fingerprint@2.0-service.xiaomi_oxygen
+PRODUCT_PACKAGES += \
+    libbacktrace-vendor \
+    android.hardware.biometrics.fingerprint@2.0-service.xiaomi_oxygen
 
 # FM
 PRODUCT_PACKAGES += \
@@ -300,7 +304,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service-qti \
+    android.hardware.power-service-qti \
     android.hardware.power.stats@1.0-service.mock
 
 PRODUCT_COPY_FILES += \
@@ -386,6 +390,11 @@ PRODUCT_PACKAGES += \
 # VNDK
 PRODUCT_PACKAGES += \
     vndk-sp
+
+PRODUCT_PACKAGES += \
+    libgui-vendor \
+    libui-vendor \
+    libstdc++.vendor
 
 # Vndk-hack
 PRODUCT_COPY_FILES += \

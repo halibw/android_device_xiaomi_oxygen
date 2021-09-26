@@ -16,6 +16,7 @@
 
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_oxygen"
 
+
 #include <binder/ProcessState.h>
 
 #include <android/log.h>
@@ -60,7 +61,7 @@ int main() {
             return 1;
         }
 
-        // the conventional HAL might start binder services
+        // the conventional HAL might start vndbinder services
         android::ProcessState::initWithDriver("/dev/vndbinder");
         android::ProcessState::self()->startThreadPool();
     }

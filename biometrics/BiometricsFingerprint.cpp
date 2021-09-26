@@ -225,9 +225,9 @@ IBiometricsFingerprint* BiometricsFingerprint::getInstance() {
 fingerprint_device_t* BiometricsFingerprint::openHal() {
     int err;
     const hw_module_t *hw_mdl = nullptr;
-    ALOGD("Opening fingerprint fpc hal library...");
-    if (0 != (err = hw_get_module_by_class(FINGERPRINT_HARDWARE_MODULE_ID, "fpc", &hw_mdl))) {
-        ALOGE("Can't open fingerprint fpc HW Module, error: %d", err);
+    ALOGD("Opening fingerprint hal library...");
+    if (0 != (err = hw_get_module(FINGERPRINT_HARDWARE_MODULE_ID, &hw_mdl))) {
+        ALOGE("Can't open fingerprint HW Module, error: %d", err);
         return nullptr;
     }
 
