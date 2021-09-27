@@ -1306,22 +1306,35 @@ etc/qdcm_calib_data_otm1911_fhd_video_mode_dsi_panel.xml:vendor/etc/qdcm_calib_d
 etc/qdcm_calib_data_r63350_ebbg_fhd_video_mode_dsi_panel.xml:vendor/etc/qdcm_calib_data_r63350_ebbg_fhd_video_mode_dsi_panel.xml
 
 # Fingerprint
-vendor/bin/goodixfp
-vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_oxygen
-vendor/bin/init.goodix.sh
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_oxygen.rc
-vendor/lib/hw/fingerprint.fpc.msm8953.so
-vendor/lib/hw/fingerprint.goodix.msm8953.so
-vendor/lib/libgf_algo.so
-vendor/lib/libgf_ca.so
-vendor/lib/libgf_hal.so
-vendor/lib/libgoodixfingerprintd_binder.so
-vendor/lib64/hw/fingerprint.fpc.msm8953.so
-vendor/lib64/hw/fingerprint.goodix.msm8953.so
-vendor/lib64/libgf_algo.so
-vendor/lib64/libgf_ca.so
-vendor/lib64/libgf_hal.so
-vendor/lib64/libgoodixfingerprintd_binder.so
+bin/goodixfp:vendor/bin/goodixfp
+lib/android.hardware.biometrics.fingerprint@2.1.so:vendor/lib/android.hardware.biometrics.fingerprint@2.1.so
+lib64/android.hardware.biometrics.fingerprint@2.1.so:vendor/lib64/android.hardware.biometrics.fingerprint@2.1.so
+lib/hw/fingerprint.fpc.msm8953.so:vendor/lib/hw/fingerprint.fpc.msm8953.so
+bin/hw/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_oxygen:vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_oxygen
+etc/permissions/com.fingerprints.extension.xml:vendor/etc/permissions/com.fingerprints.extension.xml
+firmware/goodix_firmware.bin:vendor/firmware/goodix_firmware.bin
+framework/com.fingerprints.extension.jar:vendor/framework/com.fingerprints.extension.jar
+lib/android.hardware.biometrics.fingerprint@2.1.so:vendor/lib/android.hardware.biometrics.fingerprint@2.1.so
+lib/libgf_ca.so:vendor/lib/libgf_ca.so
+lib/hw/fingerprint.goodix.msm8953.so:vendor/lib/hw/fingerprint.goodix.msm8953.so
+lib/libgf_algo.so:vendor/lib/libgf_algo.so
+lib/libgf_ca.so:vendor/lib/libgf_ca.so
+lib/libgf_hal.so:vendor/lib/libgf_hal.so
+lib/libgoodixfingerprintd_binder.so:vendor/lib/libgoodixfingerprintd_binder.so
+lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.default.so
+lib64/hw/gf_fingerprint.default.so:vendor/lib64/hw/gf_fingerprint.default.so
+lib64/hw/fingerprint.fpc.msm8953.so:vendor/lib64/hw/fingerprint.fpc.msm8953.so
+lib64/hw/fingerprint.goodix.msm8953.so:vendor/lib64/hw/fingerprint.goodix.msm8953.so
+lib64/android.hardware.biometrics.fingerprint@2.1.so:vendor/lib64/android.hardware.biometrics.fingerprint@2.1.so
+lib64/com.fingerprints.extension@1.0.so:vendor/lib64/com.fingerprints.extension@1.0.so
+lib64/libgf_algo.so:vendor/lib64/libgf_algo.so
+lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so:vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
+lib64/libvendor.goodix.hardware.fingerprint@1.0.so:vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
+lib64/vendor.qti.hardware.fingerprint@1.0.so:vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
+lib64/libgf_ca.so:vendor/lib64/libgf_ca.so
+lib64/libgf_hal.so:vendor/lib64/libgf_hal.so
+-vendor/app/FingerprintExtensionService/FingerprintExtensionService.apk
+lib64/libgoodixfingerprintd_binder.so:vendor/lib64/libgoodixfingerprintd_binder.so
 
 # Misc
 vendor/lib/libChamomilePA.so

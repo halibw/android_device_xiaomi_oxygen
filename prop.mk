@@ -72,25 +72,12 @@ persist.vendor.cne.feature=1
 
 # Coresight
 PRODUCT_PROPERTY_OVERRIDES += \
- persist.debug.coresight.config=stm-events \
- debug.egl.hw=0 \
- debug.enable.sglscale=1 \
- debug.gralloc.enable_fb_ubwc=1 \
- debug.mdpcomp.logs=0 \
- debug.sf.hw=0 \
- dev.pm.dyn_samplingrate=1 \
- persist.debug.wfd.enable=1 \
- persist.demo.hdmirotationlock=false \
- vendor.display.disable_rotator_downscale=1 \
- persist.hwc.enable_vds=1 \
- persist.hwc.mdpcomp.enable=true \
- ro.opengles.version=196610 \
- ro.qualcomm.cabl=0 \
- ro.vendor.display.cabl=2 \
- ro.sf.lcd_density=320 \
- persist.sys.wfd.nohdcp=1 \
- persist.debug.wfd.enable=1 \
- persist.sys.wfd.virtual=0
+persist.debug.coresight.config=stm-events \
+persist.debug.wfd.enable=1 \
+vendor.display.disable_rotator_downscale=1 \
+persist.sys.wfd.nohdcp=1 \
+persist.debug.wfd.enable=1 \
+persist.sys.wfd.virtual=0
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -108,7 +95,7 @@ persist.hwc.enable_vds=1 \
 persist.hwc.mdpcomp.enable=true \
 ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
-ro.sf.lcd_density=420 \
+ro.sf.lcd_density=320 \
 ro.vendor.display.cabl=2 \
 sdm.debug.disable_skip_validate=1 \
 vendor.display.enable_default_color_mode=1 \
@@ -148,6 +135,10 @@ vendor.vidc.disable.split.mode=1 \
 vendor.vidc.enc.disable.pq=true \
 vendor.vidc.enc.disable_bframes=1 \
 vendor.video.disable.ubwc=1
+
+# Navigation bar
+PRODUCT_PROPERTY_OVERRIDES += \
+qemu.hw.mainkeys=0
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -225,5 +216,5 @@ persist.sys.wfd.virtual=0
 
 # VoLTE hax
 PRODUCT_PROPERTY_OVERRIDES += \
-   persist.dbg.volte_avail_ovr=1 \
-   persist.dbg.vt_avail_ovr=1
+persist.dbg.volte_avail_ovr=1 \
+persist.dbg.vt_avail_ovr=1
