@@ -1306,7 +1306,7 @@ etc/qdcm_calib_data_otm1911_fhd_video_mode_dsi_panel.xml:vendor/etc/qdcm_calib_d
 etc/qdcm_calib_data_r63350_ebbg_fhd_video_mode_dsi_panel.xml:vendor/etc/qdcm_calib_data_r63350_ebbg_fhd_video_mode_dsi_panel.xml
 
 # Fingerprint
-bin/goodixfp:vendor/bin/goodixfp
+vendor/bin/goodixfp
 lib/android.hardware.biometrics.fingerprint@2.1.so:vendor/lib/android.hardware.biometrics.fingerprint@2.1.so
 lib64/android.hardware.biometrics.fingerprint@2.1.so:vendor/lib64/android.hardware.biometrics.fingerprint@2.1.so
 lib/hw/fingerprint.fpc.msm8953.so:vendor/lib/hw/fingerprint.fpc.msm8953.so

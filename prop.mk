@@ -207,7 +207,9 @@ sys.use_fifo_ui=1
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
-wifi.interface=wlan0
+wifi.interface=wlan0 \
+persist.vendor.data.iwlan.enable=false \
+ro.telephony.iwlan_operation_mode=legacy
 
 # Wifi-Display
 PRODUCT_PROPERTY_OVERRIDES += \
