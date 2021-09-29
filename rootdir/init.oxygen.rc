@@ -62,11 +62,3 @@ service goodix_script /vendor/bin/init.goodix.sh
     class late_start
     user root
     oneshot
-
-# Baseband
-service baseband-sh /vendor/bin/init.baseband.sh
-    class late_start
-    user system
-    group system
-    oneshot
-
