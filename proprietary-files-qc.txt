@@ -670,3 +670,6 @@ vendor/lib/libwfdhdcpcp.so|e459d08d32b9d93f498413172625861d3cc08c5c
 vendor/lib/libwfdmmservice.so|f4fcd4b9af63d5c4f352240fd040dcabb74ec22f
 vendor/lib/libwfdmodulehdcpsession.so|b252efdbd4669ed6e8db7d5f77999c9bb5b0b9c4
 vendor/lib64/libwfdhdcpcp.so|c4f8b9368ca91157695144438d02fe5f31af635d
+
+# Fingerprint
+vendor/bin/goodixfp|

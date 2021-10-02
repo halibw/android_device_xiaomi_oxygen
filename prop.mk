@@ -95,12 +95,12 @@ persist.hwc.enable_vds=1 \
 persist.hwc.mdpcomp.enable=true \
 ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
-ro.sf.lcd_density=320 \
 ro.vendor.display.cabl=2 \
 sdm.debug.disable_skip_validate=1 \
 vendor.display.enable_default_color_mode=1 \
 vendor.display.disable_skip_validate=1 \
-vendor.gralloc.enable_fb_ubwc=1
+vendor.gralloc.enable_fb_ubwc=1 \
+ro.sf.lcd_density=420
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -163,25 +163,42 @@ persist.vendor.radio.nitz_sons_1="" \
 persist.vendor.radio.nitz_sons_2="" \
 persist.vendor.radio.nitz_sons_3=""
 
+# Qualcomm
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.qti.va_aosp.support=1 \
+ro.vendor.qti.va_odm.support=1
+
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
 DEVICE_PROVISIONED=1 \
 persist.dbg.volte_avail_ovr=1 \
 persist.dbg.vt_avail_ovr=1 \
 persist.dbg.wfc_avail_ovr=1 \
-persist.radio.multisim.config=dsds \
 persist.vendor.radio.apm_sim_not_pwdn=1 \
+persist.radio.aosp_usr_pref_sel=true \
+persist.radio.multisim.config=dsds \
+persist.vendor.radio.add_power_save=1 \
 persist.vendor.radio.custom_ecc=1 \
-persist.vendor.radio.hw_mbn_update=0 \
+persist.vendor.radio.procedure_bytes=SKIP \
 persist.vendor.radio.rat_on=combine \
 persist.vendor.radio.sib16_support=1 \
-persist.vendor.radio.aosp_usr_pref_sel=true \
+persist.vendor.data.iwlan.enable=true \
 ril.subscription.types=NV,RUIM \
 rild.libargs=-d/dev/smd0 \
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
 ro.telephony.call_ring.multiple=false \
-ro.telephony.default_network=22,20 \
+ro.telephony.default_network=22,22 \
+ro.telephony.iwlan_operation_mode=legacy \
 service.qti.ims.enabled=1
+
+# Radio (IMS)
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.vendor.ims.disableIMSLogs=1 \
+persist.vendor.ims.disableADBLogs=1 \
+persist.vendor.ims.disableDebugDataPathLogs=1 \
+persist.vendor.ims.disableDebugLogs=1 \
+persist.vendor.ims.disableSigHandler=1 \
+persist.vendor.ims.disableQXDMLogs=1
 
 # SurfaceFlinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \

@@ -124,23 +124,23 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-   android.hardware.camera.common@1.0 \
    android.hardware.camera.device@3.5 \
+   android.hardware.camera.common@1.0 \
    android.hardware.camera.provider@2.4-impl \
    android.hardware.camera.provider@2.4-service \
-   camera.device@3.2-impl \
-   camera.msm8953 \
-   libmm-qcamera \
-   Snap \
    vendor.qti.hardware.camera.device@1.0 \
-   vendor.qti.hardware.camera.device@1.0_vendor
+   vendor.qti.hardware.camera.device@1.0_vendor \
+   camera.device@3.2-impl \
+   libqomx_core \
+   camera.msm8953 \
+   libcamshim \
+   libmm-qcamera \
+   libui_shim \
+   Snap
 
 # Shims
 PRODUCT_PACKAGES += \
-    libfui \
-    libbinder_gdxfp \
-    libcamshim \
-    libshim_camera
+    libbinder_gdxfp
 
 # Consumerir
 PRODUCT_PACKAGES += \
@@ -227,7 +227,11 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
-    android.hidl.base@1.0
+    android.hidl.base@1.0 \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
 
 # HW crypto
 PRODUCT_PACKAGES += \
@@ -235,6 +239,7 @@ PRODUCT_PACKAGES += \
 
 # IMS
 PRODUCT_PACKAGES += \
+    CarrierConfigOverlay \
     ims-ext-common \
     ims_ext_common.xml
 
@@ -268,7 +273,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_video.xml
 
 # Netutils
 PRODUCT_PACKAGES += \
@@ -308,7 +316,6 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
-    init.oxygen.rc \
     init.goodix.sh \
     init.qcom.rc \
     init.qcom.sh \
@@ -375,18 +382,15 @@ PRODUCT_PACKAGES += \
     vndk-sp
 
 PRODUCT_PACKAGES += \
-    libgui-vendor \
-    libui-vendor \
     libstdc++.vendor
 
 # Vndk-hack
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-core/android.hardware.gnss@1.0.so:system/lib64/android.hardware.gnss@1.0-v27.so \
     prebuilts/vndk/v28/arm64/arch-arm64-armv8-a/shared/vndk-core/libxml2.so:$(TARGET_COPY_OUT_VENDOR)/lib/libxml2-v28.so \
-    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-full.so \
-    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite.so \
     prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-full.so \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-lite.so
+    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-lite.so \
+    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libcutils-v29.so
 
 # Whitelisted apps
 PRODUCT_COPY_FILES += \

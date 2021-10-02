@@ -1,4 +1,3 @@
-// libbinder
 cc_library_shared {
     name: "libbinder_gdxfp",
     proprietary: true,
@@ -16,7 +15,14 @@ cc_library_shared {
     ],
 }
 
-// Camera
+cc_library_shared {
+    name: "libui_shim",
+    srcs: ["GraphicBuffer.cpp"],
+    shared_libs: ["libui"],
+    compile_multilib: "32",
+    vendor: true
+}
+
 cc_library_shared {
     name: "libcamshim",
     proprietary: true,
@@ -33,3 +39,4 @@ cc_library_shared {
         "libutils",
     ],
 }
+

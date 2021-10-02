@@ -195,7 +195,7 @@ SELINUX_IGNORE_NEVERALLOWS := true
 
 # Shims
 TARGET_LD_SHIM_LIBS += \
-    /system/vendor/lib/libmmcamera_ppeiscore.so|libshim_camera.so
+    /vendor/bin/goodixfp|libgoodixfingerprintd_binder.so
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
