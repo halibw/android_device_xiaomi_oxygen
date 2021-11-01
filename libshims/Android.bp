@@ -50,3 +50,14 @@ cc_library_shared {
     compile_multilib: "32",
 }
 
+// IMS
+cc_library_shared {
+    name: "libims-shim",
+    shared_libs: [
+        "libgui",
+        "libutils",
+    ],
+    srcs: [
+        "Surface.cpp"
+    ],
+}
