@@ -16,6 +16,9 @@ vidc.enc.dcvs.extra-buff-count=2
 ro.charger.disable_init_blank=true
 ro.charger.enable_suspend=true
 
+# Dexopt
+dalvik.vm.dex2oat64.enabled=true
+
 # Display
 debug.egl.hw=0
 debug.enable.sglscale=1
