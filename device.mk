@@ -87,7 +87,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl:32 \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
-    audio.primary.msm8953 \
+    audio.primary.msm8953:32 \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
