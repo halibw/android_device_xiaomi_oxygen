@@ -563,4 +563,9 @@
 
     <!-- Whether to select voice/data/sms preference without user confirmation. -->
     <bool name="config_voice_data_sms_auto_fallback">true</bool>
+	    
+    <!-- List of comma separated package names for 
+    which we the system will not show crash, ANR,
+         etc. dialogs. --> 
+     <string name="config_appsNotReportingCrashes">com.google.android.tts</string>
 </resources>
