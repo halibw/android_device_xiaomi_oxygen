@@ -16,6 +16,9 @@ bluetooth.profile.pan.panu.enabled=true
 bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
 
+# Hearing Aid Audio Support Using Bluetooth LE
+bluetooth.profile.asha.central=true
+
 # DPM
 persist.vendor.dpm.feature=11
 persist.vendor.dpm.loglevel=0
