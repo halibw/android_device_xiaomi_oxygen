@@ -285,9 +285,6 @@ on property:vold.decrypt=trigger_restart_framework
     restart vendor.camera-provider-2-4
     restart vendor.audio-hal-2-0
 
-on property:persist.env.fastdorm.enabled=true
-    setprop persist.radio.data_no_toggle 1
-
 service vendor.cnd /vendor/bin/cnd
     class main
     user system
