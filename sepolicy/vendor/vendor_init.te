@@ -1,1 +1,4 @@
 allow vendor_init self:capability kill;
+
+allow vendor_init proc_dirty:file w_file_perms;
+allow vendor_init proc_dirty_ratio:file w_file_perms;

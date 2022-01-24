@@ -5,8 +5,8 @@ genfscon proc  /sys/kernel/boot_reason					u:object_r:proc_boot_reason:s0
 genfscon sysfs /devices/soc/soc:qcom,bcl/power_supply      u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/soc/msm-bcl-20/power_supply        u:object_r:sysfs_batteryinfo:s0
 
-# Rmt
-#genfscon debugfs /rmt_storage u:object_r:debugfs_rmt_storage:s0
+# ProcFS
+genfscon proc /sys/vm/dirty_writeback_centisecs                       u:object_r:proc_dirty:s0
 
 # RTC
 genfscon sysfs /devices/soc/qpnp-rtc-8/rtc                  u:object_r:sysfs_rtc:s0
