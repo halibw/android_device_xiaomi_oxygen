@@ -38,6 +38,9 @@ BUILD_BROKEN_DUP_RULES := true
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
+# Device Properties
+TARGET_ODM_PROP := $(DEVICE_PATH)/odm.prop
+
 # Kernel
 TARGET_KERNEL_CONFIG := oxygen_defconfig
 BOARD_KERNEL_BASE := 0x80000000
