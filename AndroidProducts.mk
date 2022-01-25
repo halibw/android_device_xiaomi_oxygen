@@ -17,4 +17,5 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/arrow_oxygen.mk
 
 COMMON_LUNCH_CHOICES := \
+    arrow_oxygen-userdebug \
     arrow_oxygen-eng
