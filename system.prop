@@ -12,6 +12,10 @@ persist.vendor.camera.display.umax=1920x1080
 vendor.camera.lowpower.record.enable=1
 vidc.enc.dcvs.extra-buff-count=2
 
+# Charger
+ro.charger.disable_init_blank=true
+ro.charger.enable_suspend=true
+
 # Display
 debug.egl.hw=0
 debug.enable.sglscale=1
