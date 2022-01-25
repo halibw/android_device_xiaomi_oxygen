@@ -40,6 +40,7 @@ TARGET_USES_64_BIT_BINDER := true
 
 # Device Properties
 TARGET_ODM_PROP := $(DEVICE_PATH)/odm.prop
+TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 
 # Kernel
 TARGET_KERNEL_CONFIG := oxygen_defconfig

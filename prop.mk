@@ -21,8 +21,6 @@ persist.vendor.audio.fluence.voicecall=true \
 persist.vendor.audio.fluence.voicerec=true \
 persist.vendor.audio.hw.binder.size_kbyte=1024 \
 persist.vendor.btstack.enable.splita2dp=false \
-ro.config.media_vol_steps=25 \
-ro.config.vc_call_vol_steps=7 \
 ro.vendor.audio.sdk.fluencetype=fluence \
 ro.vendor.audio.sdk.ssr=false \
 vendor.audio.flac.sw.decoder.24bit=true \
@@ -52,16 +50,12 @@ vendor.qcom.bluetooth.soc=smd
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-camera.display.lmax=1280x720 \
-camera.display.umax=1920x1080 \
-camera.lowpower.record.enable=1 \
 media.camera.ts.monotonic=1 \
 persist.camera.gyro.android=0 \
 persist.camera.gyro.disable=1 \
 persist.camera.isp.clock.optmz=0 \
 persist.camera.stats.test=5 \
 persist.vendor.qti.telephony.vt_cam_interface=1 \
-vidc.enc.dcvs.extra-buff-count=2 \
 persist.camera.HAL3.enabled=1 \
 persist.camera.dual.camera=0 \
 persist.camera.eis.enable=1
@@ -73,47 +67,21 @@ persist.vendor.cne.feature=1
 # Coresight
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.debug.coresight.config=stm-events \
-persist.debug.wfd.enable=1 \
 vendor.display.disable_rotator_downscale=1 \
 persist.sys.wfd.nohdcp=1 \
-persist.debug.wfd.enable=1 \
 persist.sys.wfd.virtual=0
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-debug.egl.hw=0 \
-debug.enable.sglscale=1 \
-debug.gralloc.enable_fb_ubwc=1 \
-debug.mdpcomp.logs=0 \
-debug.sf.enable_hwc_vds=1 \
-debug.sf.hw=0 \
-debug.sf.latch_unsignaled=1 \
-debug.sf.recomputecrop=0 \
-dev.pm.dyn_samplingrate=1 \
-persist.demo.hdmirotationlock=false \
 persist.hwc.enable_vds=1 \
-persist.hwc.mdpcomp.enable=true \
 ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
-ro.vendor.display.cabl=2 \
 sdm.debug.disable_skip_validate=1 \
-vendor.display.enable_default_color_mode=1 \
-vendor.display.disable_skip_validate=1 \
-vendor.gralloc.enable_fb_ubwc=1 \
 ro.sf.lcd_density=420
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
 drm.service.enabled=true
-
-# Fingerprint
-PRODUCT_PROPERTY_OVERRIDES += \
-persist.qfp=false
-
-# Fm
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.fm.transmitter=false \
-vendor.hw.fm.init=0
 
 # Frp
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -121,20 +89,9 @@ ro.frp.pst=/dev/block/bootdevice/by-name/config
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-av.debug.disable.pers.cache=1 \
-media.aac_51_output_enabled=true \
-media.msm8956hw=0 \
 media.stagefright.audio.sink=280 \
 mm.enable.smoothstreaming=true \
-mmp.enable.3g2=true \
-vendor.audio.hw.aac.encoder=true \
-vendor.mm.enable.qcom_parser=1048575 \
-vendor.vidc.dec.downscalar_height=1088 \
-vendor.vidc.dec.downscalar_width=1920 \
-vendor.vidc.disable.split.mode=1 \
-vendor.vidc.enc.disable.pq=true \
-vendor.vidc.enc.disable_bframes=1 \
-vendor.video.disable.ubwc=1
+vendor.audio.hw.aac.encoder=true
 
 # Navigation bar
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -144,12 +101,6 @@ qemu.hw.mainkeys=0
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.vendor.extension_library=libqti-perfd-client.so \
 ro.vendor.qti.sys.fw.bservice_enable=true
-
-# Netmgrd
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.vendor.use_data_netmgrd=true \
-persist.data.netmgrd.qos.enable=true \
-persist.vendor.data.mode=concurrent
 
 # Nitz
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -169,7 +120,6 @@ ro.vendor.qti.va_aosp.support=1
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
-DEVICE_PROVISIONED=1 \
 persist.dbg.volte_avail_ovr=1 \
 persist.dbg.vt_avail_ovr=1 \
 persist.dbg.wfc_avail_ovr=1 \
@@ -182,13 +132,7 @@ persist.vendor.radio.procedure_bytes=SKIP \
 persist.vendor.radio.rat_on=combine \
 persist.vendor.radio.sib16_support=1 \
 persist.vendor.data.iwlan.enable=true \
-ril.subscription.types=NV,RUIM \
-rild.libargs=-d/dev/smd0 \
-rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
-ro.telephony.call_ring.multiple=false \
-ro.telephony.default_network=22,22 \
-ro.telephony.iwlan_operation_mode=legacy \
-service.qti.ims.enabled=1
+rild.libargs=-d/dev/smd0
 
 # Radio (IMS)
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -223,9 +167,7 @@ sys.use_fifo_ui=1
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
-wifi.interface=wlan0 \
-persist.vendor.data.iwlan.enable=false \
-ro.telephony.iwlan_operation_mode=legacy
+wifi.interface=wlan0
 
 # Wifi-Display
 PRODUCT_PROPERTY_OVERRIDES += \
