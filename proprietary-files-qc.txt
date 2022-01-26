@@ -187,6 +187,7 @@ vendor/lib64/libwvhidl.so|07a8861d3aa01ba535b7a1af808e012ba1dbe229
 # FM Radio - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 vendor/bin/fm_qsoc_patches|77f31379d6bf68f2f0b3aa8936150b778c4e89ee
 vendor/lib64/vendor.qti.hardware.fm@1.0.so|e72205810d49a96b01edefc5e18e5c181a4555d2
+vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|bafab5b466dfe2935a41cad6eab36f16032791dc
 
 # Gatekeeper - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 vendor/lib/hw/gatekeeper.msm8953.so|fb3693904e3b26250157ab5be21ef977971a3382
