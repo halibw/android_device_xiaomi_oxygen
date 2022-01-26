@@ -35,6 +35,9 @@
     <!-- Boolean indicating whether or not wifi should turn off when emergency call is made -->
     <bool translatable="false" name="config_wifi_turn_off_during_emergency_call">true</bool>
 
+    <!-- Indicates that AP mode MAC randomization is supported on this device -->
+    <bool name="config_wifi_ap_mac_randomization_supported">true</bool>
+
     <!-- Disable WPA2 to WPA3 auto-upgrade -->
     <bool translatable="false" name="config_wifiSaeUpgradeEnabled">false</bool>
 </resources>
