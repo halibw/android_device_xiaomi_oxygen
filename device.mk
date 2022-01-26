@@ -102,9 +102,7 @@ PRODUCT_PACKAGES += \
 
 # A2DP
 PRODUCT_PACKAGES += \
-  audio.a2dp.default \
-  android.hardware.bluetooth.a2dp@1.0-impl \
-  android.hardware.bluetooth.a2dp@1.0-service
+    audio.a2dp.default \
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
