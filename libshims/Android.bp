@@ -1,18 +1,8 @@
 cc_library_shared {
-    name: "libbinder_gdxfp",
-    proprietary: true,
-    defaults: ["hidl_defaults"],
-    srcs: [
-        "libbinder_gdxfp.cpp",
-    ],
-    cflags: [
-        "-Werror",
-        "-Wextra",
-        "-Wall",
-    ],
-    shared_libs: [
-        "libutils",
-    ],
+    name: libbinder_gdxfp",
+    srcs: [libbinder_gdxfp.cpp"],
+    compile_multilib: "64",
+    vendor: true
 }
 
 cc_library_shared {
