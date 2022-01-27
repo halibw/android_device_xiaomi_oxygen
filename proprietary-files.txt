@@ -320,15 +320,9 @@ lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.msm8953.so
 
 # Fingerprint
 bin/goodixfp:vendor/bin/goodixfp
-lib/hw/fingerprint.fpc.so:vendor/lib/hw/fingerprint.fpc.msm8953.so
-lib/hw/fingerprint.goodix.so:vendor/lib/hw/fingerprint.goodix.msm8953.so
-lib/lib_fpc_tac_shared.so:vendor/lib/lib_fpc_tac_shared.so
-lib/libgf_algo.so:vendor/lib/libgf_algo.so
-lib/libgf_ca.so:vendor/lib/libgf_ca.so
-lib/libgf_hal.so:vendor/lib/libgf_hal.so
-lib/libgoodixfingerprintd_binder.so:vendor/lib/libgoodixfingerprintd_binder.so
+lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.so
 lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.msm8953.so
-lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.msm8953.so
+lib64/hw/fingerprint.goodix.msm8953.so:vendor/lib64/hw/fingerprint.goodix.msm8953.so
 lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so
 lib64/libgf_algo.so:vendor/lib64/libgf_algo.so
 lib64/libgf_ca.so:vendor/lib64/libgf_ca.so
