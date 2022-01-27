@@ -174,10 +174,6 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SELINUX_IGNORE_NEVERALLOWS := true
 
-# Shims
-TARGET_LD_SHIM_LIBS += \
-    /vendor/bin/goodixfp|libgoodixfingerprintd_binder.so
-
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 PRODUCT_FULL_TREBLE_OVERRIDE := true
