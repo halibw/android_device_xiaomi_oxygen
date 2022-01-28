@@ -1,6 +1,6 @@
 cc_library_shared {
-    name: libbinder_gdxfp",
-    srcs: [libbinder_gdxfp.cpp"],
+    name: "libbinder_gdxfp",
+    srcs: ["libbinder_gdxfp.cpp"],
     compile_multilib: "64",
     vendor: true
 }
