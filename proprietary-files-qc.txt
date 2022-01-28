@@ -404,9 +404,6 @@ vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|c9877b6cae0353d5fdea5bc
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|656009a5cc2b3bc52a7706579a192a1f3328f37c
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so|00b41ba2e3737041c536d7a3fe87739edbd09516
 
-# Power-off charging daemon
--sbin/charger:sbin/chargeonlymode;rootfs|664dfa548b81cac348f1699222160f8d2b4d247c
-
 # QMI - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 etc/permissions/qti_libpermissions.xml|593bcb72cce68ceb0a70f50bcae7d460114e7c62
 etc/permissions/qti_permissions.xml|e6ff4572352b1a4f91b6b9d7cbb1cad9924410a0
