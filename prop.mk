@@ -76,8 +76,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 persist.hwc.enable_vds=1 \
 ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
-sdm.debug.disable_skip_validate=1 \
-ro.sf.lcd_density=420
+sdm.debug.disable_skip_validate=1
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
