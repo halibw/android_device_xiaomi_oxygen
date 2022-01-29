@@ -29,7 +29,7 @@ allow gx_fpd self:{ netlink_socket netlink_generic_socket } create_socket_perms_
 set_prop(gx_fpd, system_prop)
 
 allow gx_fpd gx_fpd_service:service_manager { add find };
-
+allow gx_fpd gx_fpd_vndservice:service_manager { add };
 allow gx_fpd hal_fingerprint_default:binder { transfer call };
 allow gx_fpd fuse:dir search;
 allow gx_fpd fuse:file { getattr open append };
