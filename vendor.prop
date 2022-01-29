@@ -2,6 +2,9 @@
 # vendor.prop for oxygen
 #
 
+# Adoptable Storage
+ro.crypto.volume.options=aes-256-xts
+
 # Audio
 af.fast_track_multiplier=2
 audio.deep_buffer.media=true
