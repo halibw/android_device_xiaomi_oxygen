@@ -220,8 +220,6 @@ vendor/lib64/libxtwifi_ulp_adaptor.so|58b20fbdbb500add11784acce0808c7198c96c34
 vendor/lib64/vendor.qti.gnss@1.0.so|4557a490b9aa4d441a3be56d457cbd08474ba6c6
 
 # Graphics - from LA.UM.8.6.r1-01900-89xx.0
-vendor/lib/libsdm-disp-apis.so|5c7e946cfa654f533d481970da9b3d2e0c181161
-vendor/lib64/libsdm-disp-apis.so|c6681b458123832bb6f4015fd3e24032d5b2eff8
 vendor/lib/egl/eglSubDriverAndroid.so|fd8988a606cec377e01127be389c98fffd0121a6
 vendor/lib/egl/libEGL_adreno.so|3ce5d0adb97ec329fb0069295964fdcc9ece0041
 vendor/lib/egl/libGLESv1_CM_adreno.so|7254635133cb608459f9deeed36a9d2852068714
