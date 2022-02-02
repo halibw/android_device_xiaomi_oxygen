@@ -81,6 +81,10 @@ vendor/firmware/cpp_firmware_v1_1_6.fw|6b2c9fe0a43a9ce86a921e18faffe4d0a35746ee
 # Charger - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 vendor/bin/hvdcp_opti|7ee82dd264c7c349fb498111a61d5009ae9f0da2
 
+# CNE - from LA.UM.9.6.2.r1-02800-89xx.0
+vendor/lib64/vendor.qti.hardware.data.connection@1.0.so|0ff864f767e707748c0d82be19bc5685f34a7a31
+vendor/lib64/vendor.qti.hardware.data.connection@1.1.so|ce98d5e0b62180d6d2b535d1263ec4ac4a303a33
+
 # CNE - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 etc/permissions/cneapiclient.xml|15831adf0e80243042b90c734eea0a68eb8ae9c9
 etc/permissions/com.quicinc.cne.xml|41770aee9d3691e6ab0dd2a858829aaa3b28e841
