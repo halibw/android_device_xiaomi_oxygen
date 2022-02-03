@@ -563,7 +563,11 @@ vendor/lib64/vendor.qti.ims.callinfo@1.0.so|5567616f4792889965b1bc254b245d5323ab
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so|f4eef520bbf98e6e1ac8697ef7eef0109487dba1
 vendor/lib64/vendor.qti.imsrtpservice@1.0.so|559a2dbf409d86746ed4303f2e0089256bb91a07
 
-# Radio - IMS - from LA.UM.8.6.r1-01900-89xx.0
+# Radio (IMS) - from LA.UM.9.6.3.r1-04400-89xx.0
+vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so|67364cea51126dd481936fd09f29481f314f8124
+vendor/lib64/vendor.qti.ims.rcsconfig@1.1.so|155a26830bcab1c9285e0bea1c846186cc47e00f
+vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so|f0eb547d3da5557b08e3e25ec957bffc5658b828
+vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so|7c89ba68743fc5e03b64e22baed6717fc099e6cf
 product/lib64/libimscamera_jni.so|7cb89110cca94d37d68c705f12a7a5a4ee106139
 product/lib64/libimsmedia_jni.so|e50217e9eb8878136614db66313508ac970a2b42
 -product/priv-app/ims/ims.apk|ce41daca328db67984843588e8bafa7e0eb53a0a
