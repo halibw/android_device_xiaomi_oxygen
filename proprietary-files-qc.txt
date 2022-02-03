@@ -48,12 +48,17 @@ vendor/lib64/soundfx/libqcvirt.so|815b3a7cd762cdb6f162dde12c866acb23cdd022
 # ANT+ (vendor) - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 vendor/lib64/com.qualcomm.qti.ant@1.0.so|29ecc1a9134dd2146f358e65c830059d3fa6c6d9
 
-# Bluetooth - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|9178856dc8651b499d1b155825b6115a486ee05e
-vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|a979981c55f3dcaf6cf2212e71b901ca4d58b959
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|e324837c011610512f64ff8131c98e95e97ceb8f
-vendor/lib64/libbtnv.so|35444e0ca93a50751db92aa4871cf277dc66b1fa
-vendor/lib64/libbt-hidlclient.so|7d25d6082cb6fd8da40fc69f93c6341f8c1dead8
+# Bluetooth - from LA.UM.9.6.2.r1-04200-89xx.0
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|2401640a10df4de23f704b87c4adab2da9ed111d
+vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|f4ee3b2da2b08647447869ade86ec63f7340accc
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|20627ee95c176ee124140dd5101f3232f74f3014
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so|a97a6c330c932176acee0bce820c6e737778aed4
+vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|2c5480b33615179e1a8a67bf93e190e8647c68b4
+vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so|0abafcc0c404b67bb0d87128a87cc9deabe54935
+vendor/lib64/libbt-hidlclient.so|1491414e874419d2df1529c511bd48e348cf53a8
+vendor/lib64/libbtnv.so|07e031527e60ce5e62a5017fd1d7ff83ef1aafcf
+vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|3281b131bf921fbdc00afe66cf2a0493a86b97a0
+vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so|5de4a802667afa2c05b9c75ae6311fcd0c8b23f6
 
 # Bluetooth (aptX) - from marlin - OPM1.171019.011
 lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
