@@ -173,10 +173,11 @@ vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc|c35e1a6f9a6faff1906
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml|ea7038bdc341cddc3f7803367e47c91c2ee6672f
 vendor/lib64/libwvhidl.so|07a8861d3aa01ba535b7a1af808e012ba1dbe229
 
-# FM Radio - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
-vendor/bin/fm_qsoc_patches|77f31379d6bf68f2f0b3aa8936150b778c4e89ee
-vendor/lib64/vendor.qti.hardware.fm@1.0.so|e72205810d49a96b01edefc5e18e5c181a4555d2
-vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|bafab5b466dfe2935a41cad6eab36f16032791dc
+# FM Radio - from LA.UM.9.6.2.r1-04200-89xx.0
+vendor/bin/init.qti.fm.sh|0ac820dd85ebdf5fa73b5e971f6787ff35ceb65d
+vendor/bin/fm_qsoc_patches|84e197364b2ec81cb9dfff97af49b30afa06b6e9
+vendor/etc/init/init.qti.fm.rc|07cb64e2109a900eb6e1da1950fddba954d0f8d6
+vendor/lib64/vendor.qti.hardware.fm@1.0.so|f7494923e84b136a44f02699082a7e0a380f94e9
 
 # Gatekeeper - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 vendor/lib/hw/gatekeeper.msm8953.so|fb3693904e3b26250157ab5be21ef977971a3382
