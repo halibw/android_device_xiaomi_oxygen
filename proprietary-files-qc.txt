@@ -61,10 +61,6 @@ lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 lib/libaptX_encoder.so|984739a0bc968e18f75ced205733fe3f51c2d4f0
 lib/libaptXHD_encoder.so|974c486e4ca03faa0713553d9dfe2995ac93e01c
 
-# Camera from oxygen
-vendor/lib/vendor.qti.hardware.camera.device@1.0_vendor.so
-vendor/lib64/vendor.qti.hardware.camera.device@1.0_vendor.so
-
 # Camera firmware - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 vendor/firmware/cpp_firmware_v1_8_0.fw|26e2badbb4e3049243f0a176722f26879e7b87e8
 vendor/firmware/cpp_firmware_v1_5_0.fw|ac19cd179b7b118bb3ea01a35fdfc78dc58164a1
@@ -350,7 +346,7 @@ vendor/lib64/libvpplibrary.so|9801e062790202f7aa640c866415be71177908f7
 
 # Modem - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 vendor/lib/libwms.so|61efcd8bc52e28b7a9b978da0af62355b358887c
-vendor/lib64/libwms.so|57d9f33071f4ae42ac77c98fb82f4e1fe8ac4754
+vendor/lib64/libwms.so|2d2cc826fe5fd905964688d1095de22fcbd4e726
 
 # Perf - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 lib/vendor.qti.hardware.perf@1.0.so|7dd24b7327308aaabc1e7ff2272e35cca31f87c2

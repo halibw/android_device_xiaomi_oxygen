@@ -15,15 +15,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 set -e
 
-INITIAL_COPYRIGHT_YEAR=2017
-
 # Required!
-export DEVICE=oxygen
-export DEVICE_COMMON=msm8953-common
-export VENDOR=xiaomi
+DEVICE=msm8953-common
+VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -33,8 +29,8 @@ ANDROID_ROOT="${MY_DIR}/../../.."
 
 HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
 if [ ! -f "$HELPER" ]; then
-    echo "Unable to find helper script at $HELPER"
-    exit 1
+	    echo "Unable to find helper script at $HELPER"
+	        exit 1
 fi
 source "${HELPER}"
 
@@ -44,7 +40,7 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}"
 # Warning headers and guards
 write_headers
 
-write_makefiles "${MY_DIR}/proprietary-files.txt" true
+write_makefiles "${MY_DIR}/proprietary-files-qc.txt" true
 
 # Finish
 write_footers
