@@ -37,7 +37,6 @@ TARGET_SCREEN_WIDTH := 1080
 
 # RRO (Runtime Resource Overlay)
 PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay/packages/apps/Snap
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -147,8 +146,7 @@ PRODUCT_PACKAGES += \
     libgui_vendor:32 \
     libshims_android \
     libshims_ui \
-    libwui \
-    Snap
+    libwui
 
 # Cgroup and task_profiles
 PRODUCT_COPY_FILES += \
