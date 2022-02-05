@@ -18,7 +18,7 @@
 set -e
 
 # Required!
-DEVICE=msm8953-common
+DEVICE=oxygen
 VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks
@@ -40,7 +40,7 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}"
 # Warning headers and guards
 write_headers
 
-write_makefiles "${MY_DIR}/proprietary-files-qc.txt" true
+write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
 # Finish
 write_footers
