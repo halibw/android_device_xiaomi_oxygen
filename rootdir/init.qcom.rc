@@ -360,12 +360,6 @@ service vendor.netmgrd /vendor/bin/netmgrd
     class main
     writepid /dev/cpuset/system-background/tasks
 
-service vendor.ipacm /vendor/bin/ipacm
-    class main
-    user radio
-    group radio inet
-    writepid /dev/cpuset/system-background/tasks
-
 service vendor.sensors.qti /vendor/bin/sensors.qti
     class core
     user system
