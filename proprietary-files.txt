@@ -493,13 +493,17 @@ vendor/lib64/libwvhidl.so|07a8861d3aa01ba535b7a1af808e012ba1dbe229
 
 # Fingerprint
 bin/goodixfp:vendor/bin/goodixfp
-lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.msm8953.so
-lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.msm8953.so
-lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so
-lib64/libgf_algo.so:vendor/lib64/libgf_algo.so
+lib64/hw/goodixfingerprint.default.so:vendor/lib64/hw/goodixfingerprint.default.so
 lib64/libgf_ca.so:vendor/lib64/libgf_ca.so
 lib64/libgf_hal.so:vendor/lib64/libgf_hal.so
+lib64/libgf_algo.so:vendor/lib64/libgf_algo.so
 lib64/libgoodixfingerprintd_binder.so:vendor/lib64/libgoodixfingerprintd_binder.so
+lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so:vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
+lib64/libvendor.goodix.hardware.fingerprint@1.0.so:vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
+vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
+
+# Firmware - Fingerprint
+vendor/firmware/goodix_firmware.bin|cbd87b30f72e82adf87537fe93911fb2d70bce84
 
 # FM Radio - from LA.UM.9.6.2.r1-04200-89xx.0
 vendor/bin/init.qti.fm.sh|0ac820dd85ebdf5fa73b5e971f6787ff35ceb65d
