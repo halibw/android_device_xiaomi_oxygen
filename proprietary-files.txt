@@ -38,7 +38,7 @@ vendor/etc/acdbdata/Forte/Forte_Bluetooth_cal.acdb
 vendor/etc/acdbdata/Forte/Forte_General_cal.acdb
 vendor/etc/acdbdata/Forte/Forte_Global_cal.acdb
 vendor/etc/acdbdata/Forte/Forte_Handset_cal.acdb
-vendor/etc/acdbdata/Forte/Forte_Hdmi_cal.acbd
+vendor/etc/acdbdata/Forte/Forte_Hdmi_cal.acdb
 vendor/etc/acdbdata/Forte/Forte_Headset_cal.acdb
 vendor/etc/acdbdata/Forte/Forte_Speaker_cal.acdb
 vendor/etc/acdbdata/Tutu/Tutu_Bluetooth_cal.acdb
@@ -373,7 +373,6 @@ vendor/lib/libchromatix_oxygen_s5k5e8_qtech_zsl_video.so
 vendor/lib/libchromatix_ov12a10_arc_4k_video_dw9763.so
 vendor/lib/libchromatix_ov12a10_arc_default_video_dw9763.so
 vendor/lib/libchromatix_ov12a10_arc_hfr_60_dw9763.so
-vendor/lib/libchromatix_ov12a10_arc_zsl_video_dw9763.so
 vendor/lib/libchromatix_s5k5e8_ofilm_default_video_3a.so
 vendor/lib/libchromatix_s5k5e8_ofilm_hfr_60_3a.so
 vendor/lib/libchromatix_s5k5e8_ofilm_hfr_90_3a.so
