@@ -594,10 +594,10 @@
     	<!-- Whether doze feature is enabled by default in settings. -->
 	<bool name="config_doze_enabled_by_default">true</bool>
 	<!-- Whether the always on display mode is available. -->
-	<bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+	<bool name="config_dozeAlwaysOnDisplayAvailable">false</bool>
 
  	<!-- Whether the display blanks itself when transition from a doze to a non-doze state -->
-	<bool name="config_displayBlanksAfterDoze">true</bool>
+	<bool name="config_displayBlanksAfterDoze">false</bool>
 
     <!-- Component name for default assistant on this device -->
     <string name="config_defaultAssistantComponentName">com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService</string>
