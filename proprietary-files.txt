@@ -624,9 +624,9 @@ vendor/firmware/a506_zap.mdt|2945f21b47cf35bf22d8cb68e937c34ea64212c0
 vendor/firmware/a530_pfp.fw|448f9db8271fefb08348cbc50409e8e95bd93f78
 vendor/firmware/a530_pm4.fw|5741a28752355b478d455635bab008028ff7e1c6
 
-# Keystore - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
-vendor/lib/hw/keystore.msm8953.so|fdfa414efe6205bfd7750726ae730e4bd3c1ba00
-vendor/lib64/hw/keystore.msm8953.so|f71f1439c9c356ce05d88b876253b4e3dcb10f4b
+# Keystore - from LA.UM.8.6.2.r1-08600-89xx.0
+vendor/lib/hw/keystore.msm8953.so|f3ba873c93584392ed7b6223c707e2e47af247f6
+vendor/lib64/hw/keystore.msm8953.so|d8ad67a680846bade1a1ebdb527c7feb4f496801
 
 # Keymaster - from Bardock Pro
 vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so:vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so|9d855636cd20177f6fdaa47a9a45260330ed901b
