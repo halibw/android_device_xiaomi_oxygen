@@ -682,10 +682,6 @@ vendor/lib64/libgpustats.so|7f884a3e4ddc6f7016120ab9aed952f1261e210f
 vendor/lib64/libmm-color-convertor.so|cae7366bd9ef8e677e55dd67be3ebac78aa151d9
 vendor/lib64/libvpplibrary.so|9801e062790202f7aa640c866415be71177908f7
 
-# Modem - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
-vendor/lib/libwms.so|61efcd8bc52e28b7a9b978da0af62355b358887c
-vendor/lib64/libwms.so|2d2cc826fe5fd905964688d1095de22fcbd4e726
-
 # Perf - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 lib/vendor.qti.hardware.perf@1.0.so|7dd24b7327308aaabc1e7ff2272e35cca31f87c2
 lib64/vendor.qti.hardware.perf@1.0.so|d54135d5ee902056acc86d8edd64d6338235c9f6
