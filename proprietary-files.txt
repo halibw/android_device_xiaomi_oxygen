@@ -708,20 +708,19 @@ vendor/lib64/libqti-perfd.so|96806732f4e5f8c25ba2e12a3a939fc2889c7341
 vendor/lib64/libqti-util.so|30dc90c1636fd100a8e101dfa659e0b7299ff813
 vendor/lib64/vendor.qti.hardware.perf@1.0.so|d54135d5ee902056acc86d8edd64d6338235c9f6
 
-# Peripheral manager - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
-vendor/bin/pm-proxy|56e9bdaa39270aa4456c9995a8a9e4618ba616a6
-vendor/bin/pm-service|7cbca1671529a805177f11f3f72defdbbe48a61c
-vendor/lib/libperipheral_client.so|6e06ff7e89cb8054612c98c25240e7570c069752
-vendor/lib64/libperipheral_client.so|e2fbf94c589dbf8ae6c544a34441783ae9db3a08
+# Peripheral manager - from LA.UM.9.6.3.r1-04400-89xx.0
+vendor/bin/pm-proxy|cfa016d416eb95949c76090bde8ccffcd5517159
+vendor/bin/pm-service|06608529b6125c5362dee26f459c52d9e51f3c92
+vendor/lib/libperipheral_client.so|7ace2f7c8c7ebd986db6c7796de7237e584e658b
+vendor/lib64/libperipheral_client.so|9bfd41e276e16b8f7c6808f3d87531fc5be4cdd5
 
-# Power-off alarm - from LA.UM.8.6.r1-01900-89xx.0
-framework/vendor.qti.hardware.alarm-V1.0-java.jar|ca5bf830ebb4fbf8fc1994200ec6e03dc83c274b
--vendor/app/PowerOffAlarm/PowerOffAlarm.apk|2399da8803ff7229476611f371fc435f48138881
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|28c768324a36e12a8c4a1a968caa25ad94a160fe
-vendor/bin/power_off_alarm|a98e375328492c0405d1712722bca0effa8cf2bb
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|c9877b6cae0353d5fdea5bc23dba77101b3d6980
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|656009a5cc2b3bc52a7706579a192a1f3328f37c
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so|00b41ba2e3737041c536d7a3fe87739edbd09516
+# Power-off alarm - from LA.UM.9.6.3.r1-04400-89xx.0
+-product/app/PowerOffAlarm/PowerOffAlarm.apk|bc906abd03e4a243201dde626b6580fd8a4f73ce
+vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|586b142f9bc4bf3098b4962682c4de1c13810f9b
+vendor/bin/power_off_alarm|b8c7ddc1bed336753c3746925fd0f4a9925aa36c
+vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|a03a9a1c818595b19272ea6ffb466e23a7fc3b05
+vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|4129558506dc078c03679ba362acda4755457742
+vendor/lib64/vendor.qti.hardware.alarm@1.0.so|3c182fd3343942c431e1d27d87f8fe114644ca36
 
 # QMI - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 etc/permissions/qti_libpermissions.xml|593bcb72cce68ceb0a70f50bcae7d460114e7c62
@@ -928,11 +927,11 @@ vendor/bin/thermal-engine|bbf772d4acf6c11413d2f728140aae63a49d3eae
 -vendor/lib64/libthermalclient.so|796c3e071fe9d6fa57598e1205a762cb55720f88
 vendor/lib64/libthermalioctl.so|6eed5b8ca6989809eac27abd4af19bbd6f3845ee
 
-# Time services - from LA.UM.8.6.r1-01900-89xx.0
--vendor/app/TimeService/TimeService.apk|4a37afd1395758d946580af184a738e3c657b1e2
-vendor/bin/time_daemon|fa1b87481313fc039d969c1ac7c06c77422ff38e
+# Time services - from LA.UM.9.6.3.r1-04400-89xx.0
+-vendor/app/TimeService/TimeService.apk|1a5f39aa2969feee50ff81ec870b5e2669ae515e
+vendor/bin/time_daemon|48401d7f85c87aa3e12ce7b4a969a50cbf59c293
 vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
-vendor/lib64/libtime_genoff.so|06df52867790cdbbcc674a3a28d7ad7c8cc161ac
+vendor/lib64/libtime_genoff.so|8bb116ad297a5e4a94da2f10509509cb6e863a5f
 
 # TUI - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 lib/vendor.qti.hardware.tui_comm@1.0.so|ee831dc9bd07c33882390761742c7881e68689f9
