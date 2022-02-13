@@ -137,10 +137,11 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor \
-    camera.device@3.2-impl \
     libqomx_core \
     camera.msm8953 \
     libmm-qcamera \
+    libui_shim \
+    libcamshim \
     Snap
 
 # Component overrides
@@ -190,6 +191,8 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     libbacktrace-vendor \
+    libbinder_gdxfp \
+    fakelogprint \
     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_oxygen
 
 # FM
@@ -376,13 +379,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
-
-# Shims
-PRODUCT_PACKAGES += \
-    libbinder_gdxfp \
-    fakelogprint \
-    libui_shim \
-    libcamshim
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \

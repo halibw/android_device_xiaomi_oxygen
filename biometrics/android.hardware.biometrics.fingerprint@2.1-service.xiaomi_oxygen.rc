@@ -1,4 +1,4 @@
-service fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_oxygen
+service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_oxygen
     # "class hal" causes a race condition on some devices due to files created
     # in /data. As a workaround, postpone startup until later in boot once
     # /data is mounted.
@@ -6,10 +6,15 @@ service fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-servi
     user system
     group system input uhid
 
+service vendor.goodixfp /vendor/bin/goodixfp
+    class core
+    user system
+    group system drmrpc
+    writepid /dev/cpuset/system-background/tasks
+
 on post-fs-data
     mkdir /data/fpc 0770 system system
     mkdir /data/fpc/s 0771 system system
-    mkdir /data/thermal 0771 system system
     mkdir /data/misc/goodix 0770 system system
     mkdir /data/gf_data 0770 system system
 
@@ -33,16 +38,23 @@ on boot
     chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/device_prepare
     chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/vendor
 
-service goodixfp /vendor/bin/goodixfp
-     class core
-     user system
-     group system
-     oneshot
-     writepid /dev/cpuset/system-background/tasks
-
-service goodix_script /vendor/bin/init.goodix.sh
+service vendor.goodix_script /vendor/bin/init.goodix.sh
     class late_start
     user system
     group system
     disabled
     oneshot
+
+on property:ro.boot.fpsensor=fpc
+    setprop persist.sys.fp.goodix 0
+    setprop ro.hardware.fingerprint fpc
+
+on property:ro.boot.fpsensor=gdx
+    setprop persist.sys.fp.goodix 1
+    setprop ro.hardware.fingerprint gdx
+
+on property:persist.sys.fp.goodix=0
+    stop goodixfp
+
+on property:persist.sys.fp.goodix=1
+    enable goodixfp
