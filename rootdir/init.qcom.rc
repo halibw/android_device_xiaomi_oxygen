@@ -257,6 +257,9 @@ on post-fs-data
     chmod 2770 /data/vendor/perfd
     rm /data/vendor/perfd/default_values
 
+    # Create dir for TUI
+    mkdir /data/vendor/tui 0700 system drmrpc
+
     # Mark the copy complete flag to not completed
     write /data/vendor/radio/copy_complete 0
     chown radio radio /data/vendor/radio/copy_complete

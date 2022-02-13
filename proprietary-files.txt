@@ -74,8 +74,9 @@ vendor/lib64/libqtigef.so|79e811fd04172b0afda1229d182014be28a146b2
 vendor/lib64/soundfx/libqcbassboost.so|0b92d65381d9722c579ccfda12f86c7e3fcaedd1
 vendor/lib64/soundfx/libqcvirt.so|815b3a7cd762cdb6f162dde12c866acb23cdd022
 
-# ANT+ (vendor) - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
-vendor/lib64/com.qualcomm.qti.ant@1.0.so|29ecc1a9134dd2146f358e65c830059d3fa6c6d9
+# Bluetooth (ANT+) - from LA.UM.9.6.2.r1-04200-89xx.0
+system_ext/lib64/com.qualcomm.qti.ant@1.0.so|7fffcdca309796183708d9e345d3cd97461d901d
+vendor/lib64/hw/com.dsi.ant@1.0-impl.so|b5c57fdf48447c68b6308fdcb167d0d21b5c56ed
 
 # Bluetooth - from LA.UM.9.6.2.r1-04200-89xx.0
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|2401640a10df4de23f704b87c4adab2da9ed111d
@@ -392,8 +393,8 @@ etc/camera/oxygen_s5k5e8_qtech_chromatix.xml:vendor/etc/camera/oxygen_s5k5e8_qte
 # ConsumerIR
 lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.msm8953.so
 
-# Charger - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
-vendor/bin/hvdcp_opti|7ee82dd264c7c349fb498111a61d5009ae9f0da2
+# Charger - from LA.UM.9.6.2.r1-04200-89xx.0
+vendor/bin/hvdcp_opti|d160d2193640a21b7eff70425bcdbfc775063cd5
 
 # CNE - from LA.UM.9.6.2.r1-02800-89xx.0
 -vendor/app/CneApp/CneApp.apk|d27c7fe7d57b2ad01dcf233dccedbaa9af702422
@@ -688,7 +689,7 @@ vendor/lib64/libvpplibrary.so|9801e062790202f7aa640c866415be71177908f7
 
 # Perf - from LA.UM.8.6.2.r1-08600-89xx.0
 vendor/bin/energy-awareness|056792da4f0bcfc34b1f85e3ee67820d8c80627f
-vendor/bin/msm_irqbalance|0e967f5c7eaf8d863a50996459101be47adf96a2
+vendor/bin/msm_irqbalance|e5706bc0acab394b53fafdc1d7f342f69c6f5649
 vendor/bin/hw/vendor.qti.hardware.perf@2.1-service|2e3be88cad2d9b9aa4edc8e68ad5f4d4e7eeaedc
 vendor/etc/init/vendor.qti.hardware.perf@2.1-service.rc|36cb02ce67ce55a34eff5c0081ea955fd4ccb19f
 vendor/lib/libperfconfig.so|e44d84d1b38e375a6e13422a8fe21c7876fc8068
@@ -927,13 +928,11 @@ vendor/bin/time_daemon|48401d7f85c87aa3e12ce7b4a969a50cbf59c293
 vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
 vendor/lib64/libtime_genoff.so|8bb116ad297a5e4a94da2f10509509cb6e863a5f
 
-# TUI - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
-lib/vendor.qti.hardware.tui_comm@1.0.so|ee831dc9bd07c33882390761742c7881e68689f9
-lib64/vendor.qti.hardware.tui_comm@1.0.so|6481fad7709b890ca8b854bbc7f876ce63b9ea72
-vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|86c327a8310fcc42f69c85ec0868c630903c7d79
+# TUI - from LA.UM.9.6.2.r1-04200-89xx.0
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|e8d97981d09a4e34907d13bcbbd10f03572c9218
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
-vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|ee831dc9bd07c33882390761742c7881e68689f9
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|6481fad7709b890ca8b854bbc7f876ce63b9ea72
+vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|933eb7026797f3dadad3d10fd69443b11f6563f3
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|16baab27397ad493e845515c20ac0c0c063c775d
 
 # Wi-Fi - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 vendor/bin/wcnss_service|f8ecd38a41b6b7f832380b489e0c9804c34174d8
