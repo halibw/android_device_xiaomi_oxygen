@@ -75,6 +75,8 @@ persist.sys.wfd.virtual=0
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.hwc.enable_vds=1 \
+ro.hardware.vulkan=adreno \
+ro.hardware.egl=adreno \
 ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
 sdm.debug.disable_skip_validate=1
