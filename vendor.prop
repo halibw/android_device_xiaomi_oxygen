@@ -57,6 +57,7 @@ ro.hardware.egl=adreno
 ro.opengles.version=196610
 ro.qualcomm.cabl=0
 sdm.debug.disable_skip_validate=1
+vendor.display.disable_scaler=1
 
 # DPM
 persist.vendor.dpmhalservice.enable=1
