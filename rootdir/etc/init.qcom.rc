@@ -313,6 +313,9 @@ on property:persist.sys.radio.mobile_data_swap=1
 on property:vold.decrypt=trigger_restart_framework
     restart vendor.camera-provider-2-4
     restart vendor.audio-hal
+    restart vendor.qcrild
+    exec /bin/sleep 2
+    restart vendor.qcrild2
 
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
