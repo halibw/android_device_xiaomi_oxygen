@@ -316,7 +316,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
     android.hardware.power.stats@1.0-service.mock \
-    vendor.qti.hardware.perf@2.0.vendor \
     vendor.qti.hardware.perf@2.1.vendor
 
 PRODUCT_COPY_FILES += \
@@ -358,8 +357,6 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     libxml2 \
     telephony-ext \
-    rild \
-    libprotobuf-cpp-full \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
@@ -367,10 +364,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
-
-# Seccomp policy
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -380,10 +373,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
-
-# TextClassifier smart selection model files
-PRODUCT_PACKAGES += \
-    textclassifier.bundle1
 
 # USB HAL
 PRODUCT_PACKAGES += \
