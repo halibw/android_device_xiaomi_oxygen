@@ -148,7 +148,6 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 872415232
 TARGET_PER_MGR_ENABLED := true
 
 # Power
-TARGET_HAS_NO_WLAN_STATS := true
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/soc/78b7000.i2c/i2c-3/3-0038/enable_dt2w"
 TARGET_USES_INTERACTION_BOOST := true
 
@@ -163,7 +162,7 @@ DISABLE_RILD_OEM_HOOK := true
 TARGET_USES_OLD_MNC_FORMAT := true
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2019-04-01
+VENDOR_SECURITY_PATCH := 2021-03-05
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
