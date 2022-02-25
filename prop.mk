@@ -81,6 +81,10 @@ ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
 sdm.debug.disable_skip_validate=1
 
+# DPM
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.vendor.dpmhalservice.enable=1
+
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
 drm.service.enabled=true
