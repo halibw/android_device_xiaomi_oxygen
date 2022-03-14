@@ -56,24 +56,25 @@
 </integer-array>
 
        <array name="config_autoBrightnessDisplayValuesNits">
-        <item>10.9800</item>  <!-- 0-3 -->
-        <item>13.2500</item>  <!-- 3-4 -->
-        <item>38.786167</item>  <!-- 4-6 -->
-        <item>43.30993</item>  <!-- 6-8 -->
-        <item>55.90478</item>  <!-- 8-12 -->
-        <item>61.334614</item>  <!-- 12-20 -->
-        <item>68.4388</item>  <!-- 20-33 -->
-        <item>75.59099</item>  <!-- 33-55 -->
-        <item>82.8686</item>  <!-- 55-90 -->
-        <item>91.49397</item>  <!-- 90-148 -->
-        <item>102.49851</item>  <!-- 148-245 -->
-        <item>118.8174</item>  <!-- 245-403 -->
-        <item>144.68486</item>  <!-- 403-665 -->
-        <item>180.69225</item>  <!-- 665-1097 -->
-        <item>225.84135</item>  <!-- 1097-1808 -->
-        <item>292.46844</item>  <!-- 1808-2981 -->
-        <item>377.05084</item>  <!-- 2981-5000 -->
-        <item>481.93427</item>  <!-- 5000+ -->
+        <item>10.45935</item>   <!-- 0-1 -->
+        <item>29.25559</item>   <!-- 1-2 -->
+        <item>34.240692</item>  <!-- 2-3 -->
+        <item>37.514347</item>  <!-- 3-4 -->
+        <item>40.018696</item>  <!-- 4-8 -->
+        <item>46.885098</item>  <!-- 8-12 -->
+        <item>51.626434</item>  <!-- 12-20 -->
+        <item>58.610405</item>  <!-- 20-33 -->
+        <item>66.890915</item>  <!-- 33-55 -->
+        <item>77.61644</item>   <!-- 55-90 -->
+        <item>90.221886</item>  <!-- 90-148 -->
+        <item>105.80314</item>  <!-- 148-245 -->
+        <item>126.073845</item> <!-- 245-403 -->
+        <item>154.16931</item>  <!-- 403-665 -->
+        <item>191.83717</item>  <!-- 665-1097 -->
+        <item>240.74442</item>  <!-- 1097-1808 -->
+        <item>294.84857</item>  <!-- 1808-2981 -->
+        <item>348.05453</item>  <!-- 2981-5000 -->
+        <item>389.70</item>     <!-- 5000+ -->
     </array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -172,73 +173,24 @@
     </integer-array>
 
     <array name="config_screenBrightnessNits">
-        <item>2.685</item>
-        <item>3.343</item>
-        <item>4.13</item>
-        <item>5.216</item>
-        <item>6.308</item>
-        <item>7.565</item>
-        <item>9.269</item>
-        <item>10.98</item>
-        <item>13.25</item>
-        <item>15.49</item>
-        <item>18.42</item>
-        <item>20.6</item>
-        <item>22.71</item>
-        <item>24.68</item>
-        <item>26.31</item>
-        <item>28.39</item>
-        <item>30.34</item>
-        <item>32.39</item>
-        <item>33.94</item>
-        <item>35.94</item>
-        <item>45.12</item>
-        <item>54</item>
-        <item>62.31</item>
-        <item>70.73</item>
-        <item>78.85</item>
-        <item>86.41</item>
-        <item>93.53</item>
-        <item>102.3</item>
-        <item>109.1</item>
-        <item>118.7</item>
-        <item>126.4</item>
-        <item>136.9</item>
-        <item>147.8</item>
-        <item>158.9</item>
-        <item>168.3</item>
-        <item>177.4</item>
-        <item>186.6</item>
-        <item>195.7</item>
-        <item>204.5</item>
-        <item>214</item>
-        <item>221.8</item>
-        <item>234</item>
-        <item>242.1</item>
-        <item>250.6</item>
-        <item>263.4</item>
-        <item>272.4</item>
-        <item>282.5</item>
-        <item>296.3</item>
-        <item>305.6</item>
-        <item>315.3</item>
-        <item>329.8</item>
-        <item>339.8</item>
-        <item>349.7</item>
-        <item>357.4</item>
-        <item>364.6</item>
-        <item>374.6</item>
-        <item>384.9</item>
-        <item>392.5</item>
-        <item>402.8</item>
-        <item>413.6</item>
-        <item>421.6</item>
-        <item>432.2</item>
-        <item>440.3</item>
-        <item>448.3</item>
-        <item>459.2</item>
-        <item>467.6</item>
-        <item>478.5</item>
+        <item>0</item>
+        <item>26.11</item>
+        <item>50.5</item>
+        <item>74.17</item>
+        <item>96.89</item>
+        <item>118.3</item>
+        <item>139.8</item>
+        <item>162.9</item>
+        <item>189.8</item>
+        <item>217.4</item>
+        <item>240.4</item>
+        <item>265.3</item>
+        <item>288.7</item>
+        <item>316</item>
+        <item>340.8</item>
+        <item>357.9</item>
+        <item>376.2</item>
+        <item>392.9</item>
     </array>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
