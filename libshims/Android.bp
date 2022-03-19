@@ -1,6 +1,6 @@
 cc_library_shared {
-    name: "libbinder_gdxfp",
-    srcs: ["libbinder_gdxfp.cpp"],
+    name: "libshims_goodix",
+    srcs: ["goodix_shim.cpp"],
     compile_multilib: "64",
     vendor: true
 }
