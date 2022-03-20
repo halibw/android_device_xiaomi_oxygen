@@ -141,7 +141,7 @@ PRODUCT_PACKAGES += \
     camera.msm8953 \
     libmm-qcamera \
     libui_shim \
-    libcamshim \
+    libshims_camera \
     Snap
 
 # Component overrides

@@ -6,20 +6,11 @@ cc_library_shared {
 }
 
 cc_library_shared {
-    name: "libui_shim",
-    srcs: ["GraphicBuffer.cpp"],
-    shared_libs: ["libui"],
-    compile_multilib: "32",
-    vendor: true
-}
-
-cc_library_shared {
-    name: "libcamshim",
-    proprietary: true,
+    name: "libshims_camera",
+    srcs: ["CameraStats.cpp"],
     defaults: ["hidl_defaults"],
-    srcs: [
-        "libshims.cpp",
-    ],
+    compile_multilib: "32",
+    vendor: true,
     cflags: [
         "-Werror",
         "-Wextra",
@@ -28,6 +19,14 @@ cc_library_shared {
     shared_libs: [
         "libutils",
     ],
+}
+
+cc_library_shared {
+    name: "libui_shim",
+    srcs: ["GraphicBuffer.cpp"],
+    shared_libs: ["libui"],
+    compile_multilib: "32",
+    vendor: true
 }
 
 // Goodix
