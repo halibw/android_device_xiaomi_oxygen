@@ -166,6 +166,7 @@ PRODUCT_PACKAGES += \
     memtrack.msm8953 \
     libdisplayconfig \
     libqdMetaData \
+    libqdMetaData.system \
     libtinyxml \
     vendor.display.config@2.0.vendor
 
