@@ -45,7 +45,8 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
-    hardware/google/pixel
+    hardware/google/pixel \
+    vendor/qcom/opensource/usb/etc
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -331,6 +332,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.sh \
     init.qcom.usb.rc \
+    init.qcom.usb.sh \
     init.recovery.qcom.rc \
     init.recovery.qcom.usb.rc \
     init.parts.rc \
