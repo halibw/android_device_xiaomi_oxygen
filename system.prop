@@ -4,7 +4,6 @@
 
 # Audio
 ro.config.media_vol_steps=25
-ro.config.vc_call_vol_steps=6
 
 # Camera
 persist.vendor.camera.display.lmax=1280x720
