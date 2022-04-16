@@ -14,8 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/arrow_oxygen.mk
+    $(LOCAL_DIR)/lineage_oxygen.mk
 
 COMMON_LUNCH_CHOICES := \
-    arrow_oxygen-userdebug \
-    arrow_oxygen-eng
+    lineage_oxygen-user \
+    lineage_oxygen-userdebug \
+    lineage_oxygen-eng
