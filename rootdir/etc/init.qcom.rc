@@ -310,7 +310,7 @@ on property:vendor.radio.atfwd.start=false
 
 on property:vold.decrypt=trigger_restart_framework
     restart vendor.camera-provider-2-4
-    restart vendor.audio-hal-2-0
+    restart vendor.audio-hal
 
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
@@ -399,17 +399,6 @@ service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqb
 
 on charger
     start qcom-post-boot
-
-service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
-    override
-    class hal
-    user audioserver
-    # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
-    group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct oem_2901 wakelock
-    capabilities BLOCK_SUSPEND SYS_NICE
-    ioprio rt 4
-    writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
-    onrestart restart audioserver
 
 service vendor.power_off_alarm /vendor/bin/power_off_alarm
     class core
