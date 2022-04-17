@@ -35,9 +35,29 @@
 
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
-char const *heapgrowthlimit;
-char const *heapminfree;
 
+char const *heaptargetutilization;
+char const *heapminfree;
+char const *heapmaxfree;
+
+void check_device()
+{
+    struct sysinfo sys;
+
+    sysinfo(&sys);
+
+    if (sys.totalram > 2048ull * 1024 * 1024) {
+        // from phone-xhdpi-4096-dalvik-heap.mk
+        heaptargetutilization = "0.6";
+        heapminfree = "8m";
+        heapmaxfree = "16m";
+    } else {
+        // from phone-xhdpi-2048-dalvik-heap.mk
+        heaptargetutilization = "0.75";
+        heapminfree = "512k";
+        heapmaxfree = "8m";
+   }
+}
 
 void property_override(char const prop[], char const value[], bool add = true)
 {
@@ -50,64 +70,14 @@ void property_override(char const prop[], char const value[], bool add = true)
     }
 }
 
-static void init_alarm_boot_properties()
-{
-    int boot_reason;
-    FILE *fp;
-
-    fp = fopen("/proc/sys/kernel/boot_reason", "r");
-    fscanf(fp, "%d", &boot_reason);
-    fclose(fp);
-
-    /*
-     * Setup ro.alarm_boot value to true when it is RTC triggered boot up
-     * For existing PMIC chips, the following mapping applies
-     * for the value of boot_reason:
-     *
-     * 0 -> unknown
-     * 1 -> hard reset
-     * 2 -> sudden momentary power loss (SMPL)
-     * 3 -> real time clock (RTC)
-     * 4 -> DC charger inserted
-     * 5 -> USB charger inserted
-     * 6 -> PON1 pin toggled (for secondary PMICs)
-     * 7 -> CBLPWR_N pin toggled (for external power supply)
-     * 8 -> KPDPWR_N pin toggled (power key pressed)
-     */
-     if (boot_reason == 3) {
-        property_override("ro.alarm_boot", "true");
-     } else {
-        property_override("ro.alarm_boot", "false");
-     }
-}
-
-void check_device()
-{
-    struct sysinfo sys;
-
-    sysinfo(&sys);
-
-    if (sys.totalram > 2048ull * 1024 * 1024) {
-        // from - Stock rom
-        heapgrowthlimit = "256m";
-        heapminfree = "4m";
-    } else {
-        // from - phone-xxhdpi-2048-dalvik-heap.mk
-        heapgrowthlimit = "192m";
-        heapminfree = "2m";
-   }
-}
-
-
 void vendor_load_properties()
 {
-
-    init_alarm_boot_properties();
     check_device();
-    property_override("dalvik.vm.heapstartsize", "16m");
-    property_override("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
+
+    property_override("dalvik.vm.heapstartsize", "8m");
+    property_override("dalvik.vm.heapgrowthlimit", "192m");
     property_override("dalvik.vm.heapsize", "512m");
-    property_override("dalvik.vm.heaptargetutilization", "0.75");
+    property_override("dalvik.vm.heaptargetutilization", heaptargetutilization);
     property_override("dalvik.vm.heapminfree", heapminfree);
-    property_override("dalvik.vm.heapmaxfree", "8m");
+    property_override("dalvik.vm.heapmaxfree", heapmaxfree);
 }

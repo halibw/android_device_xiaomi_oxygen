@@ -183,7 +183,6 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     libbacktrace-vendor \
-    fakelogprint \
     libshims_goodix
 
 # FM
