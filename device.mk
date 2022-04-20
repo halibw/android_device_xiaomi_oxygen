@@ -74,9 +74,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.print.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.print.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
 
-# Device Properties
--include $(LOCAL_PATH)/prop.mk
-
 # ANT
 PRODUCT_PACKAGES += \
     AntHalService \
