@@ -519,8 +519,8 @@ lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so
 lib64/libgoodixfingerprintd_binder.so:vendor/lib64/libgoodixfingerprintd_binder.so
 lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so:vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
 lib64/libvendor.goodix.hardware.fingerprint@1.0.so:vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
-lib/android.hardware.biometrics.fingerprint@2.1.so
-lib64/android.hardware.biometrics.fingerprint@2.1.so
+lib/android.hardware.biometrics.fingerprint@2.1.so:vendor/lib/android.hardware.biometrics.fingerprint@2.1.so
+lib64/android.hardware.biometrics.fingerprint@2.1.so:vendor/lib64/android.hardware.biometrics.fingerprint@2.1.so
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_oxygen
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_oxygen.rc
 

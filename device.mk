@@ -92,6 +92,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.soundtrigger@2.1-impl:32 \
     android.hardware.bluetooth.audio@2.1-impl:32 \
+    audio.a2dp.default \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
     audio.primary.msm8953:32 \
@@ -101,12 +102,7 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libqcompostprocbundle \
-    tinymix
-
-# A2DP
-PRODUCT_PACKAGES += \
-    audio.a2dp.default \
+    libqcompostprocbundle
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -145,7 +141,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor \
     libqomx_core \
-    camera.msm8953 \
     libmm-qcamera \
     libui_shim \
     libshims_camera \
