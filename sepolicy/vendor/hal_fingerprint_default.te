@@ -1,5 +1,3 @@
-typeattribute hal_fingerprint_default binder_in_vendor_violators;
-
 add_service(hal_fingerprint_default, gx_fpd_vndservice);
 # Allow Binder communication
 vndbinder_use(hal_fingerprint_default)
