@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The LineageOS Project
+ * Copyright (C) 2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,14 +24,17 @@
 
 #define LEDS            "/sys/class/leds/"
 
+#define BUTTON_LED      LEDS "button-backlight/"
 #define LCD_LED         LEDS "lcd-backlight/"
-#define WHITE_LED       LEDS "red/"
+#define RED_LED         LEDS "red/"
+#define GREEN_LED       LEDS "green/"
+#define BLUE_LED        LEDS "blue/"
 
 #define BLINK           "blink"
 #define BRIGHTNESS      "brightness"
 
 #define MAX_LED_BRIGHTNESS    255
-#define MAX_LCD_BRIGHTNESS    4095
+#define MAX_LCD_BRIGHTNESS    255
 
 namespace {
 /*
@@ -64,13 +67,11 @@ static uint32_t getBrightness(const LightState& state) {
     blue = state.color & 0xFF;
 
     /*
-     * Scale RGB brightness if Alpha brightness is not 0xFF.
+     * Scale RGB brightness using Alpha brightness.
      */
-    if (alpha != 0xFF) {
-        red = red * alpha / 0xFF;
-        green = green * alpha / 0xFF;
-        blue = blue * alpha / 0xFF;
-    }
+    red = red * alpha / 0xFF;
+    green = green * alpha / 0xFF;
+    blue = blue * alpha / 0xFF;
 
     return (77 * red + 150 * green + 29 * blue) >> 8;
 }
@@ -87,62 +88,145 @@ static inline uint32_t getScaledBrightness(const LightState& state, uint32_t max
     return scaleBrightness(getBrightness(state), maxBrightness);
 }
 
-static void handleBacklight(Type /* type */, const LightState& state) {
+static void handleBacklight(const LightState& state) {
     uint32_t brightness = getScaledBrightness(state, MAX_LCD_BRIGHTNESS);
     set(LCD_LED BRIGHTNESS, brightness);
 }
 
-static void setNotification(const LightState& state) {
+static void handleButtons(const LightState& state) {
+     uint32_t brightness = getScaledBrightness(state, MAX_LED_BRIGHTNESS);
+     set(BUTTON_LED BRIGHTNESS, brightness);
+}
 
-    /* Disable blinking */
-    set(WHITE_LED BLINK, 0);
+static void handleNotification(const LightState& state) {
+    int blink, onMs, offMs, red, green, blue;
+    uint32_t alpha;
 
-    if (state.flashMode == Flash::TIMED) {
+    // Extract brightness from AARRGGBB
+    alpha = (state.color >> 24) & 0xff;
+    red = (state.color >> 16) & 0xff;
+    green = (state.color >> 8) & 0xff;
+    blue = state.color & 0xff;
 
-        /* Enable blinking */
-        set(WHITE_LED BLINK, 1);
+    // Scale RGB brightness if Alpha brightness is not 0xFF
+    if (alpha != 0xff) {
+        red = (red * alpha) / 0xff;
+        green = (green * alpha) / 0xff;
+        blue = (blue * alpha) / 0xff;
+    }
+
+    switch (state.flashMode) {
+        case Flash::TIMED:
+            onMs = state.flashOnMs;
+            offMs = state.flashOffMs;
+            break;
+        case Flash::NONE:
+        default:
+            onMs = 0;
+            offMs = 0;
+            break;
+    }
+
+    if (onMs > 0 && offMs > 0) {
+        /*
+         * if ON time == OFF time
+         *   use blink mode 2
+         * else
+         *   use blink mode 1
+         */
+        if (onMs == offMs) {
+            blink = 2;
+        } else {
+            blink = 1;
+        }
     } else {
-        set(WHITE_LED BRIGHTNESS, getScaledBrightness(state, MAX_LED_BRIGHTNESS));
+        blink = 0;
+    }
+
+    /* Disable blinking. */
+    set(RED_LED BLINK, 0);
+    set(GREEN_LED BLINK, 0);
+    set(BLUE_LED BLINK, 0);
+
+    /* Enable blinking */
+    if (blink){
+        if (red)
+            set(RED_LED BLINK, blink);
+        if (green)
+            set(GREEN_LED BLINK, blink);
+        if (blue)
+            set(BLUE_LED BLINK, blink);
+    } else {
+        if (red == 0 && green == 0 && blue == 0) {
+            set(RED_LED BLINK, 0);
+            set(GREEN_LED BLINK, 0);
+            set(BLUE_LED BLINK, 0);
+        }
+        set(RED_LED BRIGHTNESS, red);
+        set(GREEN_LED BRIGHTNESS, green);
+        set(BLUE_LED BRIGHTNESS, blue);
     }
 }
 
-static inline bool isLit(const LightState& state) {
+static inline bool isStateLit(const LightState& state) {
     return state.color & 0x00ffffff;
 }
 
-/*
- * Keep sorted in the order of importance.
- */
-static const LightState offState = {};
-static std::vector<std::pair<Type, LightState>> notificationStates = {
-    { Type::ATTENTION, offState },
-    { Type::NOTIFICATIONS, offState },
-    { Type::BATTERY, offState },
-};
-
-static void handleNotification(Type type, const LightState& state) {
-    for(auto it : notificationStates) {
-        if (it.first == type) {
-            it.second = state;
-        }
-
-        if  (isLit(it.second)) {
-            setNotification(it.second);
-            return;
-        }
+static inline bool isStateEqual(const LightState& first, const LightState& second) {
+    if (first.color == second.color && first.flashMode == second.flashMode &&
+            first.flashOnMs == second.flashOnMs &&
+            first.flashOffMs == second.flashOffMs &&
+            first.brightnessMode == second.brightnessMode) {
+        return true;
     }
 
-    setNotification(offState);
+    return false;
 }
 
-static std::map<Type, std::function<void(Type type, const LightState&)>> lights = {
+/* Keep sorted in the order of importance. */
+static std::vector<LightBackend> backends = {
     { Type::ATTENTION, handleNotification },
     { Type::NOTIFICATIONS, handleNotification },
     { Type::BATTERY, handleNotification },
     { Type::BACKLIGHT, handleBacklight },
+    { Type::BUTTONS, handleButtons },
 };
 
-} // anonymous namespace
+static LightStateHandler findHandler(Type type) {
+    for (const LightBackend& backend : backends) {
+        if (backend.type == type) {
+            return backend.handler;
+        }
+    }
+
+    return nullptr;
+}
+
+static LightState findLitState(LightStateHandler handler) {
+    LightState emptyState;
+
+    for (const LightBackend& backend : backends) {
+        if (backend.handler == handler) {
+            if (isStateLit(backend.state)) {
+                return backend.state;
+            }
+
+            emptyState = backend.state;
+        }
+    }
+
+    return emptyState;
+}
+
+static void updateState(Type type, const LightState& state) {
+    for (LightBackend& backend : backends) {
+        if (backend.type == type) {
+            backend.state = state;
+        }
+    }
+}
+
+}  // anonymous namespace
 
 namespace android {
 namespace hardware {
@@ -151,18 +235,29 @@ namespace V2_0 {
 namespace implementation {
 
 Return<Status> Light::setLight(Type type, const LightState& state) {
-    auto it = lights.find(type);
+    /* Lock global mutex until light state is updated. */
+    std::lock_guard<std::mutex> lock(globalLock);
 
-    if (it == lights.end()) {
+    LightStateHandler handler = findHandler(type);
+    if (!handler) {
+        /* If no handler has been found, then the type is not supported. */
         return Status::LIGHT_NOT_SUPPORTED;
     }
 
-    /*
-     * Lock global mutex until light state is updated.
-     */
-    std::lock_guard<std::mutex> lock(globalLock);
+    /* Find the old state of the current handler. */
+    LightState oldState = findLitState(handler);
 
-    it->second(type, state);
+    /* Update the cached state value for the current type. */
+    updateState(type, state);
+
+    /* Find the new state of the current handler. */
+    LightState newState = findLitState(handler);
+
+    if (isStateEqual(oldState, newState)) {
+        return Status::SUCCESS;
+    }
+
+    handler(newState);
 
     return Status::SUCCESS;
 }
@@ -170,8 +265,8 @@ Return<Status> Light::setLight(Type type, const LightState& state) {
 Return<void> Light::getSupportedTypes(getSupportedTypes_cb _hidl_cb) {
     std::vector<Type> types;
 
-    for (auto const& light : lights) {
-        types.push_back(light.first);
+    for (const LightBackend& backend : backends) {
+        types.push_back(backend.type);
     }
 
     _hidl_cb(types);
