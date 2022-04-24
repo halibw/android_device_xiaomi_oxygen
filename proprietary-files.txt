@@ -922,12 +922,10 @@ product/lib64/libimsmedia_jni.so|e50217e9eb8878136614db66313508ac970a2b42
 
 # Sensors - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 vendor/bin/sensors.qti|726b3597792d1c714a47549d4d27599672795000
-vendor/lib/hw/activity_recognition.msm8953.so|f9247646a5e2b28473753da06f832ae5f702f7c4
 vendor/lib/libsensor1.so|48727a05c1b91051d5ec53860124f1f1c0d8ca53
 vendor/lib/libsensor_reg.so|8ae3b9d1a54feb9f0af55a8fff50410f53660318
 vendor/lib/libsensor_user_cal.so|df85342393b56994b4f4b4c33aad97928bc6f023
 vendor/lib/sensors.ssc.so|c4b5ee167e5b06fde7143007b87ea5dbe90b0565
-vendor/lib64/hw/activity_recognition.msm8953.so|5531da4cf2451f899602fb7e3f0e80775bb7e5ff
 vendor/lib64/libsensor1.so|48dedf69781fb146fc35e622f1c80a635530da22
 vendor/lib64/libsensor_reg.so|74659858f5abcfa0d8c826af2e2e46addc9f5f87
 vendor/lib64/libsensor_user_cal.so|92de798c64f9e23ca1069a5a4bec5895fafa9a22
