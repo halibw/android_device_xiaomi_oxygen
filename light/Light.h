@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,28 +20,17 @@
 #include <hardware/lights.h>
 #include <hidl/Status.h>
 #include <map>
-#include <mutex>
 #include <vector>
+#include <mutex>
 
 using ::android::hardware::Return;
 using ::android::hardware::Void;
-using ::android::hardware::light::V2_0::Flash;
+using ::android::hardware::hidl_vec;
 using ::android::hardware::light::V2_0::ILight;
+using ::android::hardware::light::V2_0::Flash;
 using ::android::hardware::light::V2_0::LightState;
 using ::android::hardware::light::V2_0::Status;
 using ::android::hardware::light::V2_0::Type;
-
-typedef void (*LightStateHandler)(const LightState&);
-
-struct LightBackend {
-    Type type;
-    LightState state;
-    LightStateHandler handler;
-
-    LightBackend(Type type, LightStateHandler handler) : type(type), handler(handler) {
-        this->state.color = 0xff000000;
-    }
-};
 
 namespace android {
 namespace hardware {
