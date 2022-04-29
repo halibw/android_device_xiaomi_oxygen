@@ -498,6 +498,7 @@ vendor/lib64/libssd.so|6dcbfc531e69a3c7eeaf21e85ac0202b8fa82d55
 vendor/lib64/libStDrvInt.so|7c921ee6db896233f9ea03f1fb3a9b7d9434e7dc
 
 # DRM - from Redmi/lmi/lmi:11/RKQ1.200826.002/20.10.19:user/release-keys
+vendor/lib64/libops.so|b2223e64db9d8f84262da7a8621013d3c63b6c98
 vendor/lib64/libspl.so|0fa8c0711f72fc8a914dce044cf8dddd79ee62e1
 
 # DRM - Widevine - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
