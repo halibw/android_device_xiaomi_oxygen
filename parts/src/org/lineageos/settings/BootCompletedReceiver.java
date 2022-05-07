@@ -21,14 +21,16 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.provider.Settings;
 
 import org.lineageos.settings.dirac.DiracUtils;
 import org.lineageos.settings.doze.DozeUtils;
+import org.lineageos.settings.preferences.FileUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
     private static final boolean DEBUG = false;
-    private static final String TAG = "XiaomiParts";
+     private static final String TAG = "XiaomiParts";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
@@ -37,5 +39,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
             DozeUtils.startService(context);
         }
         new DiracUtils(context).onBootCompleted();
+
     }
 }

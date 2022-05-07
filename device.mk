@@ -184,8 +184,8 @@ PRODUCT_PACKAGES += \
     vendor.display.config@2.0.vendor
 
 # Device-specific settings
-#PRODUCT_PACKAGES += \
-#    XiaomiParts
+PRODUCT_PACKAGES += \
+    XiaomiParts
 
 # DRM
 PRODUCT_PACKAGES += \
