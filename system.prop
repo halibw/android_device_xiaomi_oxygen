@@ -58,6 +58,9 @@ vendor.hw.fm.init=0
 # fastbootd
 ro.fastbootd.available=true
 
+# hwui properties
+debug.hwui.skia_atrace_enabled=false
+
 # Media
 av.debug.disable.pers.cache=1
 media.aac_51_output_enabled=true
