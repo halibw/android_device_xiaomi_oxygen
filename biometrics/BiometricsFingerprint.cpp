@@ -299,7 +299,7 @@ fingerprint_device_t* BiometricsFingerprint::openHal() {
         }
         // Cleanup FPC
         ALOGI("Clean up FPC.");
-        if (!android::base::WriteStringToFile("reset", "/sys/devices/soc/soc:fpc1020/hw_reset", true)) {
+        if (!android::base::WriteStringToFile("reset", "/sys/devices/platform/soc/soc:fingerprint_fpc/hw_reset", true)) {
             ALOGE("Failed to cleanup FPC.");
         }
         // Goodix
