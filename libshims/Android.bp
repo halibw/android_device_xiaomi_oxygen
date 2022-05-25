@@ -6,7 +6,7 @@ cc_library_shared {
 }
 
 cc_library_shared {
-    name: "libshims_camera",
+    name: "libshims_android",
     srcs: ["CameraStats.cpp"],
     defaults: ["hidl_defaults"],
     compile_multilib: "32",
@@ -22,7 +22,7 @@ cc_library_shared {
 }
 
 cc_library_shared {
-    name: "libui_shim",
+    name: "libshims_ui",
     srcs: ["GraphicBuffer.cpp"],
     shared_libs: ["libui"],
     compile_multilib: "32",

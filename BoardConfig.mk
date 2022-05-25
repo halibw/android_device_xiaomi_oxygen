@@ -166,9 +166,7 @@ SELINUX_IGNORE_NEVERALLOWS := true
 
 # Shim
 TARGET_LD_SHIM_LIBS := \
-    /vendor/lib64/libgoodixfingerprintd_binder.so|libshims_goodix.so \
-    /vendor/lib/libmmcamera2_stats_modules.so|libshims_camera.so \
-    /vendor/lib/libmmcamera_ppeiscore.so|libui_shim.so
+    /vendor/lib64/libgoodixfingerprintd_binder.so|libshims_goodix.so
 
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true

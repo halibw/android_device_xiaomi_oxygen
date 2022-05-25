@@ -148,9 +148,9 @@ PRODUCT_PACKAGES += \
     libqomx_core \
     camera.msm8953 \
     libmm-qcamera \
-    libui_shim \
-    libshims_camera \
     libgui_vendor:32 \
+    libshims_android \
+    libshims_ui \
     Snap
 
 # Cgroup and task_profiles
