@@ -399,6 +399,11 @@ vendor/lib64/vendor.qti.latency@2.0.so|909bc76c76252f0824474f1b6c52dac7142c9c55
 vendor/etc/qdcm_calib_data_auo_r61322_1080p_video_mode_dsi_panel.xml
 vendor/etc/qdcm_calib_data_tianma_r63350_1080p_video_mode_dsi_panel.xml
 
+# Dirac
+vendor/etc/diracmobile.config
+vendor/lib/libDiracAPI_SHARED.so
+vendor/lib/soundfx/libdirac.so
+
 # DPM - from LA.UM.9.6.3.r1-04400-89xx.0
 system_ext/bin/dpmd|8a582ec5f23d8f43922566a12840da8ced8e6ab7
 system_ext/etc/dpm/dpm.conf|95e27da8c989e96c6faea6f0697bce11955b62a5
