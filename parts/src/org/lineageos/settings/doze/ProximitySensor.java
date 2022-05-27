@@ -17,7 +17,6 @@
 
 package org.lineageos.settings.doze;
 
-import java.lang.System;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -73,10 +72,6 @@ public class ProximitySensor implements SensorEventListener {
     }
 
     private boolean shouldPulse(long timestamp) {
-	if (timestamp > System.nanoTime()) {
-                return false;
-            }
-
         long delta = timestamp - mInPocketTime;
 
         if (DozeUtils.isHandwaveGestureEnabled(mContext) &&

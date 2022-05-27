@@ -57,8 +57,8 @@
 /system/bin/clean_scratch_files                                      u:object_r:clean_scratch_files_exec:s0
 
 # Torch
-/sys/devices/soc/qpnp-flash-led-25/leds/led:torch_0/max_brightness          u:object_r:sysfs_torch:s0
-/sys/devices/soc/qpnp-flash-led-25/leds/led:torch_1/max_brightness          u:object_r:sysfs_torch:s0
+/sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/led:torch_0/max_brightness          u:object_r:sysfs_torch:s0
+/sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/led:torch_1/max_brightness          u:object_r:sysfs_torch:s0
 
  # Vibrator
 /sys/class/timed_output/vibrator/vtg_level            u:object_r:sysfs_vibrator:s0
