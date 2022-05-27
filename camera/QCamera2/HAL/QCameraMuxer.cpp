@@ -1542,6 +1542,31 @@ int QCameraMuxer::send_command(struct camera_device * device,
     }
 
         switch (cmd) {
+#ifndef VANILLA_HAL
+        case CAMERA_CMD_LONGSHOT_ON:
+            for (uint32_t i = 0; i < cam->numCameras; i++) {
+                pCam = gMuxer->getPhysicalCamera(cam, i);
+                CHECK_CAMERA_ERROR(pCam);
+
+                QCamera2HardwareInterface *hwi = pCam->hwi;
+                CHECK_HWI_ERROR(hwi);
+
+                rc = QCamera2HardwareInterface::send_command_restart(pCam->dev,
+                        cmd, arg1, arg2);
+                if (rc != NO_ERROR) {
+                    LOGE("Error sending command restart !! ");
+                    return rc;
+                }
+            }
+        break;
+        case CAMERA_CMD_LONGSHOT_OFF:
+            gMuxer->m_ComposeMpoTh.sendCmd(CAMERA_CMD_TYPE_STOP_DATA_PROC,
+                    FALSE, FALSE);
+            // flush Jpeg Queues
+            gMuxer->m_MainJpegQ.flush();
+            gMuxer->m_AuxJpegQ.flush();
+        break;
+#endif
         default:
             // do nothing
             rc = NO_ERROR;

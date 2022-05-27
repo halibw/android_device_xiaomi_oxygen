@@ -1526,6 +1526,26 @@ int32_t QCameraStateMachine::procEvtPreviewingState(qcamera_sm_evt_enum_t evt,
             m_bPreviewDelayedRestart =
                     (QCAMERA_SM_EVT_DELAYED_RESTART == cmd_payload->arg2);
 
+#ifndef VANILLA_HAL
+            if ((CAMERA_CMD_LONGSHOT_ON == cmd_payload->cmd) &&
+                    (m_bPreviewNeedsRestart)) {
+                m_parent->stopPreview();
+                // Clear memory pools
+                m_parent->m_memoryPool.clear();
+
+                if (!m_bPreviewDelayedRestart) {
+                    // start preview again
+                    rc = m_parent->preparePreview();
+                    if (rc == NO_ERROR) {
+                        applyDelayedMsgs();
+                        rc = m_parent->startPreview();
+                        if (rc != NO_ERROR) {
+                            m_parent->unpreparePreview();
+                        }
+                    }
+                }
+            }
+#endif
             result.status = rc;
             result.request_api = evt;
             result.result_type = QCAMERA_API_RESULT_TYPE_DEF;
@@ -1534,6 +1554,22 @@ int32_t QCameraStateMachine::procEvtPreviewingState(qcamera_sm_evt_enum_t evt,
         break;
     case QCAMERA_SM_EVT_SEND_COMMAND_RESTART:
         {
+#ifndef VANILLA_HAL
+            qcamera_sm_evt_command_payload_t *cmd_payload =
+                    (qcamera_sm_evt_command_payload_t *)payload;
+            if ((CAMERA_CMD_LONGSHOT_ON == cmd_payload->cmd) &&
+                    (m_bPreviewNeedsRestart) &&
+                    (m_bPreviewDelayedRestart)) {
+                // start preview again
+                rc = m_parent->preparePreview();
+                if (rc == NO_ERROR) {
+                    rc = m_parent->startPreview();
+                    if (rc != NO_ERROR) {
+                        m_parent->unpreparePreview();
+                    }
+                }
+            }
+#endif
             result.status = rc;
             result.request_api = evt;
             result.result_type = QCAMERA_API_RESULT_TYPE_DEF;
@@ -2087,6 +2123,12 @@ int32_t QCameraStateMachine::procEvtPicTakingState(qcamera_sm_evt_enum_t evt,
             rc = m_parent->sendCommand(cmd_payload->cmd,
                                        cmd_payload->arg1,
                                        cmd_payload->arg2);
+#ifndef VANILLA_HAL
+            if ( CAMERA_CMD_LONGSHOT_OFF == cmd_payload->cmd ) {
+                // move state to previewing state
+                m_state = QCAMERA_SM_STATE_PREVIEWING;
+            }
+#endif
             result.status = rc;
             result.request_api = evt;
             result.result_type = QCAMERA_API_RESULT_TYPE_DEF;
@@ -3330,6 +3372,12 @@ int32_t QCameraStateMachine::procEvtPreviewPicTakingState(qcamera_sm_evt_enum_t 
             rc = m_parent->sendCommand(cmd_payload->cmd,
                                        cmd_payload->arg1,
                                        cmd_payload->arg2);
+#ifndef VANILLA_HAL
+            if ( CAMERA_CMD_LONGSHOT_OFF == cmd_payload->cmd ) {
+                // move state to previewing state
+                m_state = QCAMERA_SM_STATE_PREVIEWING;
+            }
+#endif
             result.status = rc;
             result.request_api = evt;
             result.result_type = QCAMERA_API_RESULT_TYPE_DEF;

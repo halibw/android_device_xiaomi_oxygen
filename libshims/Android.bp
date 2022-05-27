@@ -5,12 +5,14 @@ cc_library_shared {
     vendor: true
 }
 
+// libandroid
 cc_library_shared {
     name: "libshims_android",
-    srcs: ["CameraStats.cpp"],
+    proprietary: true,
     defaults: ["hidl_defaults"],
-    compile_multilib: "32",
-    vendor: true,
+    srcs: [
+        "libshims_android.cpp",
+    ],
     cflags: [
         "-Werror",
         "-Wextra",
@@ -21,10 +23,30 @@ cc_library_shared {
     ],
 }
 
+// libgui
+cc_library_shared {
+    name: "libshims_gui",
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "libshims_gui.cpp",
+    ],
+    cflags: [
+        "-Werror",
+        "-Wextra",
+        "-Wall",
+    ],
+    shared_libs: [
+        "libgui_vendor",
+    ],
+}
+
+// libshim_camera
 cc_library_shared {
     name: "libshims_ui",
-    srcs: ["GraphicBuffer.cpp"],
+    srcs: ["libshims_ui.cpp"],
     shared_libs: ["libui"],
+    vendor: true,
     compile_multilib: "32",
-    vendor: true
 }
+

@@ -28,6 +28,10 @@ LOCAL_SRC_FILES += \
 
 LOCAL_CFLAGS := -Wall -Wextra -Werror -Wno-unused-parameter -Wno-unused-variable -Wno-error
 
+ifeq (1,$(filter 1,$(shell echo "$$(( $(PLATFORM_SDK_VERSION) >= 31 ))" )))
+LOCAL_CFLAGS += -Wno-compound-token-split-by-macro
+endif
+
 #HAL 1.0 source
 
 ifeq ($(TARGET_SUPPORT_HAL1),false)

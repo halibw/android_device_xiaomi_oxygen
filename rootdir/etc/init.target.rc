@@ -52,6 +52,9 @@ on early-boot
     chown system system /mnt/vendor/persist/sensors/registry/config
     chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
 
+#Create folder for mm-qcamera-daemon
+    mkdir /data/vendor/camera 0770 camera camera
+
 on init
     write /dev/stune/foreground/schedtune.sched_boost_no_override 1
     write /dev/stune/top-app/schedtune.sched_boost_no_override 1
@@ -62,12 +65,13 @@ on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
 # Add a cpuset for the camera daemon
-    mkdir /dev/cpuset/camera-daemon 0750 cameraserver cameraserver
-    write /dev/cpuset/camera-daemon/cpus 0-7
-    write /dev/cpuset/camera-daemon/mems 0
-    chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
-    chmod 0660 /dev/cpuset/camera-daemon/tasks
-    chown system system /sys/kernel/hbtp/display_pwr
+   mkdir /dev/cpuset/camera-daemon
+   write /dev/cpuset/camera-daemon/cpus 0-3
+   write /dev/cpuset/camera-daemon/mems 0
+   chown cameraserver cameraserver /dev/cpuset/camera-daemon
+   chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
+   chmod 0660 /dev/cpuset/camera-daemon/tasks    
+   chown system system /sys/kernel/hbtp/display_pwr
 
 on post-fs
     # set RLIMIT_MEMLOCK to 64MB
@@ -76,19 +80,14 @@ on post-fs
     wait_for_prop vendor.sys.listeners.registered true
     write /dev/ipa 1
 
-on post-fs-data
-#Create folder for mm-qcamera-daemon
-mkdir /data/vendor/qcam/ 0770 camera camera
-
 on late-fs
     mount_all /vendor/etc/fstab.qcom --late
 
 #start camera server as daemon
-service vendor.qcamerasvr /vendor/bin/mm-qcamera-daemon
+service vendor.qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
-    writepid /dev/cpuset/system-background/tasks
 
 #Start up peripheral manager
 service vendor.per_mgr /vendor/bin/pm-service

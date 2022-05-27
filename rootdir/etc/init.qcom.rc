@@ -166,6 +166,10 @@ on post-fs-data
     mkdir /data/vendor/bluetooth 0770 bluetooth bluetooth
     mkdir /data/vendor/ramdump/bluetooth 0770 bluetooth bluetooth
 
+    #Create folder of camera
+    mkdir /data/vendor/camera 0770 camera camera
+    mkdir /data/vendor/qcam 0770 camera camera
+
     # Create directory for tftp
     mkdir /data/vendor/tombstones 0771 system system
     mkdir /data/vendor/tombstones/rfs 0771 system system
@@ -252,6 +256,11 @@ on post-fs-data
     chown radio radio /data/vendor/radio/db_check_done
     chmod 0660 /data/vendor/radio/db_check_done
 
+# Restart camera provider after vendor.qcamerasvr is running
+on property:init.svc.vendor.qcamerasvr=running
+    exec /bin/sleep 1s
+    restart vendor.camera-provider-2-4
+
 on property:ro.vendor.iocgrp.config=1
     mkdir /dev/blkio
     mount cgroup none /dev/blkio blkio
@@ -286,7 +295,6 @@ on property:persist.sys.radio.mobile_data_swap=1
     restart vendor.qcrild2
 
 on property:vold.decrypt=trigger_restart_framework
-    restart vendor.camera-provider-2-4
     restart vendor.audio-hal
     restart vendor.qcrild
     exec /bin/sleep 2

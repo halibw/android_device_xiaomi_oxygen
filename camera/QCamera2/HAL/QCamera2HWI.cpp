@@ -5711,6 +5711,83 @@ int QCamera2HardwareInterface::sendCommand(int32_t command,
     int rc = NO_ERROR;
 
     switch (command) {
+#ifndef VANILLA_HAL
+    case CAMERA_CMD_LONGSHOT_ON:
+        m_perfLock.lock_acq();
+        arg1 = arg2 = 0;
+        // Longshot can only be enabled when image capture
+        // is not active.
+        if ( !m_stateMachine.isCaptureRunning() ) {
+            LOGI("Longshot Enabled");
+            mLongshotEnabled = true;
+            rc = mParameters.setLongshotEnable(mLongshotEnabled);
+
+            // Due to recent buffer count optimizations
+            // ZSL might run with considerably less buffers
+            // when not in longshot mode. Preview needs to
+            // restart in this case.
+            if (isZSLMode() && m_stateMachine.isPreviewRunning()) {
+                QCameraChannel *pChannel = NULL;
+                QCameraStream *pSnapStream = NULL;
+                pChannel = m_channels[QCAMERA_CH_TYPE_ZSL];
+                if (NULL != pChannel) {
+                    QCameraStream *pStream = NULL;
+                    for (uint32_t i = 0; i < pChannel->getNumOfStreams(); i++) {
+                        pStream = pChannel->getStreamByIndex(i);
+                        if (pStream != NULL) {
+                            if (pStream->isTypeOf(CAM_STREAM_TYPE_SNAPSHOT)) {
+                                pSnapStream = pStream;
+                                break;
+                            }
+                        }
+                    }
+                    if (NULL != pSnapStream) {
+                        uint8_t required = 0;
+                        required = getBufNumRequired(CAM_STREAM_TYPE_SNAPSHOT);
+                        if (pSnapStream->getBufferCount() < required) {
+                            // We restart here, to reset the FPS and no
+                            // of buffers as per the requirement of longshot usecase.
+                            arg1 = QCAMERA_SM_EVT_RESTART_PERVIEW;
+                            if (getRelatedCamSyncInfo()->sync_control ==
+                                    CAM_SYNC_RELATED_SENSORS_ON) {
+                                arg2 = QCAMERA_SM_EVT_DELAYED_RESTART;
+                            }
+                        }
+                    }
+                }
+            }
+            //
+            mPrepSnapRun = false;
+            mCACDoneReceived = FALSE;
+        } else {
+            rc = NO_INIT;
+        }
+        break;
+    case CAMERA_CMD_LONGSHOT_OFF:
+        m_perfLock.lock_rel();
+        if ( mLongshotEnabled && m_stateMachine.isCaptureRunning() ) {
+            cancelPicture();
+            processEvt(QCAMERA_SM_EVT_SNAPSHOT_DONE, NULL);
+            QCameraChannel *pZSLChannel = m_channels[QCAMERA_CH_TYPE_ZSL];
+            if (isZSLMode() && (NULL != pZSLChannel) && mPrepSnapRun) {
+                mCameraHandle->ops->stop_zsl_snapshot(
+                        mCameraHandle->camera_handle,
+                        pZSLChannel->getMyHandle());
+            }
+        }
+        mPrepSnapRun = false;
+        LOGI("Longshot Disabled");
+        mLongshotEnabled = false;
+        rc = mParameters.setLongshotEnable(mLongshotEnabled);
+        mCACDoneReceived = FALSE;
+        break;
+    case CAMERA_CMD_HISTOGRAM_ON:
+    case CAMERA_CMD_HISTOGRAM_OFF:
+        rc = setHistogram(command == CAMERA_CMD_HISTOGRAM_ON? true : false);
+        LOGH("Histogram -> %s",
+              mParameters.isHistogramEnabled() ? "Enabled" : "Disabled");
+        break;
+#endif
     case CAMERA_CMD_START_FACE_DETECTION:
     case CAMERA_CMD_STOP_FACE_DETECTION:
         mParameters.setFaceDetectionOption(command == CAMERA_CMD_START_FACE_DETECTION? true : false);
@@ -5718,6 +5795,9 @@ int QCamera2HardwareInterface::sendCommand(int32_t command,
         LOGH("FaceDetection -> %s",
               mParameters.isFaceDetectionEnabled() ? "Enabled" : "Disabled");
         break;
+#ifndef VANILLA_HAL
+    case CAMERA_CMD_HISTOGRAM_SEND_DATA:
+#endif
     default:
         rc = NO_ERROR;
         break;
@@ -6402,6 +6482,61 @@ int32_t QCamera2HardwareInterface::processHDRData(
 {
     int rc = NO_ERROR;
 
+#ifndef VANILLA_HAL
+    if (hdr_scene.is_hdr_scene &&
+      (hdr_scene.hdr_confidence > HDR_CONFIDENCE_THRESHOLD) &&
+      mParameters.isAutoHDREnabled()) {
+        m_HDRSceneEnabled = true;
+    } else {
+        m_HDRSceneEnabled = false;
+    }
+    mParameters.setHDRSceneEnable(m_HDRSceneEnabled);
+
+    if ( msgTypeEnabled(CAMERA_MSG_META_DATA) ) {
+
+        size_t data_len = sizeof(int);
+        size_t buffer_len = 1 *sizeof(int)       //meta type
+                          + 1 *sizeof(int)       //data len
+                          + 1 *sizeof(int);      //data
+        camera_memory_t *hdrBuffer = mGetMemory(-1,
+                                                 buffer_len,
+                                                 1,
+                                                 mCallbackCookie);
+        if ( NULL == hdrBuffer ) {
+            LOGE("Not enough memory for auto HDR data");
+            return NO_MEMORY;
+        }
+
+        int *pHDRData = (int *)hdrBuffer->data;
+        if (pHDRData == NULL) {
+            LOGE("memory data ptr is NULL");
+            return UNKNOWN_ERROR;
+        }
+
+        pHDRData[0] = CAMERA_META_DATA_HDR;
+        pHDRData[1] = (int)data_len;
+        pHDRData[2] = m_HDRSceneEnabled;
+
+        qcamera_callback_argm_t cbArg;
+        memset(&cbArg, 0, sizeof(qcamera_callback_argm_t));
+        cbArg.cb_type = QCAMERA_DATA_CALLBACK;
+        cbArg.msg_type = CAMERA_MSG_META_DATA;
+        cbArg.data = hdrBuffer;
+        cbArg.user_data = hdrBuffer;
+        cbArg.cookie = this;
+        cbArg.release_cb = releaseCameraMemory;
+        rc = m_cbNotifier.notifyCallback(cbArg);
+        if (rc != NO_ERROR) {
+            LOGE("fail sending auto HDR notification");
+            hdrBuffer->release(hdrBuffer);
+        }
+    }
+
+    LOGH("hdr_scene_data: processHDRData: %d %f",
+          hdr_scene.is_hdr_scene,
+          hdr_scene.hdr_confidence);
+
+#endif
   return rc;
 }
 
@@ -6470,6 +6605,44 @@ int32_t QCamera2HardwareInterface::processASDUpdate(
         __unused cam_asd_decision_t asd_decision)
 {
 
+#ifndef VANILLA_HAL
+    if ( msgTypeEnabled(CAMERA_MSG_META_DATA) ) {
+        size_t data_len = sizeof(cam_auto_scene_t);
+        size_t buffer_len = 1 *sizeof(int)       //meta type
+                + 1 *sizeof(int)       //data len
+                + data_len;            //data
+        camera_memory_t *asdBuffer = mGetMemory(-1,
+                buffer_len, 1, mCallbackCookie);
+        if ( NULL == asdBuffer ) {
+            LOGE("Not enough memory for histogram data");
+            return NO_MEMORY;
+        }
+
+        int *pASDData = (int *)asdBuffer->data;
+        if (pASDData == NULL) {
+            LOGE("memory data ptr is NULL");
+            return UNKNOWN_ERROR;
+        }
+
+        pASDData[0] = CAMERA_META_DATA_ASD;
+        pASDData[1] = (int)data_len;
+        pASDData[2] = asd_decision.detected_scene;
+
+        qcamera_callback_argm_t cbArg;
+        memset(&cbArg, 0, sizeof(qcamera_callback_argm_t));
+        cbArg.cb_type = QCAMERA_DATA_CALLBACK;
+        cbArg.msg_type = CAMERA_MSG_META_DATA;
+        cbArg.data = asdBuffer;
+        cbArg.user_data = asdBuffer;
+        cbArg.cookie = this;
+        cbArg.release_cb = releaseCameraMemory;
+        int32_t rc = m_cbNotifier.notifyCallback(cbArg);
+        if (rc != NO_ERROR) {
+            LOGE("fail sending notification");
+            asdBuffer->release(asdBuffer);
+        }
+    }
+#endif
     return NO_ERROR;
 }
 
@@ -8067,6 +8240,19 @@ int32_t QCamera2HardwareInterface::preparePreview()
         bool recordingHint = mParameters.getRecordingHintValue();
         if(!isRdiMode() && recordingHint) {
             //stop face detection,longshot,etc if turned ON in Camera mode
+#ifndef VANILLA_HAL
+            int32_t arg; //dummy arg
+            if (isLongshotEnabled()) {
+                sendCommand(CAMERA_CMD_LONGSHOT_OFF, arg, arg);
+            }
+            if (mParameters.isFaceDetectionEnabled()
+                    && (!mParameters.fdModeInVideo())) {
+                sendCommand(CAMERA_CMD_STOP_FACE_DETECTION, arg, arg);
+            }
+            if (mParameters.isHistogramEnabled()) {
+                sendCommand(CAMERA_CMD_HISTOGRAM_OFF, arg, arg);
+            }
+#endif
             //Don't create snapshot channel for liveshot, if low power mode is set.
             //Use video stream instead.
             if (!isLowPowerMode()) {
@@ -8229,6 +8415,9 @@ int32_t QCamera2HardwareInterface::processFaceDetectionResult(cam_faces_data_t *
     if ((NULL == mDataCb) ||
         (fd_type == QCAMERA_FD_PREVIEW && !msgTypeEnabled(CAMERA_MSG_PREVIEW_METADATA)) ||
         (!needPreviewFDCallback(detect_data->num_faces_detected))
+#ifndef VANILLA_HAL
+        || (fd_type == QCAMERA_FD_SNAPSHOT && !msgTypeEnabled(CAMERA_MSG_META_DATA))
+#endif
         ) {
         LOGH("metadata msgtype not enabled, no ops here");
         return NO_ERROR;
@@ -8256,6 +8445,17 @@ int32_t QCamera2HardwareInterface::processFaceDetectionResult(cam_faces_data_t *
         faceResultSize = sizeof(camera_frame_metadata_t);
         faceResultSize += sizeof(camera_face_t) * MAX_ROI;
     }else if(fd_type == QCAMERA_FD_SNAPSHOT){
+#ifndef VANILLA_HAL
+        // fd for snapshot frames
+        //check if face is detected in this frame
+        if(detect_data->num_faces_detected > 0){
+            data_len = sizeof(camera_frame_metadata_t) +
+                    sizeof(camera_face_t) * detect_data->num_faces_detected;
+        }else{
+            //no face
+            data_len = 0;
+        }
+#endif
         faceResultSize = 1 *sizeof(int)    //meta data type
                        + 1 *sizeof(int)    // meta data len
                        + data_len;         //data
@@ -8277,6 +8477,30 @@ int32_t QCamera2HardwareInterface::processFaceDetectionResult(cam_faces_data_t *
         faceData = pFaceResult;
         mNumPreviewFaces = detect_data->num_faces_detected;
     }else if(fd_type == QCAMERA_FD_SNAPSHOT){
+#ifndef VANILLA_HAL
+        //need fill meta type and meta data len first
+        int *data_header = (int* )pFaceResult;
+        data_header[0] = CAMERA_META_DATA_FD;
+        data_header[1] = (int)data_len;
+
+        if(data_len <= 0){
+            //if face is not valid or do not have face, return
+            qcamera_callback_argm_t cbArg;
+            memset(&cbArg, 0, sizeof(qcamera_callback_argm_t));
+            cbArg.cb_type = QCAMERA_DATA_CALLBACK;
+            cbArg.msg_type = CAMERA_MSG_META_DATA;
+            cbArg.data = faceResultBuffer;
+            cbArg.user_data = faceResultBuffer;
+            cbArg.cookie = this;
+            cbArg.release_cb = releaseCameraMemory;
+            int32_t rc = m_cbNotifier.notifyCallback(cbArg);
+            if (rc != NO_ERROR) {
+                LOGE("fail sending notification");
+                faceResultBuffer->release(faceResultBuffer);
+            }
+            return rc;
+        }
+#endif
         faceData = pFaceResult + 2 *sizeof(int); //skip two int length
     }
 
@@ -8348,6 +8572,35 @@ int32_t QCamera2HardwareInterface::processFaceDetectionResult(cam_faces_data_t *
                 faces[i].mouth[1] = -2000;
             }
 
+#ifndef VANILLA_HAL
+#ifdef TARGET_TS_MAKEUP
+            mFaceRect.left = detect_data->faces[i].face_boundary.left;
+            mFaceRect.top = detect_data->faces[i].face_boundary.top;
+            mFaceRect.right = detect_data->faces[i].face_boundary.width+mFaceRect.left;
+            mFaceRect.bottom = detect_data->faces[i].face_boundary.height+mFaceRect.top;
+#endif
+            if (faces_data->smile_valid) {
+                faces[i].smile_degree = faces_data->smile_data.smile[i].smile_degree;
+                faces[i].smile_score = faces_data->smile_data.smile[i].smile_confidence;
+            }
+            if (faces_data->blink_valid) {
+                faces[i].blink_detected = faces_data->blink_data.blink[i].blink_detected;
+                faces[i].leye_blink = faces_data->blink_data.blink[i].left_blink;
+                faces[i].reye_blink = faces_data->blink_data.blink[i].right_blink;
+            }
+            if (faces_data->recog_valid) {
+                faces[i].face_recognised = faces_data->recog_data.face_rec[i].face_recognised;
+            }
+            if (faces_data->gaze_valid) {
+                faces[i].gaze_angle = faces_data->gaze_data.gaze[i].gaze_angle;
+                faces[i].updown_dir = faces_data->gaze_data.gaze[i].updown_dir;
+                faces[i].leftright_dir = faces_data->gaze_data.gaze[i].leftright_dir;
+                faces[i].roll_dir = faces_data->gaze_data.gaze[i].roll_dir;
+                faces[i].left_right_gaze = faces_data->gaze_data.gaze[i].left_right_gaze;
+                faces[i].top_bottom_gaze = faces_data->gaze_data.gaze[i].top_bottom_gaze;
+            }
+#endif
+
         }
     }
     else{
@@ -8361,6 +8614,11 @@ int32_t QCamera2HardwareInterface::processFaceDetectionResult(cam_faces_data_t *
     if(fd_type == QCAMERA_FD_PREVIEW){
         cbArg.msg_type = CAMERA_MSG_PREVIEW_METADATA;
     }
+#ifndef VANILLA_HAL
+    else if(fd_type == QCAMERA_FD_SNAPSHOT){
+        cbArg.msg_type = CAMERA_MSG_META_DATA;
+    }
+#endif
     cbArg.data = faceResultBuffer;
     cbArg.metadata = roiData;
     cbArg.user_data = faceResultBuffer;
@@ -8437,6 +8695,68 @@ void QCamera2HardwareInterface::returnStreamBuffer(void *data,
 int32_t QCamera2HardwareInterface::processHistogramStats(
         __unused cam_hist_stats_t &stats_data)
 {
+#ifndef VANILLA_HAL
+    if (!mParameters.isHistogramEnabled()) {
+        LOGH("Histogram not enabled, no ops here");
+        return NO_ERROR;
+    }
+
+    camera_memory_t *histBuffer = mGetMemory(-1,
+                                             sizeof(cam_histogram_data_t),
+                                             1,
+                                             mCallbackCookie);
+    if ( NULL == histBuffer ) {
+        LOGE("Not enough memory for histogram data");
+        return NO_MEMORY;
+    }
+
+    cam_histogram_data_t *pHistData = (cam_histogram_data_t *)histBuffer->data;
+    if (pHistData == NULL) {
+        LOGE("memory data ptr is NULL");
+        return UNKNOWN_ERROR;
+    }
+
+    switch (stats_data.type) {
+    case CAM_HISTOGRAM_TYPE_BAYER:
+        switch (stats_data.bayer_stats.data_type) {
+            case CAM_STATS_CHANNEL_Y:
+            case CAM_STATS_CHANNEL_R:
+                *pHistData = stats_data.bayer_stats.r_stats;
+                break;
+            case CAM_STATS_CHANNEL_GR:
+                *pHistData = stats_data.bayer_stats.gr_stats;
+                break;
+            case CAM_STATS_CHANNEL_GB:
+            case CAM_STATS_CHANNEL_ALL:
+                *pHistData = stats_data.bayer_stats.gb_stats;
+                break;
+            case CAM_STATS_CHANNEL_B:
+                *pHistData = stats_data.bayer_stats.b_stats;
+                break;
+            default:
+                *pHistData = stats_data.bayer_stats.r_stats;
+                break;
+        }
+        break;
+    case CAM_HISTOGRAM_TYPE_YUV:
+        *pHistData = stats_data.yuv_stats;
+        break;
+    }
+
+    qcamera_callback_argm_t cbArg;
+    memset(&cbArg, 0, sizeof(qcamera_callback_argm_t));
+    cbArg.cb_type = QCAMERA_DATA_CALLBACK;
+    cbArg.msg_type = CAMERA_MSG_STATS_DATA;
+    cbArg.data = histBuffer;
+    cbArg.user_data = histBuffer;
+    cbArg.cookie = this;
+    cbArg.release_cb = releaseCameraMemory;
+    int32_t rc = m_cbNotifier.notifyCallback(cbArg);
+    if (rc != NO_ERROR) {
+        LOGE("fail sending notification");
+        histBuffer->release(histBuffer);
+    }
+#endif
     return NO_ERROR;
 }
 
