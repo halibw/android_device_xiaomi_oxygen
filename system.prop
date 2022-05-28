@@ -5,9 +5,6 @@
 # Audio
 ro.config.media_vol_steps=25
 
-# BPF
-ro.kernel.ebpf.supported=false
-
 # Camera
 persist.camera.gyro.android=0
 persist.camera.gyro.disable=1
