@@ -79,40 +79,19 @@ qemu.hw.mainkeys=0
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.qti.sys.fw.bservice_enable=true
 
-# Nitz
-persist.vendor.radio.nitz_plmn=""
-persist.vendor.radio.nitz_lons_0=""
-persist.vendor.radio.nitz_lons_1=""
-persist.vendor.radio.nitz_lons_2=""
-persist.vendor.radio.nitz_lons_3=""
-persist.vendor.radio.nitz_sons_0=""
-persist.vendor.radio.nitz_sons_1=""
-persist.vendor.radio.nitz_sons_2=""
-persist.vendor.radio.nitz_sons_3=""
-
 # Radio
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-persist.dbg.wfc_avail_ovr=1
-persist.vendor.radio.apm_sim_not_pwdn=1
-persist.radio.aosp_usr_pref_sel=true
 persist.radio.multisim.config=dsds
+persist.vendor.data.iwlan.enable=true
 persist.vendor.radio.add_power_save=1
+persist.vendor.radio.apm_sim_not_pwdn=1
 persist.vendor.radio.custom_ecc=1
 persist.vendor.radio.enableadvancedscan=false
+persist.vendor.radio.hw_mbn_update=0
+persist.vendor.radio.mt_sms_ack=30
 persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.sib16_support=1
-persist.vendor.data.iwlan.enable=true
-rild.libargs=-d/dev/smd0
-
-# Radio (IMS)
-persist.vendor.ims.disableIMSLogs=1
-persist.vendor.ims.disableADBLogs=1
-persist.vendor.ims.disableDebugDataPathLogs=1
-persist.vendor.ims.disableDebugLogs=1
-persist.vendor.ims.disableSigHandler=1
-persist.vendor.ims.disableQXDMLogs=1
+vendor.rild.libargs=-d /dev/smd0
 
 # Sensors
 ro.vendor.sensors.smd=false
