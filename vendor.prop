@@ -14,10 +14,12 @@ persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicerec=true
 persist.vendor.audio.hw.binder.size_kbyte=1024
 persist.vendor.btstack.enable.splita2dp=false
+ro.af.client_heap_size_kbyte=7168
 ro.vendor.audio.sdk.fluencetype=fluence
 ro.vendor.audio.sdk.ssr=false
 vendor.audio.flac.sw.decoder.24bit=true
 vendor.audio.hal.boot.timeout.ms=20000
+vendor.audio.hw.aac.encoder=true
 vendor.audio.offload.buffer.size.kb=64
 vendor.audio.offload.gapless.enabled=true
 vendor.audio.offload.multiaac.enable=true
@@ -27,10 +29,12 @@ vendor.audio.parser.ip.buffer.size=0
 vendor.audio.playback.mch.downsample=true
 vendor.audio.pp.asphere.enabled=false
 vendor.audio.safx.pbe.enabled=true
+vendor.audio.spkr_prot.tx.sampling_rate=48000
 vendor.audio.tunnel.encode=false
 vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 vendor.audio_hal.period_size=192
+vendor.audio.read.wsatz.type=true
 vendor.voice.conc.fallbackpath=deep-buffer
 vendor.voice.path.for.pcm.voip=true
 vendor.voice.playback.conc.disabled=true
@@ -70,7 +74,6 @@ ro.frp.pst=/dev/block/bootdevice/by-name/config
 # Media
 media.stagefright.audio.sink=280
 mm.enable.smoothstreaming=true
-vendor.audio.hw.aac.encoder=true
 
 # Navigation bar
 qemu.hw.mainkeys=0
