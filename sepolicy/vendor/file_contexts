@@ -27,10 +27,6 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service\.xiaomi_oxygen				u:object_r:hal_ir_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_oxygen                    		u:object_r:hal_light_default_exec:s0
 
-# Input files
-/(vendor|system/vendor)/usr/idc(/.*)?		u:object_r:idc_file:s0
-/(vendor|system/vendor)/usr/keylayout(/.*)?	u:object_r:keylayout_file:s0
-
 # Ir
 /dev/lirc[0-9]*					u:object_r:lirc_device:s0
 
@@ -52,9 +48,6 @@
 /sys/devices/soc/78b7000\.i2c/i2c-3/3-[0-9a-f]+/disable_keys            u:object_r:proc_touchpanel:s0
 /sys/devices/soc/leds-qpnp-[0-9]+/leds(/.*)?				u:object_r:sysfs_leds:s0
 /sys/devices/soc/78b7000\.i2c/i2c-3/3-[0-9a-f]+/enable_dt2w		u:object_r:proc_touchpanel:s0
-
-# clean_scratch_files
-/system/bin/clean_scratch_files                                      u:object_r:clean_scratch_files_exec:s0
 
 # Torch
 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/led:torch_0/max_brightness          u:object_r:sysfs_torch:s0

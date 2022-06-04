@@ -163,7 +163,6 @@ VENDOR_SECURITY_PATCH := 2021-03-05
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-SELINUX_IGNORE_NEVERALLOWS := true
 
 # Shim
 TARGET_LD_SHIM_LIBS := \

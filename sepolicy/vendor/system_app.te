@@ -8,4 +8,3 @@ allow system_app sysfs_vibrator:dir search;
 
  # Kcal
 allow system_app sysfs:dir search;
-allow system_app sysfs:file rw_file_perms; 

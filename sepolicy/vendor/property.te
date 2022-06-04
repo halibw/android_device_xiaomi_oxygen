@@ -1,2 +1,2 @@
 # Dirac
-type dirac_prop, property_type;
+vendor_restricted_prop(vendor_dirac_prop);
