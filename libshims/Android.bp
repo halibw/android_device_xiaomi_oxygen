@@ -1,8 +1,27 @@
+// goodix
 cc_library_shared {
     name: "libshims_goodix",
     srcs: ["goodix_shim.cpp"],
     compile_multilib: "64",
     vendor: true
+}
+
+// fpc
+cc_library_shared {
+    name: "libshims_binder",
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "libshims_binder.cpp",
+    ],
+    cflags: [
+        "-Werror",
+        "-Wextra",
+        "-Wall",
+    ],
+    shared_libs: [
+        "libutils",
+    ],
 }
 
 // libandroid

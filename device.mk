@@ -194,8 +194,10 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_oxygen \
     libbacktrace-vendor \
-    libshims_goodix
+    libshims_goodix \
+    libshims_binder
 
 # FM
 PRODUCT_PACKAGES += \
