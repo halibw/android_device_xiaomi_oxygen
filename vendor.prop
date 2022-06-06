@@ -75,9 +75,6 @@ ro.frp.pst=/dev/block/bootdevice/by-name/config
 media.stagefright.audio.sink=280
 mm.enable.smoothstreaming=true
 
-# Navigation bar
-qemu.hw.mainkeys=0
-
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.qti.sys.fw.bservice_enable=true
