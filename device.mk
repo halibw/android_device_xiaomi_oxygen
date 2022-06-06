@@ -337,9 +337,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
-# Permissions
-PRODUCT_PROPERTY_OVERRIDES += ro.control_privapp_permissions=log
-
 # QMI
 PRODUCT_PACKAGES += \
     libjson \
