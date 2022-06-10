@@ -51,7 +51,6 @@ persist.vendor.cne.feature=1
 # Coresight
 persist.debug.coresight.config=stm-events
 vendor.display.disable_rotator_downscale=1
-persist.sys.wfd.nohdcp=1
 persist.sys.wfd.virtual=0
 
 # Display
