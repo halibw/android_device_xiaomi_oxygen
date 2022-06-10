@@ -915,3 +915,4 @@ vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|16baab27397ad493e845515c20ac0c0
 
 # Wi-Fi - from LA.UM.9.6.3.r1-04400-89xx.0
 vendor/bin/wcnss_service|48e4a96a9de69bd83791a3b0b2134f5ab1205adc
+vendor/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin|5e97baa4957609519835074071c879fbaf462266
