@@ -388,10 +388,6 @@ vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so|851db5940d5e9e4330e16221be114ae
 vendor/lib64/vendor.qti.latency@2.0.so|44e613964229ad11c5a69d1861b24f5897eff1d7
 vendor/lib64/vendor.qti.latency@2.1.so|3f5e3be5fcbc96b5f4c87dd76cfcc0e1dc858ad0
 
-# Display calibration
-vendor/etc/qdcm_calib_data_auo_r61322_1080p_video_mode_dsi_panel.xml
-vendor/etc/qdcm_calib_data_tianma_r63350_1080p_video_mode_dsi_panel.xml
-
 # Dirac
 vendor/etc/diracmobile.config
 vendor/lib/libDiracAPI_SHARED.so
