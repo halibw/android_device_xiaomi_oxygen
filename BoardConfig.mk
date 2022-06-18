@@ -164,10 +164,6 @@ VENDOR_SECURITY_PATCH := 2021-03-05
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
-# Shim
-TARGET_LD_SHIM_LIBS := \
-    /vendor/lib64/libgoodixfingerprintd_binder.so|libshims_goodix.so
-
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 BOARD_VNDK_VERSION := current
