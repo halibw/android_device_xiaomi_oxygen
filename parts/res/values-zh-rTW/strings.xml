@@ -16,6 +16,12 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Audio amplification -->
+    <string name="audio_title">音頻放大器</string>
+    <string name="audio_summary">聲音控製設置</string>
+    <string name="headphone_gain">耳機增益</string>
+    <string name="microphone_gain">麥克風增益</string>
+    <string name="speaker_gain">揚聲器增益</string>
     <!-- Dirac settings -->
     <string name="dirac_title">使用米音提升音質</string>
     <string name="dirac_summary">米音</string>
@@ -56,4 +62,9 @@
     <string name="dirac_preset_country">鄉村</string>
     <string name="dirac_preset_dance">舞曲</string>
     <string name="dirac_preset_metal">金屬</string>
+    <!-- Torch -->
+    <string name="torch_title">手電筒調節</string>
+    <string name="torch_summary">手電筒 黃/白LED 控製</string>
+    <string name="yellow_torch_brightness_title">黃色LED亮度</string>
+    <string name="white_torch_brightness_title">白色LED亮度</string>
 </resources>

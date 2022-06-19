@@ -16,14 +16,21 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Audio amplification -->
+    <string name="audio_title">音频放大器</string>
+    <string name="audio_summary">声音控制设置</string>
+    <string name="headphone_gain">耳机增益</string>
+    <string name="microphone_gain">麦克风增益</string>
+    <string name="speaker_gain">扬声器增益</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">数值: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">默认</string>
     <string name="custom_seekbar_default_value_to_set">默认数值: <xliff:g id="v">%s</xliff:g>\n长按以设置</string>
     <string name="custom_seekbar_default_value_is_set">默认数值已设定</string>
     <!-- Dirac settings -->
-    <string name="dirac_title">使用米音提升音质</string>
-    <string name="dirac_summary">米音</string>
+    <string name="dirac_enable">启用 dirac</string>
+    <string name="dirac_title">Dirac™ Sound</string>
+    <string name="dirac_summary">优化音频质量</string>
     <string name="dirac_headset_title">耳机类型设置</string>
     <string name="dirac_preset_title">请选择预设效果</string>
     <!-- Dirac settings: Headset types -->
@@ -61,4 +68,9 @@
     <string name="dirac_preset_country">乡村</string>
     <string name="dirac_preset_dance">舞曲</string>
     <string name="dirac_preset_metal">金属</string>
+    <!-- Torch -->
+    <string name="torch_title">手电筒调节</string>
+    <string name="torch_summary">手电筒 黄/白LED 控制</string>
+    <string name="yellow_torch_brightness_title">黄色LED亮度</string>
+    <string name="white_torch_brightness_title">白色LED亮度</string>
 </resources>
