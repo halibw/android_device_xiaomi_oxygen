@@ -145,7 +145,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     camera.msm8953 \
     libmm-qcamera \
-    libgui_vendor:32 \
     libshims_android \
     libshims_ui \
     libwui
