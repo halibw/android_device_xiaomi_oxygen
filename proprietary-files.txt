@@ -550,9 +550,9 @@ vendor/lib64/libmm-hdcpmgr.so|f42daaad4741e87db5f4e11633a0b7a8f8eba687
 vendor/lib64/librs_adreno.so|1b894b53ef85039b6119f2d48820978192e3aeed
 vendor/lib64/librs_adreno_sha1.so|68072f7dfd43e8d7690c84bec208ab9ca8f23c77
 
-# Graphics (HDR) - from AquariusX2 (Zangya) PKQ1.190118.001/657
-vendor/lib/libhdr_tm.so|4fab759307b36a9effe71a204151acd5a63a699f
-vendor/lib64/libhdr_tm.so|7913de28c6e258cab36cbff59ee943e9d0c14994
+# Graphics (HDR) - from LA.UM.10.6.2.r1-01600-89xx.0
+vendor/lib/libhdr_tm.so|0d03941ffa1d48b2cc8400ce6131894450151665
+vendor/lib64/libhdr_tm.so|66f312694a60e9f917a6aafa04563b9c376b1411
 
 # Graphics (Postprocessing) - from AquariusX2 Pro (Zangya Pro) PKQ1.190118.001/920
 vendor/bin/hw/vendor.display.color@1.0-service|633a0a4bed08202ef3799275f06920eb4382db31
@@ -580,9 +580,9 @@ vendor/lib64/libsdm-diag.so|0a2116e2f1e310be896250053761888b2b890dc4
 vendor/lib64/libsdmextension.so|a3e3ccd22f0d0a81e70e4e2e39dc270fc94615c9
 vendor/lib64/libtinyxml2_1.so|cb6f4fb572a28cad293f4b6c5312fcff73ad088b
 
-# Graphics (Vulkan) - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
-vendor/lib/hw/vulkan.msm8953.so|6259874ee4fe1a414b5e2109ec63af55a70d3733
-vendor/lib64/hw/vulkan.msm8953.so|e1905916771354829868a65e6757615c7de20b71
+# Graphics (Vulkan) - from LA.UM.10.6.2.r1-01600-89xx.0
+vendor/lib/hw/vulkan.adreno.so|15185d60e0615009a39b6341755ec9de98725803
+vendor/lib64/hw/vulkan.adreno.so|09c5d7b60e36fd9bb5aa25e9b4110e8bf9554731
 
 # Graphics firmware - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 vendor/firmware/a506_zap.b00|c45a7b34456844f5deb73e2dce79cbfcfb9ae71c
