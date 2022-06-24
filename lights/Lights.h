@@ -23,16 +23,37 @@ namespace android {
 namespace hardware {
 namespace light {
 
-class Lights : public BnLights {
+enum led_type {
+    RED,
+    GREEN,
+    BLUE,
+    WHITE,
+};
 
+class Lights : public BnLights {
 public:
+    Lights();
+
     ndk::ScopedAStatus setLightState(int id, const HwLightState& state) override;
     ndk::ScopedAStatus getLights(std::vector<HwLight>* types) override;
 
 private:
-    void write(const std::string &path, uint32_t value);
+    void setSpeakerLightLocked(const HwLightState& state);
+    void handleSpeakerBatteryLocked();
+
+    bool setLedBreath(led_type led, uint32_t value);
+    bool setLedBrightness(led_type led, uint32_t value);
+
+    bool IsLit(uint32_t color);
     uint32_t RgbaToBrightness(uint32_t color);
-    void setNotificationLight(const HwLightState& state);
+    bool WriteToFile(const std::string& path, uint32_t content);
+
+    std::string mBacklightNode;
+    bool mButtonExists;
+    bool mWhiteLed;
+    bool mBreath;
+    HwLightState mNotification;
+    HwLightState mBattery;
 };
 
 }  // namespace light
