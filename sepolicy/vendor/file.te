@@ -1,8 +1,8 @@
-# Boot reason
-type proc_boot_reason, fs_type;
-
 # Camera
 type camera_socket, file_type, data_file_type;
+
+# DT2W
+type sysfs_ts, fs_type, sysfs_type;
 
 # Fingerprint
 type fpc_data_file, file_type, data_file_type, core_data_file_type;
@@ -13,14 +13,11 @@ type gx_fpd_data_file, file_type, data_file_type, core_data_file_type;
 # Rild
 type rild_file, file_type, vendor_file_type;
 
-# Rmt
-type debugfs_rmt, debugfs_type, fs_type;
-
-# Sensors
-type persist_sensors_file, file_type, vendor_persist_type;
-
 # Touchscreen
-type proc_touchpanel, fs_type, sysfs_type;
+type proc_touchpanel, fs_type, sysfs_type, proc_type;
 
-# Torch
-type sysfs_torch, fs_type, sysfs_type;
+# XiaomiParts
+type sysfs_hgain, sysfs_type, fs_type;
+type sysfs_mgain, sysfs_type, fs_type;
+type sysfs_sgain, sysfs_type, fs_type;
+type sysfs_torch, sysfs_type, fs_type;

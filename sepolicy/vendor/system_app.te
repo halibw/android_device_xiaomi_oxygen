@@ -1,10 +1,25 @@
-# Torch
-allow system_app sysfs_torch:file rw_file_perms;
-allow system_app sysfs_torch:dir search;
+allow system_app proc_pagetypeinfo:file r_file_perms;
 
- # Vibrator
-allow system_app sysfs_vibrator:file rw_file_perms;
-allow system_app sysfs_vibrator:dir search;
+binder_call(system_app, hal_power_default)
+binder_call(system_app, hal_vibrator_default)
+binder_call(system_app, iorapd)
+binder_call(system_app, wificond)
+binder_call(system_app vold)
 
- # Kcal
-allow system_app sysfs:dir search;
+# aosp fm
+allow system_app fm_radio_device:chr_file { ioctl open read };
+
+# XiaomiParts
+allow system_app {
+    sysfs_hgain
+    sysfs_mgain
+    sysfs_sgain
+    sysfs_torch
+}:file rw_file_perms;
+
+allow system_app {
+    sysfs_leds
+}:dir search;
+
+# zram
+r_dir_file(system_app sysfs_zram)

@@ -1,7 +1,16 @@
-# touchpanel
-allow system_server proc_touchpanel:dir search;
-allow system_server proc_touchpanel:file rw_file_perms;
-allow system_server proc_touchpanel:lnk_file read;
+# Input devices
+allow system_server sysfs_virtualkeys:file { read open getattr };
+
+allow system_server system_file:file ioctl;
+
+get_prop(system_server, userspace_reboot_config_prop)
+get_prop(system_server, userspace_reboot_exported_prop)
+
+# power
+allow system_server sysfs_battery_supply:file { read open getattr };
 
 # vibrator
 allow system_server sysfs_vibrator:file read;
+
+# zygote
+allow system_server app_zygote:process getpgid;

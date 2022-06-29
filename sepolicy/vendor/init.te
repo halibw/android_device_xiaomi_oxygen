@@ -1,8 +1,21 @@
+get_prop(init, vendor_fingerprint_prop);
+
+allow init self:capability sys_nice;
+
+# Allow init to bind mount gps_debug.conf
+allow init system_file:file mounton;
+
 # adsprpcd
-allow init adsprpcd_file:filesystem { mount relabelfrom relabelto };
+allow init adsprpcd_file:filesystem { getattr mount relabelfrom relabelto };
 
-# boot reason
-allow init proc_boot_reason:file r_file_perms;
+# Firmware
+allow init firmware_file:filesystem getattr;
 
-# leds
+# Leds
 allow init sysfs_leds:lnk_file read;
+
+# Power
+allow init sysfs_battery_supply:file setattr;
+
+# Wifi
+allow init wcnss_device:chr_file write;
