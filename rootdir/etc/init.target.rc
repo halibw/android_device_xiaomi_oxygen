@@ -52,9 +52,6 @@ on early-boot
     chown system system /mnt/vendor/persist/sensors/registry/config
     chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
 
-#Create folder for mm-qcamera-daemon
-    mkdir /data/vendor/camera 0770 camera camera
-
 on init
     write /dev/stune/foreground/schedtune.sched_boost_no_override 1
     write /dev/stune/top-app/schedtune.sched_boost_no_override 1
