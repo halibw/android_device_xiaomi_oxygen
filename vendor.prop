@@ -16,7 +16,6 @@ persist.vendor.audio.hw.binder.size_kbyte=1024
 persist.vendor.btstack.enable.splita2dp=false
 ro.af.client_heap_size_kbyte=7168
 ro.vendor.audio.sdk.fluencetype=fluence
-ro.vendor.audio.sdk.ssr=false
 vendor.audio.flac.sw.decoder.24bit=true
 vendor.audio.hal.boot.timeout.ms=20000
 vendor.audio.hw.aac.encoder=true
