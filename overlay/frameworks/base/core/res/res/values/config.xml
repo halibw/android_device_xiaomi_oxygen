@@ -23,7 +23,6 @@
          when adapting to brighter or darker environments.  This parameter controls how quickly
          brightness changes occur in response to an observed change in light level that exceeds the
          hysteresis threshold. -->
-    <integer name="config_autoBrightnessBrighteningLightDebounce">4000</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
@@ -445,11 +444,6 @@
          carrier provisioning. If false: hard disabled. If true: then depends on carrier
          provisioning, availability etc -->
     <bool name="config_carrier_vt_available">true</bool>
-	<!-- Whether the always on display mode is available. -->
-	<bool name="config_dozeAlwaysOnDisplayAvailable">false</bool>
-
- 	<!-- Whether the display blanks itself when transition from a doze to a non-doze state -->
-	<bool name="config_displayBlanksAfterDoze">false</bool>
 
     <!-- The name of the package that will hold the assistant role by default. -->
     <string name="config_defaultAssistant" translatable="false">com.google.android.googlequicksearchbox</string>
