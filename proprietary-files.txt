@@ -75,7 +75,7 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so|5de4a802667afa2c05b9c75ae6
 system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 
-# Camera stack - from oxygen-user 7.1.1 NMF26F V11.0.2.0.NDDMIXM release-keys
+# Camera stack
 bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
 vendor/lib/libchromaflash.so
 vendor/lib/libflash_pmic.so
@@ -176,7 +176,7 @@ vendor/lib/libubifocus.so
 -vendor/lib/libts_detected_face_hal.so
 -vendor/lib/libts_face_beautify_hal.so
 
-# Camera modules - from oxygen-user 7.1.1 NMF26F V11.0.2.0.NDDMIXM release-keys
+# Camera modules
 vendor/lib/libactuator_oxygen_dw9763_sunny.so
 vendor/lib/libactuator_oxygen_ov12a_ofilm_dw9718.so
 vendor/lib/libactuator_oxygen_ov12a_sunny_dw9763.so
@@ -295,7 +295,7 @@ etc/camera/oxygen_ov12a_sunny_chromatix.xml:vendor/etc/camera/oxygen_ov12a_sunny
 etc/camera/oxygen_s5k5e8_ofilm_chromatix.xml:vendor/etc/camera/oxygen_s5k5e8_ofilm_chromatix.xml
 etc/camera/oxygen_s5k5e8_qtech_chromatix.xml:vendor/etc/camera/oxygen_s5k5e8_qtech_chromatix.xml
 
-# Camera Firmware - from Nokia/Panther_00WW/PAN_sprout:11/RKQ1.200928.002/00WW_3_240:user/release-keys
+# Camera Firmware
 vendor/firmware/cpp_firmware_v1_10_0.fw
 vendor/firmware/cpp_firmware_v1_12_0.fw
 vendor/firmware/cpp_firmware_v1_12_1.fw
@@ -439,7 +439,7 @@ vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc|225dd006bfecf6c1dca
 vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml|91d7c0996133556cb7f7c5d1b7e5d9e7f07b78b2
 vendor/lib64/libwvhidl.so|8ffc9cfc0ca2abc0e7bbde94c61961b1fef45e6f
 
-# Fingerprint (FPC) - from oxygen-user 7.1.1 NMF26F V11.0.2.0.NDDMIXM release-keys
+# Fingerprint (FPC)
 lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.msm8953.so
 lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so
 
@@ -584,7 +584,7 @@ vendor/lib64/libtinyxml2_1.so|cb6f4fb572a28cad293f4b6c5312fcff73ad088b
 vendor/lib/hw/vulkan.adreno.so|15185d60e0615009a39b6341755ec9de98725803
 vendor/lib64/hw/vulkan.adreno.so|09c5d7b60e36fd9bb5aa25e9b4110e8bf9554731
 
-# Graphics firmware - from daisy-user 10 QKQ1.191002.002 V11.0.21.0.QDLMIXM release-keys
+# Graphics firmware - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 vendor/firmware/a506_zap.b00|c45a7b34456844f5deb73e2dce79cbfcfb9ae71c
 vendor/firmware/a506_zap.b01|00a618f9ecde71e169200fbdc60428c81bab144c
 vendor/firmware/a506_zap.b02|b79957c47f0a6757ac1d721dbe06551508454634
