@@ -26,15 +26,14 @@ vendor/lib/rfsa/adsp/libfastcvadsp.so|9818625bfa018f517e32a8f4a1e7fb4b255e5049
 vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so|944169db3ac67056b92ef4f850f69346958370b5
 vendor/lib/rfsa/adsp/libscveT2T_skel.so|91b9200dbb982abf0d6b440668252d892a616f66
 
-# Audio ACDB - from LA.UM.9.6.2.r1-04200-89xx.0
-vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb|0364848ae2eb5505bdace46d6b8f1391a39095a8
-vendor/etc/acdbdata/QRD/QRD_General_cal.acdb|6e8c873201410aa64eebf75819d8ea3bc11613cf
-vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb|0ae1d3c0dfd9c27afd030584b233d2f4b454a743
-vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb|855422d5b156ed60f5f6bacb9458e85f6c67ed12
-vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb|457bd7d412d9359297b9923cee264214d013547a
-vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb|ba8ab21912dd9a8c41014f6c26f2dca6d4476fdf
-vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb|b1a9a1497d1ecfab01e8a59d4c33410d409753a3
-vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp|997da5dd12d92c6c803cf33c69b5a1a92dd2fe49
+# Audio ACDB - from oxygen 7.1.1/NMF26F/V11.0.2.0.NDDMIXM
+vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb|a3e108cdb29dad955f11bed9e6980c77d758731f
+vendor/etc/acdbdata/QRD/QRD_General_cal.acdb|e0718b706786eeb6710456e47a3b4206f9037ccf
+vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb|8acd616c4e405a0d77fc274224392a00b078ebcb
+vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb|4d2ab2f0df0105b72d431fc29812305d33ecddaf
+vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb|861ad26bd65aed414e1014362686c3e26f126af0
+vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb|c6854d0cacf32abb294447264d153f7c17a20625
+vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb|2539733d2239abb0d3f96229b3fadd0bfaf0e306
 
 # Audio - from LA.UM.9.6.2.r1-04200-89xx.0
 vendor/lib/libacdb-fts.so|fee2b1f0b93c28f5ef0a4d65736cca01c4275975
