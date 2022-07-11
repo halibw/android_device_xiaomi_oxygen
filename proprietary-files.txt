@@ -903,12 +903,12 @@ vendor/bin/time_daemon|48401d7f85c87aa3e12ce7b4a969a50cbf59c293
 vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
 vendor/lib64/libtime_genoff.so|8bb116ad297a5e4a94da2f10509509cb6e863a5f
 
-# TUI - from LA.UM.9.6.2.r1-04200-89xx.0
-vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|e8d97981d09a4e34907d13bcbbd10f03572c9218
+# TUI - from LA.UM.9.6.3.r1-06200-89xx.0
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|15378114c18fd1b1c8f9671f656396285ad1de48
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
-vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|933eb7026797f3dadad3d10fd69443b11f6563f3
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|16baab27397ad493e845515c20ac0c0c063c775d
+vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|680e563a4fe444f71ea56a825cc2aa8a59dfe2ce
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|4ba792ee3234dca4cd7ebbd7b3f9003c800f51b4
 
-# Wi-Fi - from LA.UM.9.6.3.r1-04400-89xx.0
-vendor/bin/wcnss_service|48e4a96a9de69bd83791a3b0b2134f5ab1205adc
+# Wi-Fi - from LA.UM.9.6.3.r1-06200-89xx.0
+vendor/bin/wcnss_service|4bf3962fa1444caca2d3497e71ae4cd2ba306aa1
 vendor/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin|5e97baa4957609519835074071c879fbaf462266
