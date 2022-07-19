@@ -251,10 +251,6 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
-# HW crypto
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
-
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common \
