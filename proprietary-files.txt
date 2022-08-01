@@ -600,6 +600,10 @@ vendor/lib64/libtinyxml2_1.so|cb6f4fb572a28cad293f4b6c5312fcff73ad088b
 vendor/lib/hw/vulkan.adreno.so|15185d60e0615009a39b6341755ec9de98725803
 vendor/lib64/hw/vulkan.adreno.so|09c5d7b60e36fd9bb5aa25e9b4110e8bf9554731
 
+# Graphics (shared libs) - from LA.UM.10.6.2.r1-01600-89xx.0
+system_ext/lib64/libgralloc.qti.so|8d5f08f480c121eab46bc64e3d6a8c9913a4c9f2
+system_ext/lib64/libqdMetaData.so|9092b482aa50935b9dc008b79a2ee8305869bd6c
+
 # Graphics firmware - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
 vendor/firmware/a506_zap.b00|c45a7b34456844f5deb73e2dce79cbfcfb9ae71c
 vendor/firmware/a506_zap.b01|00a618f9ecde71e169200fbdc60428c81bab144c
