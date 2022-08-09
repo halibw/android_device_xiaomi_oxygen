@@ -145,7 +145,6 @@ on post-fs-data
     mkdir /data/vendor/ramdump/bluetooth 0770 bluetooth bluetooth
 
     #Create folder of camera
-    mkdir /data/vendor/camera 0770 camera camera
     mkdir /data/vendor/qcam 0770 camera camera
 
     # Create directory for tftp
