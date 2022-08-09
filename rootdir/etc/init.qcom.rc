@@ -248,9 +248,6 @@ on property:ro.vendor.iocgrp.config=1
 
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
-    #Reset read ahead for dm-0 and dm-1 to 512kb
-    write /sys/block/dm-0/queue/read_ahead_kb 512
-    write /sys/block/dm-1/queue/read_ahead_kb 512
 
     # This initializes vendor.qti.hardware.perf service
     setprop vendor.post_boot.parsed 1
