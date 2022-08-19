@@ -463,7 +463,7 @@ lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so
 # Goodix - from daisy-user 10 QKQ1.191002.002 V11.0.21.0.QDLMIXM
 lib64/hw/gf_fingerprint.default.so:vendor/lib64/hw/gf_fingerprint.default.so|b09aba758c469f3e3ff04197a723a15fbdfafea1
 vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so|feee131f714ed9a7dd93e7ba9bfc768cbf651426
-vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so|2b8c0c22be4df5f3bdb2b3013593716c67dcb016
+vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so|f9c5a4a35d92b8c7945ed1749d5e013ed91d232f
 
 # Fingerprint
 lib64/libgf_ca.so:vendor/lib64/libgf_ca.so
