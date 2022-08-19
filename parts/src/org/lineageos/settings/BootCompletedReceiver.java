@@ -32,12 +32,14 @@ import org.lineageos.settings.torch.TorchSettings;
 public class BootCompletedReceiver extends BroadcastReceiver {
 
     private static final boolean DEBUG = false;
-     private static final String TAG = "XiaomiParts";
+    private static final String TAG = "XiaomiParts";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
         if (DozeUtils.isDozeEnabled(context) && DozeUtils.sensorsEnabled(context)) {
-            if (DEBUG) Log.d(TAG, "Starting Doze service");
+            if (DEBUG) {
+		    Log.d(TAG, "Starting Doze service");
+	    }
             DozeUtils.startService(context);
         }
         new DiracUtils(context).onBootCompleted();
@@ -48,7 +50,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         FileUtils.setValue(TorchSettings.TORCH_2_BRIGHTNESS_PATH,
                 Settings.Secure.getInt(context.getContentResolver(),
                         TorchSettings.KEY_YELLOW_TORCH_BRIGHTNESS, 100));
-    int gain = Settings.Secure.getInt(context.getContentResolver(),
+	int gain = Settings.Secure.getInt(context.getContentResolver(),
                 SoundControlSettings.PREF_HEADPHONE_GAIN, 4);
         FileUtils.setValue(SoundControlSettings.HEADPHONE_GAIN_PATH, gain + " " + gain);
         FileUtils.setValue(SoundControlSettings.MICROPHONE_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),

@@ -30,7 +30,7 @@
 
     <uses-sdk
         android:minSdkVersion="24"
-        android:targetSdkVersion="24"/>
+        android:targetSdkVersion="30"/>
 
     <application
         android:icon="@mipmap/ic_launcher"
