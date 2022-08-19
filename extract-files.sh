@@ -7,6 +7,7 @@
 #
 
 function blob_fixup() {
+    case "${1}" in
 vendor/lib64/libgf_hal.so)
             # Always assume screen is interactive
             sed -i -e 's|\xE6\xDB\xFF\x97\x60\x02\x00\xB9|\x20\x00\x80\xD2\x20\x00\x80\xD2|g' "${2}"
@@ -21,6 +22,11 @@ vendor/lib64/libgf_hal.so)
                 echo "Critical blob modification weren't applied on ${2}!"
                 exit;
             fi
+	    ;;
+# Use VNDK 32 libhidlbase
+vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so)
+            "${PATCHELF_0_8}" --remove-needed "libhidlbase.so" "${2}"
+            sed -i "s/libhidltransport.so/libhidlbase-v32.so\x00/" "${2}"
             ;;
     esac
 }
