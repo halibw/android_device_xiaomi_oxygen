@@ -341,7 +341,6 @@ PRODUCT_PACKAGES += \
     init.msm.usb.configfs.rc \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
-    init.goodix.sh \
     init.qcom.sensors.sh \
     init.qcom.rc \
     init.qcom.sh \

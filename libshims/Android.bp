@@ -18,7 +18,6 @@ cc_library_shared {
 cc_library_shared {
     name: "libshims_binder",
     proprietary: true,
-    defaults: ["hidl_defaults"],
     srcs: [
         "libshims_binder.cpp",
     ],
@@ -36,7 +35,6 @@ cc_library_shared {
 cc_library_shared {
     name: "libshims_android",
     proprietary: true,
-    defaults: ["hidl_defaults"],
     srcs: [
         "libshims_android.cpp",
     ],
