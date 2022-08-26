@@ -35,7 +35,7 @@ public:
     Lights();
 
     ndk::ScopedAStatus setLightState(int id, const HwLightState& state) override;
-    ndk::ScopedAStatus getLights(std::vector<HwLight>* types) override;
+    ndk::ScopedAStatus getLights(std::vector<HwLight>* lights) override;
 
 private:
     void setSpeakerLightLocked(const HwLightState& state);
