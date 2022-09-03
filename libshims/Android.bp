@@ -6,14 +6,6 @@ cc_library_shared {
     ],
 }
 
-// goodix
-cc_library_shared {
-    name: "libshims_goodix",
-    srcs: ["goodix_shim.cpp"],
-    compile_multilib: "64",
-    vendor: true
-}
-
 // fpc
 cc_library_shared {
     name: "libshims_binder",

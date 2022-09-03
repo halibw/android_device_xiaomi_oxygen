@@ -459,14 +459,15 @@ vendor/lib64/libwvhidl.so|8ffc9cfc0ca2abc0e7bbde94c61961b1fef45e6f
 lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.msm8953.so
 lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so
 
+# Goodix - from daisy-user 10 QKQ1.191002.002 V11.0.21.0.QDLMIXM
+lib64/hw/gf_fingerprint.default.so:vendor/lib64/hw/gf_fingerprint.default.so|b09aba758c469f3e3ff04197a723a15fbdfafea1
+vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so|feee131f714ed9a7dd93e7ba9bfc768cbf651426
+vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so|c9d0251df63d8e34b6d70a59ad7b774c9f640fa1
+
 # Fingerprint
-lib64/hw/gf_fingerprint.default.so:vendor/lib64/hw/gf_fingerprint.default.so
 lib64/libgf_ca.so:vendor/lib64/libgf_ca.so
 lib64/libgf_hal.so:vendor/lib64/libgf_hal.so
 lib64/libgf_algo.so:vendor/lib64/libgf_algo.so
-lib64/libgoodixfingerprintd_binder.so:vendor/lib64/libgoodixfingerprintd_binder.so
-lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so:vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
-lib64/libvendor.goodix.hardware.fingerprint@1.0.so:vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
 
 # FM Radio - from LA.UM.9.6.2.r1-04200-89xx.0
 vendor/bin/init.qti.fm.sh|0ac820dd85ebdf5fa73b5e971f6787ff35ceb65d

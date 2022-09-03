@@ -88,8 +88,6 @@ sed -i "s|libgui.so|libwui.so|g" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera_pp
 ${PATCHELF}" --add-needed "libshims_binder.so" "${DEVICE_BLOB_ROOT}"/vendor/lib64/lib_fpc_tac_shared.so
 
 # Goodix
-"${PATCHELF}" --add-needed "libshims_goodix.so" "${DEVICE_BLOB_ROOT}"/vendor/lib64/libgoodixfingerprintd_binder.so
-"${PATCHELF}" --remove-needed "libprotobuf-cpp-lite.so" "${DEVICE_BLOB_ROOT}"/vendor/lib64/libgoodixfingerprintd_binder.so
 "${PATCHELF}" --remove-needed "libprotobuf-cpp-lite.so" "${DEVICE_BLOB_ROOT}"/vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
 "${PATCHELF}" --remove-needed "libprotobuf-cpp-lite.so" "${DEVICE_BLOB_ROOT}"/vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
 
