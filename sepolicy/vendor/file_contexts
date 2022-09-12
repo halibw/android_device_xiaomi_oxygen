@@ -15,6 +15,7 @@
 /data/system/fingerprint(/.*)?                  u:object_r:gx_fpd_data_file:s0
 
 # HALs
+/vendor/bin/hw/android\.hardware\.power-service\.xiaomi-msm8953-libperfmgr                      	u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.xiaomi_oxygen	u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.xiaomi				u:object_r:hal_light_default_exec:s0
 

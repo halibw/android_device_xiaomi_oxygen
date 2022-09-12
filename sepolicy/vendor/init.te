@@ -1,5 +1,4 @@
 get_prop(init, vendor_fingerprint_prop);
-
 allow init self:capability sys_nice;
 
 # Allow init to bind mount gps_debug.conf
