@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "HwKeyOverlay",
+    theme: "HwKeyOverlay",
+    sdk_version: "current",
+    product_specific: true
+}
