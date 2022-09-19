@@ -16,7 +16,7 @@
 /dev/block/bootdevice/by-name/modem		/vendor/firmware_mnt	vfat	ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0	wait
 /dev/block/bootdevice/by-name/misc		/misc			emmc	defaults							defaults
 /dev/block/bootdevice/by-name/config		/frp			emmc	defaults							defaults
-/dev/block/by-name/oem				/metadata		ext4	noatime,nosuid,nodev,discard,data=journal,commit=1		wait,formattable,first_stage_mount
+/dev/block/by-name/logdump			/metadata		ext4	noatime,nosuid,nodev,discard,data=journal,commit=1		wait,formattable,first_stage_mount
 
 /devices/platform/soc/7864900.sdhci/mmc_host*		auto			auto	defaults							wait,voldmanaged=sdcard1:auto,noemulatedsd,encryptable=userdata
 /devices/platform/soc/7000000.ssusb/7000000.dwc3/xhci-hcd.0.auto*     auto	auto    defaults							wait,voldmanaged=usb:auto
