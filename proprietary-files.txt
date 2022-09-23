@@ -566,17 +566,12 @@ vendor/lib64/librs_adreno.so|1b894b53ef85039b6119f2d48820978192e3aeed
 vendor/lib64/librs_adreno_sha1.so|68072f7dfd43e8d7690c84bec208ab9ca8f23c77
 
 # Graphics (HDR) - from LA.UM.10.6.2.r1-01600-89xx.0
-vendor/lib/libhdr_tm.so|0d03941ffa1d48b2cc8400ce6131894450151665
 vendor/lib64/libhdr_tm.so|66f312694a60e9f917a6aafa04563b9c376b1411
 
 # Graphics (Postprocessing) - from LA.UM.10.6.2.r1-01600-89xx.0
 vendor/bin/hw/vendor.display.color@1.0-service|1f1d5cba21378c81f1c23c78d987d06c7613b794
 vendor/bin/mm-pp-dpps|083a05570aa6ec8c36e92a1294e34ca420b89437
 vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
-vendor/lib/vendor.display.color@1.0.so|7786f830d3cfe807ff2004957283a5fa7f925952
-vendor/lib/vendor.display.color@1.1.so|1cff66d0900d2555eaa51df9fbd6039e031e0b1f
-vendor/lib/vendor.display.color@1.2.so|54805d318e9f0e45cc3b6abec53cacdc1849302c
-vendor/lib/vendor.display.postproc@1.0.so|0b704dae454b0f8f82930c4cfec5b271b7a86663
 vendor/lib64/libdisp-aba.so|1b27405e7d1101f40be242d99ab4da0ff9a271b0
 vendor/lib64/vendor.display.color@1.0.so|f527bf664bfbeed240d956c5477b5bf5d6654e1c
 vendor/lib64/vendor.display.color@1.1.so|8af70a73df6fe4e5c6527dcab9573516124743b9
@@ -584,12 +579,6 @@ vendor/lib64/vendor.display.color@1.2.so|2fa82f2f822530e2516678987873de4e9e4d0b4
 vendor/lib64/vendor.display.postproc@1.0.so|6ed50478f3b6c4ff6871ce715b9944c5e8a42eb7
 
 # Graphics (SDM) - from op3 - PKQ1.181203.001
-vendor/lib/libscalar.so|7eb9864f82f5ffeb26ba548919c4812d1412b89e
-vendor/lib/libsdm-color.so|0e9ed4076b322bd630f5a227930c7ce5acf2dccf
-vendor/lib/libsdm-diag.so|427fe7e2e23715041d35fa25cbacb7bca1803219
--vendor/lib/libsdm-disp-vndapis.so|6c4233ea3676643bc9658c25cfad7edd45c49362
-vendor/lib/libsdmextension.so|b57d80c0689ed0519762ea740fa163867dfa6a7d
-vendor/lib/libtinyxml2_1.so|89a4da164dfe30fa43f0ba2de198c8de54817162
 vendor/lib64/libscalar.so|d7cb68b0c3269bc8750646cfcf659973ac97c5b1
 vendor/lib64/libsdm-color.so|364aba1e0b7a376c37b79e971d01d49063bf3c1c
 vendor/lib64/libsdm-diag.so|0a2116e2f1e310be896250053761888b2b890dc4
