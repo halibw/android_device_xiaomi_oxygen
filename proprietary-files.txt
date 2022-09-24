@@ -594,13 +594,13 @@ vendor/lib64/hw/vulkan.adreno.so|09c5d7b60e36fd9bb5aa25e9b4110e8bf9554731
 system_ext/lib64/libgralloc.qti.so|8d5f08f480c121eab46bc64e3d6a8c9913a4c9f2
 system_ext/lib64/libqdMetaData.so|9092b482aa50935b9dc008b79a2ee8305869bd6c
 
-# Graphics firmware - from Tissot PKQ1.180917.001.V10.0.11.0.PDHMIXM
+# Graphics firmware - from Daisy 10/QKQ1.191002.002/V11.0.21.0.QDLMIXM
 vendor/firmware/a506_zap.b00|c45a7b34456844f5deb73e2dce79cbfcfb9ae71c
-vendor/firmware/a506_zap.b01|00a618f9ecde71e169200fbdc60428c81bab144c
+vendor/firmware/a506_zap.b01|374b5c4a2212b2636d5dfc2deda66b56b6bf2d03
 vendor/firmware/a506_zap.b02|b79957c47f0a6757ac1d721dbe06551508454634
-vendor/firmware/a506_zap.mdt|2945f21b47cf35bf22d8cb68e937c34ea64212c0
-vendor/firmware/a530_pfp.fw|448f9db8271fefb08348cbc50409e8e95bd93f78
-vendor/firmware/a530_pm4.fw|5741a28752355b478d455635bab008028ff7e1c6
+vendor/firmware/a506_zap.mdt|621df918f1d6ef0a0c3fe25c8f6a58d56af4b26a
+vendor/firmware/a530_pfp.fw|c19e1905c15622d7bb02409e6748959bceda9b08
+vendor/firmware/a530_pm4.fw|b1cf625b5552b99839687f479c124ac5daca2ca2
 
 # IRQ Balance - from LA.UM.9.6.2.r1-04200-89xx.0
 vendor/bin/msm_irqbalance|e5706bc0acab394b53fafdc1d7f342f69c6f5649
