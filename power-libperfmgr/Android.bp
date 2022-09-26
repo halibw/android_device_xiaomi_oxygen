@@ -17,22 +17,6 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
-cc_library {
-    name: "libdisppower-xiaomi-msm8953",
-    proprietary: true,
-    srcs: [
-        "disp-power/DisplayLowPower.cpp",
-        "disp-power/InteractionHandler.cpp",
-    ],
-     shared_libs: [
-        "libbase",
-        "libcutils",
-        "liblog",
-        "libperfmgr",
-        "libutils",
-    ],
-}
-
 cc_binary {
     name: "android.hardware.power-service.xiaomi-msm8953-libperfmgr",
     relative_install_path: "hw",
@@ -47,7 +31,7 @@ cc_binary {
         "liblog",
         "libutils",
         "libbinder_ndk",
-        "libdisppower-xiaomi-msm8953",
+	"libdisppower-pixel",
         "libperfmgr",
         "libprocessgroup",
         "pixel-power-ext-V1-ndk",
