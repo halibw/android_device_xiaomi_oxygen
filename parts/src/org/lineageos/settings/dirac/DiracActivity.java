@@ -17,11 +17,15 @@
 package org.lineageos.settings.dirac;
 
 import android.os.Bundle;
+import androidx.appcompat.app.AlertDialog;
+import android.content.SharedPreferences;
+import android.content.DialogInterface;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import com.android.settingslib.collapsingtoolbar.R;
 
 public class DiracActivity extends CollapsingToolbarBaseActivity {
+    private boolean isOn;
 
     private static final String TAG_DIRAC = "dirac";
 
@@ -29,7 +33,32 @@ public class DiracActivity extends CollapsingToolbarBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getFragmentManager().beginTransaction().replace(R.id.content_frame,
-                new DiracSettingsFragment(), TAG_DIRAC).commit();
+        SharedPreferences sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
+        isOn = sharedPreferences.getBoolean("saveT", false);
+        if (!isOn) {
+            AlertDialog.Builder alert = new AlertDialog.Builder(this)
+                    .setTitle("Warring")
+		    .setMessage("This function may affect the audio effect in some scenarios. Are you sure you want to turn it on?")
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {}
+                    })
+                    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            isOn = true;
+                            SharedPreferences sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putBoolean("saveT", isOn);
+                            editor.apply();
+                        }
+                    });
+            alert.show();
+        } else {
+	    getFragmentManager()
+		    .beginTransaction()
+		    .replace(R.id.content_frame, new DiracSettingsFragment(), TAG_DIRAC)
+		    .commit();
+	}
     }
 }
