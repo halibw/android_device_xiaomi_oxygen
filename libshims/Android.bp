@@ -6,6 +6,14 @@ cc_library_shared {
     ],
 }
 
+cc_library_shared {
+    name: "libbacktrace-vendor",
+    vendor: true,
+    shared_libs: [
+        "libunwindstack",
+    ],
+}
+
 // fpc
 cc_library_shared {
     name: "libshims_binder",
