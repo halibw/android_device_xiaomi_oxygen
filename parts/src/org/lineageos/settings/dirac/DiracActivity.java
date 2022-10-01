@@ -51,14 +51,19 @@ public class DiracActivity extends CollapsingToolbarBaseActivity {
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putBoolean("saveT", isOn);
                             editor.apply();
+			    openFM();
                         }
                     });
             alert.show();
         } else {
-	    getFragmentManager()
-		    .beginTransaction()
-		    .replace(R.id.content_frame, new DiracSettingsFragment(), TAG_DIRAC)
-		    .commit();
+	    openFM();
 	}
+    }
+
+    public void openFM() {
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.content_frame, new DiracSettingsFragment(), TAG_DIRAC)
+                    .commit();
     }
 }
