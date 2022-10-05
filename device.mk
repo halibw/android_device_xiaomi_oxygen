@@ -187,12 +187,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
-# FM
-PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni \
-    fm-commonsys
-
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl:64 \
