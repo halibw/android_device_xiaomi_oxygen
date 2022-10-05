@@ -1,3 +1,5 @@
+typeattribute qti_init_shell data_between_core_and_vendor_violators;
+
 allow qti_init_shell proc_touchpanel:dir { r_dir_perms setattr };
 allow qti_init_shell proc_touchpanel:file { getattr setattr };
 
@@ -12,4 +14,4 @@ allow qti_init_shell system_data_file:file getattr;
 allow qti_init_shell vendor_radio_data_file:dir rw_dir_perms;
 allow qti_init_shell vendor_radio_data_file:dir create_dir_perms;
 allow qti_init_shell vendor_radio_data_file:file create_file_perms;
-dontaudit qti_init_shell radio_core_data_file:dir search;
+allow qti_init_shell radio_core_data_file:dir search;
