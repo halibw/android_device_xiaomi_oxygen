@@ -124,6 +124,7 @@ TARGET_PER_MGR_ENABLED := true
 
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
+TARGET_ENFORCES_QSSI := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom

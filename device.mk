@@ -166,9 +166,6 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.0.vendor \
     vendor.display.config@2.0.vendor
 
-PRODUCT_PACKAGES += \
-    disable_configstore
-
 # Device-specific settings
 PRODUCT_PACKAGES += \
     XiaomiParts
