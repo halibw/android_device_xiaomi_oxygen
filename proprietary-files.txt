@@ -68,6 +68,7 @@ vendor/lib64/libacdbrtac.so|547a42e2ed54d13e780fab26134ec0fd90054d4c
 vendor/lib64/libadiertac.so|98a8c2702d4e203689e4a80c69c4b1cf93af1567
 vendor/lib64/libaudcal.so|213bdd87ec3339042796f62605e38690e2500fd6
 vendor/lib64/libaudioalsa.so|534d4dc07fecea0611273c745721b1ed2015a3a3
+vendor/lib/libaudio_log_utils.so|9c10e18c405733e409a6d4f21bc381d2f860582d
 -vendor/lib/libaudioparsers.so|a39f1f6e789547f63b7e2369d73b29876763d68d
 -vendor/lib64/libaudioparsers.so|1463c5ee0f2f040835386d9ccb4a4b010c5bdf58
 
@@ -464,7 +465,7 @@ lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so
 # Goodix - from daisy-user 10 QKQ1.191002.002 V11.0.21.0.QDLMIXM
 lib64/hw/gf_fingerprint.default.so:vendor/lib64/hw/gf_fingerprint.default.so|b09aba758c469f3e3ff04197a723a15fbdfafea1
 vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so|feee131f714ed9a7dd93e7ba9bfc768cbf651426
-vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so|c9d0251df63d8e34b6d70a59ad7b774c9f640fa1
+vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so|c6856ac0387ed1a9651477eeecc30e83581d369d
 
 # Fingerprint
 lib64/libgf_ca.so:vendor/lib64/libgf_ca.so
