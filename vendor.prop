@@ -78,7 +78,6 @@ vendor.audio.volume.headset.gain.depcal=true
 
 # Bluetooth
 bluetooth.device.default_name=Mi Max 2
-bluetooth.hfp.client=1
 vendor.qcom.bluetooth.soc=smd
 
 # Cne
