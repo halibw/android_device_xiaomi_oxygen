@@ -128,7 +128,6 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.frameworks.displayservice@1.0.vendor \
     android.frameworks.sensorservice@1.0.vendor \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
@@ -163,8 +162,7 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libtinyxml \
     libvulkan \
-    vendor.display.config@1.0.vendor \
-    vendor.display.config@2.0.vendor
+    vendor.display.config@1.0.vendor
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
