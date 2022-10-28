@@ -6,6 +6,15 @@ cc_library_shared {
     ],
 }
 
+// libhidlbase
+cc_library_shared {
+    name: "libhidlbase-vendor",
+    vendor: true,
+    shared_libs: [
+        "libhidlbase",
+    ],
+}
+
 cc_library_shared {
     name: "libbacktrace-vendor",
     vendor: true,

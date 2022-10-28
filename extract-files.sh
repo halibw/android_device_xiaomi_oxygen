@@ -110,6 +110,7 @@ ${PATCHELF}" --add-needed "libshims_binder.so" "${DEVICE_BLOB_ROOT}"/vendor/lib6
 # Goodix
 "${PATCHELF}" --remove-needed "libprotobuf-cpp-lite.so" "${DEVICE_BLOB_ROOT}"/vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
 "${PATCHELF}" --remove-needed "libprotobuf-cpp-lite.so" "${DEVICE_BLOB_ROOT}"/vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
+"${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
 
 # IMS
 "${PATCHELF}" --add-needed "libims-shim.so" "${DEVICE_BLOB_ROOT}"/system_ext/lib64/lib-imsvideocodec.so
