@@ -22,11 +22,6 @@ vendor/lib64/libgf_hal.so)
                 echo "Critical blob modification weren't applied on ${2}!"
                 exit;
             fi
-	    ;;
-# Use VNDK 32 libhidlbase
-vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so)
-            "${PATCHELF_0_8}" --remove-needed "libhidlbase.so" "${2}"
-            sed -i "s/libhidltransport.so/libhidlbase-v32.so\x00/" "${2}"
             ;;
     esac
 }
