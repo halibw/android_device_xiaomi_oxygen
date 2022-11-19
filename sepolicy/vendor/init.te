@@ -1,5 +1,6 @@
 get_prop(init, vendor_fingerprint_prop);
 allow init self:capability sys_nice;
+allow init logdump_partition:lnk_file relabelto;
 
 # Allow init to bind mount gps_debug.conf
 allow init system_file:file mounton;
