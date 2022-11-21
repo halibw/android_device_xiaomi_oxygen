@@ -135,7 +135,7 @@ BOARD_USES_QCOM_HARDWARE := true
 TARGET_ENFORCES_QSSI := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.qcom
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
