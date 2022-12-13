@@ -121,10 +121,8 @@ static int64_t convertWorkDurationToBoostByPid(std::shared_ptr<AdpfConfig> adpfC
 
 }  // namespace
 
-PowerHintSession::PowerHintSession(std::shared_ptr<AdaptiveCpu> adaptiveCpu, int32_t tgid,
-                                   int32_t uid, const std::vector<int32_t> &threadIds,
-                                   int64_t durationNanos)
-    : mAdaptiveCpu(adaptiveCpu) {
+PowerHintSession::PowerHintSession(int32_t tgid, int32_t uid, const std::vector<int32_t> &threadIds,
+                                   int64_t durationNanos) {
     mDescriptor = new AppHintDesc(tgid, uid, threadIds);
     mDescriptor->duration = std::chrono::nanoseconds(durationNanos);
     mStaleTimerHandler = sp<StaleTimerHandler>(new StaleTimerHandler(this));
@@ -355,8 +353,6 @@ ndk::ScopedAStatus PowerHintSession::reportActualWorkDuration(
         updateWorkPeriod(actualDurations);
         mEarlyBoostHandler->updateTimer(getEarlyBoostTime());
     }
-
-    mAdaptiveCpu->ReportWorkDurations(actualDurations, mDescriptor->duration);
 
     return ndk::ScopedAStatus::ok();
 }
