@@ -1,4 +1,4 @@
-# ADSP - from FP3:11/8901.4.A.0017.3
+# ADSP - from FP3:11/8901.4.A.0019.2
 vendor/bin/adsprpcd|5e246a6f5d2dca27e29b233a17e4673532191b95
 vendor/bin/dspservice|a7344fc3d27a49df30858ebc3f73ee5818e752d4
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc|8f0eb84d3eb5fc0f683ef7b975b75044d56f513e
