@@ -22,6 +22,9 @@ bluetooth.profile.asha.central=true
 # Enhanced sco connection
 bluetooth.sco.disable_enhanced_connection=true
 
+# APCF extended
+bluetooth.le.disable_apcf_extended_features=1
+
 # DPM
 persist.vendor.dpm.feature=11
 persist.vendor.dpm.loglevel=0
