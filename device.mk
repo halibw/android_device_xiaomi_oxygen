@@ -220,7 +220,7 @@ PRODUCT_PACKAGES += \
     libims-shim
 
 # Input configuration
-ifeq ($(HW_KEY),true)
+ifneq ($(HIDE_HWKEY),true)
 PRODUCT_PACKAGES += \
     HwKeyOverlay
 
