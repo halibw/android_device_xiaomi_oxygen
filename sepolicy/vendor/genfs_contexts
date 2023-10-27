@@ -27,6 +27,11 @@ genfscon proc /sys/vm/dirty_writeback_centisecs				u:object_r:proc_dirty:s0
 genfscon proc /touchpanel						u:object_r:proc_touchpanel:s0
 genfscon sysfs /board_properties/virtualkeys.ft5x46			u:object_r:sysfs_virtualkeys:s0
 
+# MSM_SUBSYS
+genfscon sysfs /sys/devices/platform/soc/1de0000.qcom,venus/subsys4/name	u:object_r:sysfs_subsys:s0
+genfscon sysfs /sys/devices/platform/soc/4080000.qcom,mss/subsys0/name		u:object_r:sysfs_subsys:s0
+genfscon sysfs /sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys1/name		u:object_r:sysfs_subsys:s0
+
 # XiaomiParts (Sound-Control nodes)
 genfscon sysfs /kernel/sound_control/headphone_gain			u:object_r:sysfs_hgain:s0
 genfscon sysfs /kernel/sound_control/mic_gain				u:object_r:sysfs_mgain:s0

@@ -1,0 +1,1 @@
+allow port-bridge sysfs_subsys:file r_file_perms;

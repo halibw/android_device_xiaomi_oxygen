@@ -1,1 +1,3 @@
 allow vendor_per_mgr self:capability net_raw;
+
+allow vendor_per_mgr sysfs_subsys:file r_file_perms;

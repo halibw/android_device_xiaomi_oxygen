@@ -24,6 +24,9 @@ type rild_file, file_type, vendor_file_type;
 # Touchscreen
 type proc_touchpanel, fs_type, sysfs_type, proc_type;
 
+# msm_subsys
+type sysfs_subsys, sysfs_type, fs_type;
+
 # XiaomiParts
 type sysfs_hgain, sysfs_type, fs_type;
 type sysfs_mgain, sysfs_type, fs_type;
