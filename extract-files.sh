@@ -103,6 +103,20 @@ sed -i "s|persist.camera.debug.logfile|persist.vendor.camera.dbglog|g" "${DEVICE
 sed -i "s|libgui.so|libwui.so|g" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera2_stats_modules.so
 sed -i "s|libgui.so|libwui.so|g" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera_ppeiscore.so
 "${PATCHELF}" --remove-needed "libandroid.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmpbase.so
+"${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmpbase.so
+"${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libFaceGrade.so
+"${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libchromaflash.so
+"${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera_hdr_gb_lib.so
+"${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmorpho_easy_hdr.so
+"${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmorpho_group_portrait.so
+"${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmorpho_hdr_checker.so
+"${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmorpho_panorama_gp.so
+"${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/liboptizoom.so
+"${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libseemore.so
+"${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libtrueportrait.so
+"${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libts_detected_face_hal.so
+"${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libts_face_beautify_hal.so
+"${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libubifocus.so
 
 # FPC
 ${PATCHELF}" --add-needed "libshims_binder.so" "${DEVICE_BLOB_ROOT}"/vendor/lib64/lib_fpc_tac_shared.so
@@ -111,6 +125,7 @@ ${PATCHELF}" --add-needed "libshims_binder.so" "${DEVICE_BLOB_ROOT}"/vendor/lib6
 "${PATCHELF}" --remove-needed "libprotobuf-cpp-lite.so" "${DEVICE_BLOB_ROOT}"/vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
 "${PATCHELF}" --remove-needed "libprotobuf-cpp-lite.so" "${DEVICE_BLOB_ROOT}"/vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
 "${PATCHELF}" --replace-needed "libhidlbase-vendor.so" "libhidlbase-v32.so" "${DEVICE_BLOB_ROOT}"/vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
+"${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${DEVICE_BLOB_ROOT}"/vendor/lib64/libgf_algo.so
 
 # IMS
 "${PATCHELF}" --add-needed "libims-shim.so" "${DEVICE_BLOB_ROOT}"/system_ext/lib64/lib-imsvideocodec.so
